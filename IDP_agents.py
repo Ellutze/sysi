@@ -39,7 +39,7 @@ def AgentSutler(varVar,varVal,fixedVars,varMin,varMax,specie):
     #this function is used by the GUI
     #Based on user input new iteration table in SQL is created
     
-    
+    lPath = os.path.dirname(os.path.abspath(__file__))
     #creates a string of iteratable variables list for SQL record
     i = 0
     varVarS = ""
@@ -122,7 +122,7 @@ def AgentSutler(varVar,varVal,fixedVars,varMin,varMax,specie):
             temp[0,1] = varMax[varVar[i]]
             BCs = np.concatenate((BCs,temp),axis = 0)
         elif "airfoil" in varVar[i]:
-            img_folder_path = 'D:\\IDPcode\\aerofoilcollection\\'
+            img_folder_path = lPath+'\\aerofoilcollection\\'
             dirListing = os.listdir(img_folder_path)
             AFLS = len(dirListing)
             temp[0,0] = 0
@@ -193,8 +193,8 @@ def AgentSutler(varVar,varVal,fixedVars,varMin,varMax,specie):
             if "airfoil" in varVar[ii]:
                 # Will raise StopIteration if you don't have x files
                 fileNO = int(sampleMAT[i,ii])
-                file1000 = next(itertools.islice(os.scandir('D:\\IDPcode\\aerofoilcollection\\'), fileNO, None)).path
-                file1000 = file1000.split("D:\\IDPcode\\aerofoilcollection\\")[1]
+                file1000 = next(itertools.islice(os.scandir(lPath+'\\aerofoilcollection\\'), fileNO, None)).path
+                file1000 = file1000.split(lPath+"\\aerofoilcollection\\")[1]
                 query += """'"""+str(file1000)+"""',"""
             else:
                 query += str(sampleMAT[i,ii])+","
@@ -206,7 +206,7 @@ def AgentSutler(varVar,varVal,fixedVars,varMin,varMax,specie):
         i = i + 1
     dc_X('NCC',cnnW,crrW)
     
-    with open("D:\\IDPcode\\temporary\\underground.txt", "a") as text_file:
+    with open(lPath+"\\temporary\\underground.txt", "a") as text_file:
         text_file.write("LHS run, begin evaluation.\n")
     IDP_assistants.Linda(generation,specie,GENtable,varVal,varVar)
     print("Finished sampling the Hypercube")
@@ -215,6 +215,7 @@ def AgentSutler(varVar,varVal,fixedVars,varMin,varMax,specie):
 
    
 def AgentPytlik(GENtable,varVar,varVal,varMin,varMax):
+    lPath = os.path.dirname(os.path.abspath(__file__))
     #Ant colony optimisatoin, or gradient based adjustment optimisation
     #initial number of randoms
     #LHS or other initial sampling method should be run prior to this
@@ -235,7 +236,7 @@ def AgentPytlik(GENtable,varVar,varVal,varMin,varMax):
             temp[0,1] = varMax[varVar[i]]
             BCs = np.concatenate((BCs,temp),axis = 0)
         elif "airfoil" in varVar[i]:
-            img_folder_path = 'D:\\IDPcode\\aerofoilcollection\\'
+            img_folder_path = lPath+'\\aerofoilcollection\\'
             dirListing = os.listdir(img_folder_path)
             AFLS = len(dirListing)
             temp[0,0] = 0
@@ -326,8 +327,8 @@ def AgentPytlik(GENtable,varVar,varVal,varMin,varMax):
                 if "airfoil" in varVar[ii]:
                     # Will raise StopIteration if you don't have x files
                     fileNO = int(specimen[i,ii])
-                    file1000 = next(itertools.islice(os.scandir('D:\\IDPcode\\aerofoilcollection\\'), fileNO, None)).path
-                    file1000 = file1000.split("D:\\IDPcode\\aerofoilcollection\\")[1]
+                    file1000 = next(itertools.islice(os.scandir(lPath+'\\aerofoilcollection\\'), fileNO, None)).path
+                    file1000 = file1000.split(lPath+"\\aerofoilcollection\\")[1]
                     query += """'"""+str(file1000)+"""',"""
                 else:
                     query += str(specimen[i,ii])+","

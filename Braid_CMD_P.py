@@ -13,6 +13,7 @@ from Braid_main_P import poc
 from default_var_dict import getBase
 import time
 import IDP_geometry
+import os
 
 def maxVersion(trimfile):
     conn,cursor = cnt_X('NCC')   
@@ -40,9 +41,10 @@ def is_empty(any_structure):
         return True
 
 def baseBraid(varVal,CADfile,MeshFile):
+    lPath = os.path.dirname(os.path.abspath(__file__))
     st1 = time.time() 
 
-    MD = np.load("D:\\IDPcode\\catiafiles\\meshfiles\\"+MeshFile+"_nodes.npy")
+    MD = np.load(lPath+"\\catiafiles\\meshfiles\\"+MeshFile+"_nodes.npy")
     
     MS = varVal["mandrel_speed"]
     spoolsPhy = varVal['spools']

@@ -3,7 +3,7 @@ from abaqusConstants import *
 from odbMaterial import *
 from odbSection import *
 # Open the odb
-myOdb = session.openOdb(name='D:\\IDPcode\\Temporary\\Task-1.odb')
+myOdb = session.openOdb(name='D:\\sysi\\Temporary\\Task-1.odb')
 frames = myOdb.steps["Step-1"].frames
 numFrames = len(frames)
 # Isolate the instance, get the number of nodes and elements

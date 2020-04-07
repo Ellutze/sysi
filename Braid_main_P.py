@@ -10,6 +10,7 @@ import math
 import IDP_geometry
 import time
 from IDP_databases import cnt_X, dc_X
+import os
 
 def braidAngle(NS,t,f):
     #Uses vectorised formulas to obtain local braid angle - Johan Van.Ravenhorst thesis reference ....
@@ -92,6 +93,7 @@ def noSerpent(T,YARN,maxR,gd,WW,rota,spoolsWa,MS,imd,datum):
     return(SPP)
 
 def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
+    lPath = os.path.dirname(os.path.abspath(__file__))
     st2 = time.time()  
     #change for iteration
 
@@ -423,8 +425,8 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
     pocList[np.size(pocList,0)-1,9] = pitch
     
     #store pocList and sppList for troubleshooting and review
-    np.save("D:\\IDPcode\\temporary\\pocList.npy", pocList[:,1:4])    
-    np.save("D:\\IDPcode\\temporary\\sppList.npy", sppList) 
+    np.save(lPath+"\\temporary\\pocList.npy", pocList[:,1:4])    
+    np.save(lPath+"\\temporary\\sppList.npy", sppList) 
     #add to matrix?
     
     print("YARN "+str(YARN)+" simulation time :--- %s seconds ---" % (time.time() - st2)) 

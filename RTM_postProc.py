@@ -17,7 +17,7 @@ def outputS1(RTMfile):
     fif = RTMfile+".log"
     
     #Open the standard .log file available with every visual-rtm simulation.
-    eef = open("D:\\IDPcode\\pamrtm\\mainSimFiles\\"+fif, "rt")
+    eef = open("D:\\sysi\\pamrtm\\mainSimFiles\\"+fif, "rt")
     ee = eef.read() 
     prc = ee.count('%')
     i = 0
@@ -79,13 +79,13 @@ def cmdReach(RTMfile):
     
 def ifUnfi(RTMfile):
     #ifUnfi is a specilized post processign script for mesh-addition-iteration.
-    with open("D:\\IDPcode\\pamrtm\\mainSimFiles\\FILLING_FACTOR124.txt", "r") as fin:
+    with open("D:\\sysi\\pamrtm\\mainSimFiles\\FILLING_FACTOR124.txt", "r") as fin:
         data = fin.read().splitlines(True)
-    with open('D:\\IDPcode\\pamrtm\\mainSimFiles\\FILLING_FACTOR125.txt', 'w') as fout:
+    with open('D:\\sysi\\pamrtm\\mainSimFiles\\FILLING_FACTOR125.txt', 'w') as fout:
         fout.writelines(data[14:])
         
     #Load the trimmed version of filling factors at last frame.
-    matrix = np.loadtxt('D:\\IDPcode\\pamrtm\\mainSimFiles\\FILLING_FACTOR125.txt',usecols=range(2))
+    matrix = np.loadtxt('D:\\sysi\\pamrtm\\mainSimFiles\\FILLING_FACTOR125.txt',usecols=range(2))
     i = 0 
     vrba = np.zeros([1,2])
     while i < np.size(matrix,0):
@@ -100,7 +100,7 @@ def ifUnfi(RTMfile):
     vrba = np.concatenate((vrba,locaV),1)
     vrba = np.delete(vrba, (0), axis=0)
     #import node matrix - with locations and match nodes ... 
-    with open("D:\\IDPcode\\pamrtm\\mainSimFiles\\"+RTMfile+".inp") as nds:
+    with open("D:\\sysi\\pamrtm\\mainSimFiles\\"+RTMfile+".inp") as nds:
         fl = nds.read()
         ff = fl.split("*NODE")[1]
         coord_mat = np.zeros([1,4])
@@ -164,7 +164,7 @@ def ifUnfi(RTMfile):
         i = i + 1 
     
     #Importing the surface coordinate information
-    surf_mat = np.load(r"D:\\IDPcode\\temporary\\RTM_surfaces.npy")
+    surf_mat = np.load(r"D:\\sysi\\temporary\\RTM_surfaces.npy")
     print(np.size(surf_mat,0),"original surface matrix")
 
     surf_Alist = np.zeros([1,4])
@@ -201,20 +201,20 @@ def ifUnfi(RTMfile):
     print(np.size(surf_mat,0),"new surface matrix")
     #Output new surfaces with mesh and the original surface matrix with the 
     #mesh surfaces taken out. 
-    np.save("D:\\IDPcode\\temporary\\RTM_surfaces_2.npy", surf_mat)
-    np.save("D:\\IDPcode\\temporary\\FM_surfaces.npy", surf_Alist)
+    np.save("D:\\sysi\\temporary\\RTM_surfaces_2.npy", surf_mat)
+    np.save("D:\\sysi\\temporary\\FM_surfaces.npy", surf_Alist)
     
 def ff_check(RTMFile, I_time, UNmoved,RTMF):
     #This function uses last simulation results to adjust flow rates from
     #various inlets to create smoother flow front.
     
     #imports the previous iteration of flow matrix
-    frMAT = np.load(r"D:\\IDPcode\\temporary\\flowMAT.npy")
+    frMAT = np.load(r"D:\\sysi\\temporary\\flowMAT.npy")
     
     #Uses result of last executed simulation to find the number of frames
     #present in the result files.
     cmdReach(RTMFile)   
-    with open("D:\\IDPcode\\pamrtm\\mainSimFiles\\FILLING_FACTOR124.txt", "r") as fin:
+    with open("D:\\sysi\\pamrtm\\mainSimFiles\\FILLING_FACTOR124.txt", "r") as fin:
         data = fin.read().splitlines(True)
     nS = data[12]
     nS = int(nS.split()[1])  
@@ -223,18 +223,18 @@ def ff_check(RTMFile, I_time, UNmoved,RTMF):
     STRx = RTMFile+"---"+"getALLff(RTMfile,nS)"+"---"+str(nS)
     with open("Temporary\\PP_request.txt", "w") as text_file:
         text_file.write(STRx)
-    cmd("VEBatch -activeconfig Trade:CompositesandPlastics -activeapp VisualRTM -sessionrun D:\\IDPcode\\RTM_PPcmd.py")
+    cmd("VEBatch -activeconfig Trade:CompositesandPlastics -activeapp VisualRTM -sessionrun D:\\sysi\\RTM_PPcmd.py")
         
     #Check each result frame.
     #If flow front is non-uniform, flow rate matrix is adjusted.
     Y = 0
     while Y < nS:
         #Import filling factors for the particular time step.
-        with open("D:\\IDPcode\\pamrtm\\mainSimFiles\\FILLING_FACTOR"+str(Y)+".txt", "r") as finn:
+        with open("D:\\sysi\\pamrtm\\mainSimFiles\\FILLING_FACTOR"+str(Y)+".txt", "r") as finn:
             data = finn.read().splitlines(True)
-        with open('D:\\IDPcode\\pamrtm\\mainSimFiles\\FILLING_FACTOR_TEMP.txt', 'w') as fout:
+        with open('D:\\sysi\\pamrtm\\mainSimFiles\\FILLING_FACTOR_TEMP.txt', 'w') as fout:
             fout.writelines(data[14:])
-        matrix = np.loadtxt("D:\\IDPcode\\pamrtm\\mainSimFiles\\FILLING_FACTOR_Temp.txt",usecols=range(2))
+        matrix = np.loadtxt("D:\\sysi\\pamrtm\\mainSimFiles\\FILLING_FACTOR_Temp.txt",usecols=range(2))
         
         #Filter the current timestep data for the not-fully-filled nodes.
         i = 0 
@@ -249,7 +249,7 @@ def ff_check(RTMFile, I_time, UNmoved,RTMF):
         vrba = np.concatenate((vrba,locaV),1)
         vrba = np.delete(vrba, (0), axis=0)
         #import node matrix - with locations and match nodes ... 
-        with open("D:\\IDPcode\\pamrtm\\mainSimFiles\\"+RTMF+".inp") as nds:
+        with open("D:\\sysi\\pamrtm\\mainSimFiles\\"+RTMF+".inp") as nds:
             fl = nds.read()
             ff = fl.split("*NODE")[1]
             ff = ff.split("*SHELL")[0]
@@ -334,8 +334,8 @@ def ff_check(RTMFile, I_time, UNmoved,RTMF):
             #local origin is a point on centerline.
             #Therefore the nodes are translated to their respective local 
             #coordinates.
-            BCs = np.loadtxt(open("D:\\IDPcode\\temporary\\braidsegments.csv", "rb"), delimiter=",")
-            refPTS = np.loadtxt(open("D:\\IDPcode\\temporary\\secPTS.csv","rb"), delimiter=",")
+            BCs = np.loadtxt(open("D:\\sysi\\temporary\\braidsegments.csv", "rb"), delimiter=",")
+            refPTS = np.loadtxt(open("D:\\sysi\\temporary\\secPTS.csv","rb"), delimiter=",")
             secVECz = np.loadtxt(open("Temporary\\secVECz.csv","rb"), delimiter=",")
             secVECy = np.loadtxt(open("Temporary\\secVECy.csv","rb"), delimiter=",")
             secPTS = refPTS
@@ -411,7 +411,7 @@ def ff_check(RTMFile, I_time, UNmoved,RTMF):
 
                     ii = ii + 1
                 i = i + 1
-            np.save("D:\\IDPcode\\temporary\\flowMAT.npy", frMAT)
+            np.save("D:\\sysi\\temporary\\flowMAT.npy", frMAT)
             Y = 9000
         Y = Y + 1
     return(FF_check, UNmoved)

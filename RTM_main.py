@@ -21,6 +21,7 @@ def is_empty(any_structure):
         return True
 
 def mRTM(MeshFile,BraidFile,resin,varVal):
+    lPath = os.path.dirname(os.path.abspath(__file__))
     #This function prepares input information for RTM simulation and then
     #runs the simulation.
     #In many places phrase "ACTIVATE FOR SQL USAGE:" is used. Those sections 
@@ -59,7 +60,7 @@ def mRTM(MeshFile,BraidFile,resin,varVal):
     #Flow matrix baseline
     flowM = np.zeros([1000,12])
     flowM = flowM + (varVal['flow_rate'])*varVal['no_layers']
-    np.save("D:\\IDPcode\\temporary\\flowMAT.npy", flowM)
+    np.save(lPath+"\\temporary\\flowMAT.npy", flowM)
     
     #find the highest iteration in the MySQL table
     #the input to sim, through SQL
@@ -119,17 +120,17 @@ def mRTM(MeshFile,BraidFile,resin,varVal):
     
     #The list of surfaces is created with their 3D coordinates.
     #Can be hashed if the same part is being re-analysed.
-    cmd("VEBatch -activeconfig Trade:CompositesandPlastics -activeapp VisualRTM -sessionrun D:\\IDPcode\\RTM_surfaces.py")
+    cmd("VEBatch -activeconfig Trade:CompositesandPlastics -activeapp VisualRTM -sessionrun "+lPath+"\\RTM_surfaces.py")
     
 
     #Only for troubleshooting.
-    surf_mat = np.load("D:\\IDPcode\\temporary\\RTM_surfaces.npy")
+    surf_mat = np.load(lPath+"\\temporary\\RTM_surfaces.npy")
     c = np.size(surf_mat,0)
     print(c,"how many elements?")
     
     #This is the main section, runs the visual-rtm model generation script.
-    cmd("VEBatch -activeconfig Trade:CompositesandPlastics -activeapp VisualRTM -sessionrun D:\\IDPcode\\RTM_toolbox.py")
-    cmd2("VEBatch -activeconfig Trade:CompositesandPlastics -activeapp VisualRTM -sessionrun D:\\IDPcode\\RTM_run.py",RTMFile)
+    cmd("VEBatch -activeconfig Trade:CompositesandPlastics -activeapp VisualRTM -sessionrun "+lPath+"\\RTM_toolbox.py")
+    cmd2("VEBatch -activeconfig Trade:CompositesandPlastics -activeapp VisualRTM -sessionrun "+lPath+"\\RTM_run.py",RTMFile)
     
     #For shorter runs RTM_lil_toolbox can be used. (#REP must be adjusted manually)
     #REP=6
@@ -218,9 +219,9 @@ def mRTM(MeshFile,BraidFile,resin,varVal):
     #print("Fill:",mf)
     #print("Infusion time:",time)
     RTM_postProc.cmdReach(RTMFile)
-    with open("D:\\IDPcode\\pamrtm\\mainSimFiles\\FILLING_FACTOR124.txt", "r") as fin:
+    with open(lPath+"\\pamrtm\\mainSimFiles\\FILLING_FACTOR124.txt", "r") as fin:
         data = fin.read().splitlines(True)
-    with open('D:\\IDPcode\\pamrtm\\mainSimFiles\\FILLING_FACTOR125.txt', 'w') as fout:
+    with open(lPath+'\\pamrtm\\mainSimFiles\\FILLING_FACTOR125.txt', 'w') as fout:
         fout.writelines(data[14:])
     
     return(RTMFile)

@@ -362,13 +362,14 @@ def ex1(project,file,varVal, version):
     version = "A"+vn
     name = project+"_"+file+"_"+version+"_JK"
     
-    silo = "D:\\IDPcode\\CatiaFiles\\SourceFiles\\"+name+".CatPart"
+    lPath = os.path.dirname(os.path.abspath(__file__))
+    silo = lPath+"\\CatiaFiles\\SourceFiles\\"+name+".CatPart"
     print(silo)
     partDocument1.SaveAs(silo)
     #storeCAD instance to recored iteration of cad parameters in MySQL
     storeCADinstance(varVal,name,chord_min,chord_max,dihedral)
     #iges save
-    silo2 = "D:\\IDPcode\\CatiaFiles\\SourceFiles\\"+name+".igs"
+    silo2 = lPath+"\\CatiaFiles\\SourceFiles\\"+name+".igs"
     partDocument1.ExportData(silo2, "igs")
     partDocument1.Close()
     print("--- %s seconds ---" % (time.time() - start_time))

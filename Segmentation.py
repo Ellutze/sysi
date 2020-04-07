@@ -13,8 +13,10 @@ from IDP_databases import cnt_X, dc_X
 import math
 #import sys 
 from IDP_cheats import togglePulse
+import os
 
-def centPTS_C(BraidFile, span, secs):
+def centPTS_C(BraidFile, span, secs):   
+    lPath = os.path.dirname(os.path.abspath(__file__))
     #this script finds points/positions on centreline for reference of locations relative to centreline
     #obtain the pitch data based on BraidFile
     cnnE,crrE = cnt_X('NCC')
@@ -54,7 +56,7 @@ def centPTS_C(BraidFile, span, secs):
     CATIA.RefreshDisplay = False
     
     #location of CATIA braid-file 
-    str15 = "D:\\IDPcode\\CatiaFiles\\BraidFiles\\"+BraidFile+".CatPart"
+    str15 = lPath+"\\CatiaFiles\\BraidFiles\\"+BraidFile+".CatPart"
     partDocument1 = CATIA.Documents.Open(str15)
     part1 = partDocument1.Part
     HSF1 = part1.HybridShapeFactory
@@ -104,7 +106,7 @@ def centPTS_C(BraidFile, span, secs):
         hb3.AppendHybridShape(hslx)
         part1.Update()
         #obtain the vector using wrmmm script
-        partDocument1.ExportData("D:\\IDPcode\\Temporary\\xxx.wrl", "wrl")
+        partDocument1.ExportData(lPath+"\\Temporary\\xxx.wrl", "wrl")
         vec, point = wrmmm()
             
         #hide unused geomtry
@@ -160,7 +162,7 @@ def centPTS_C(BraidFile, span, secs):
         hb3.AppendHybridShape(sla1)
         #update, export, obtain vector
         part1.Update()
-        partDocument1.ExportData("D:\\IDPcode\\Temporary\\xxx.wrl", "wrl")
+        partDocument1.ExportData(lPath+"\\Temporary\\xxx.wrl", "wrl")
         vec, point = wrmmm()
         
         #hide useless geometry
@@ -191,6 +193,7 @@ def centPTS_C(BraidFile, span, secs):
     return(secPTS, secVECy, secVECz)
     
 def centPTS_P(BraidFile, span, secs):
+    lPath = os.path.dirname(os.path.abspath(__file__))
     #this script finds points/positions on centreline for reference of locations relative to centreline
     #obtain the pitch data based on BraidFile
     cnnE,crrE = cnt_X('NCC')
@@ -226,7 +229,7 @@ def centPTS_P(BraidFile, span, secs):
     #section lenght calculate
     secLen = span/secs
     
-    cdArr = np.load("D:\\IDPcode\\temporary\\cdArr.npy")
+    cdArr = np.load(lPath+"\\temporary\\cdArr.npy")
 
     i = 0 
     #loop through sections

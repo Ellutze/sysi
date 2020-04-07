@@ -7,6 +7,7 @@ Created on Thu Feb 20 10:34:48 2020
 
 import numpy as np
 import math
+import os
 
 #Assembly of geometric tools used for the Integrated Simulations project
 
@@ -78,6 +79,7 @@ def findNormal(MD,point):
     
     
 def centreline(MD):
+    lPath = os.path.dirname(os.path.abspath(__file__))
     #finds local centreline vector for the braided part
     cdArr = np.zeros([1,4])
     i = 0
@@ -104,7 +106,7 @@ def centreline(MD):
             temp = np.matrix([vx,vy,vz,avz])
             cdArr = np.concatenate((cdArr,temp),axis = 0)
     cdArr = np.delete(cdArr,0,axis=0)
-    np.save("D:\\IDPcode\\temporary\\cdArr.npy", cdArr)
+    np.save(lPath+"\\temporary\\cdArr.npy", cdArr)
     return(datum,cdArr)
     
 def pitch(a,MD,z,spoolsPhy):

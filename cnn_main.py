@@ -2,17 +2,25 @@ import Segmentation
 import lam_tools
 import numpy as np
 import time
+import os
+import spheres
 #import MySQL_utils
 
 def aba_inputProp(BraidFile,CADfile,varVal):
     print(BraidFile)
     print(CADfile)
+    #run function to obtain spheres input
+    
+    
+    
+    #spheres.spheres(varVal)
+    
     #this function segments the part into uniform material propertis areas
     #then it calculates the appropriate properties from the results of braiding analysis
     st496 = time.time() 
-    
+    lPath = os.path.dirname(os.path.abspath(__file__))
     #np import spheres
-    II = np.load('D:\\IDPcode\\Temporary\\for_spheres.npy')
+    II = np.load(lPath+'\\Temporary\\for_spheres.npy')
     i = 0
     while i < II.shape[0]:
         #process the acquired values
@@ -25,7 +33,7 @@ def aba_inputProp(BraidFile,CADfile,varVal):
         
         i = i + 1
     #saves required sphere assignments
-    np.savetxt("D:\\IDPcode\\Temporary\\spheres.csv", II, delimiter=",")
+    np.savetxt(lPath+"\\Temporary\\spheres.csv", II, delimiter=",")
         
     #the next is not really required is it...since the numpy saving
     with open("Temporary\\sphere_rad.txt", "w") as text_file:
@@ -39,11 +47,11 @@ def aba_inputProp(BraidFile,CADfile,varVal):
     output, segBC,secPTS,secVECy,secVECz = Segmentation.braidAV(secPTS,secVECy,secVECz,BraidFile,secs,varVal)
     
     #save the boundary condition info, and info about local coordinate systems
-    np.savetxt("D:\\IDPcode\\Temporary\\output.csv", output, delimiter=",")
-    np.savetxt("D:\\IDPcode\\Temporary\\BraidSegments.csv", segBC, delimiter=",")
-    np.savetxt("D:\\IDPcode\\Temporary\\secPTS.csv", secPTS, delimiter=",")
-    np.savetxt("D:\\IDPcode\\Temporary\\secVECy.csv", secVECy, delimiter=",")
-    np.savetxt("D:\\IDPcode\\Temporary\\secVECz.csv", secVECz, delimiter=",")
+    np.savetxt(lPath+"\\Temporary\\output.csv", output, delimiter=",")
+    np.savetxt(lPath+"\\Temporary\\BraidSegments.csv", segBC, delimiter=",")
+    np.savetxt(lPath+"\\Temporary\\secPTS.csv", secPTS, delimiter=",")
+    np.savetxt(lPath+"\\Temporary\\secVECy.csv", secVECy, delimiter=",")
+    np.savetxt(lPath+"\\Temporary\\secVECz.csv", secVECz, delimiter=",")
     matXX = np.zeros([1,14])
 
     #print(output)
@@ -57,7 +65,7 @@ def aba_inputProp(BraidFile,CADfile,varVal):
         matXX = np.concatenate((matXX,matYY),axis=0)
     matXX = np.delete(matXX, (0), axis=0)
     
-    np.savetxt("D:\\IDPcode\\Temporary\\BraidData.csv", matXX, delimiter=",")
+    np.savetxt(lPath+"\\Temporary\\BraidData.csv", matXX, delimiter=",")
     print("Total segmentation time:--- %s seconds ---" % (time.time() - st496))
     spanwise_sections = secs
     return(spanwise_sections)

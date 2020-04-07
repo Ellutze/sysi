@@ -2,6 +2,7 @@ import win32com.client.dynamic
 import math
 import numpy as np
 import time 
+import os
 
 def paraRedef(md,sd):
     #processes the input to the CATIA mesh functions below
@@ -17,14 +18,14 @@ def paraRedef(md,sd):
     return(MD)  
     
 def openPart(CADfile):
-
+    lPath = os.path.dirname(os.path.abspath(__file__))
     #This functions opens relevant CATIA files and returns core handles for the file 
     CATIA = win32com.client.Dispatch("CATIA.Application")
     #documents1 = CATIA.Documents # this line is not currently in use
     CATIA.RefreshDisplay = False
     
     #location of CATIA file to be meshed
-    str15 = "D:\\IDPcode\\CatiaFiles\\SourceFiles\\"+CADfile+".CatPart"
+    str15 = lPath+"\\CatiaFiles\\SourceFiles\\"+CADfile+".CatPart"
     partDocument1 = CATIA.Documents.Open(str15)
     part1 = partDocument1.Part
     HSF1 = part1.HybridShapeFactory

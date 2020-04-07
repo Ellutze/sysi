@@ -12,6 +12,7 @@ from default_var_dict import getBase
 from math_utils import orderByColumn
 import math
 import IDP_inpGen
+import os
 
 from IDP_databases import cnt_X,dc_X
 
@@ -23,7 +24,7 @@ def is_empty(any_structure):
         return True
 
 def XSP(varVal,CADfile = "none_A000_JK"):
-    
+    lPath = os.path.dirname(os.path.abspath(__file__))
     st118 = time.time()
     #Naming convention used for the System of Simulations (SoS) - bit long, maybe simplify? or replace by input?
     #looks for other meshes with the same source geomertry
@@ -379,7 +380,7 @@ def XSP(varVal,CADfile = "none_A000_JK"):
         MLX = np.concatenate((ML99,ML0,ML2,ML4,ML6),axis = 0)
         MLX = orderByColumn(MLX,0,1)
         #print(MLX)
-        np.savetxt("D:\\IDPcode\\Temporary\\MLX"+str(meepo)+".csv", MLX, delimiter=",")
+        np.savetxt(lPath+"\\Temporary\\MLX"+str(meepo)+".csv", MLX, delimiter=",")
     
     
         #print(MLX)
@@ -400,19 +401,102 @@ def XSP(varVal,CADfile = "none_A000_JK"):
         #the spanwise size of elements depends on local cross-section size
         #use the vectors to generate all points
     MLm = np.copy(ML)
+    
+    #the for spheres table:
+    smMain = np.matrix([[0,varVal["mesh_size"]]])
 
     i = 0
     while i < (NX-1):
         #print("i:",i)
-        zdif = ML[0,3,i+1]-ML[0,3,i]
-        mshTii = int(zdif/mshI)
-        mshTi = zdif/mshTii
+
         
+        
+        #create a matrix of meshsizes in this segment
+        
+        #perimeter calculations
+        csL = 0
+        iv=0
+        while iv < np.size(ML,0)-1:
+            if i == (np.size(ML,i)-1):
+                localLen = np.sqrt((ML[iv,1,i]-ML[0,1,i])**2 + (ML[iv,2,i]-ML[0,2,i])**2)
+            else:
+                localLen = np.sqrt((ML[iv,1,i]-ML[iv+1,1,i])**2 + (ML[iv,2,i]-ML[iv+1,2,i])**2)
+            csL = csL + localLen
+            iv = iv + 1
+            
+        csL2 = 0
+        print(csL)
+        iv=0
+        while iv < np.size(ML,0)-1:
+            if i == (np.size(ML,i)-1):
+                localLen = np.sqrt((ML[iv,1,i+1]-ML[0,1,i+1])**2 + (ML[iv,2,i+1]-ML[0,2,i+1])**2)
+            else:
+                localLen = np.sqrt((ML[iv,1,i+1]-ML[iv+1,1,i+1])**2 + (ML[iv,2,i+1]-ML[iv+1,2,i+1])**2)
+            csL2 = csL2 + localLen
+            iv = iv + 1
+            
+        print(ML[0,3,i],"z?")
+        GRAD = (csL2-csL)/(ML[0,3,i+1]-ML[0,3,i])
+        
+        mesh2 = varVal["mesh_size"] + GRAD*(ML[0,3,i+1]-ML[0,3,i])
+        
+        #only chance meshsize when gradient is non-zero
+        if abs(GRAD) >0.01:
+            
+            remain = 0
+            lm = varVal["mesh_size"]
+    
+            while lm*0.85 > remain:
+                zi = ML[0,3,i] +lm
+                SM = np.matrix([[0,0]])
+                while zi < ML[0,3,i+1]:
+                    
+                    #use gradient to propagete mesh sizes 
+                    lm = (zi - ML[0,3,i])*GRAD+lm
+                    #print(lm)
+                    #ammend the mesh table
+                    SMtemp = np.matrix([[zi,lm]])
+                    SM = np.concatenate((SM,SMtemp),axis= 0)
+                    #calculate cumulative distance
+                    zi = zi + lm
+                SM = np.delete(SM,0,axis=0)
+                
+                    
+                #on
+                remain = ML[0,3,i+1]-(zi - lm)
+                if remain < 0.85*lm:
+                    GRAD = GRAD*0.99
+                    lm = varVal["mesh_size"]
+                        #refresh the mesh table
+                
+                #after the gap was fine
+                
+                #you have the mesh table, use this later in numimesh, export this for spheres
+                
+                #UNDER CONSTRUCTION
+        else:
+            #SM generation
+            
+            zdif = ML[0,3,i+1]-ML[0,3,i]
+            mshTii = int(zdif/mshI)
+            mshTi = zdif/mshTii
+            SM = np.matrix([[0,0]])
+            zi = mshTi
+            while zi < ML[0,3,i+1]:
+                SMtemp = np.matrix([[zi,mshTi]])
+                SM = np.concatenate((SM,SMtemp),axis=0)
+                zi = zi + mshTi
+            SM = np.delete(SM,0,axis=0)
+            
+            # output to for_spheres
+        
+        print(SM)
         ii = 1
-        while ii < mshTii:
+        z = 0
+        while ii < np.size(SM,0):
             #print("ii:",ii)
             seg = np.zeros([np.size(ML,0),4])
-            z = mshTi*ii+ML[0,3,i]
+            z = z +SM[ii,1]
             iii = 0
             while iii < (np.size(ML,0)):
                 #print("iii:",iii)
@@ -424,7 +508,17 @@ def XSP(varVal,CADfile = "none_A000_JK"):
             #seg = np.delete(seg,0,axis=0)
             MLm = np.insert(MLm, (np.size(MLm,2)-(NX-1-i)), seg, axis=2)
             ii = ii + 1
+            
+        #combine pre-existing mesh sizes, newly generated ones, and end mesh size for current section
+        smMain = np.concatenate((smMain,SM,np.matrix([[ML[0,3,i+1],mesh2]])),axis = 0)  
+            
+            
         i = i + 1
+    print(MLm)
+    #save for spheres
+    np.save(lPath+'\\Temporary\\for_spheres', smMain)
+    
+    
     IDP_inpGen.inpGen(MLm,MeshFile)
     span_ele_size = varVal["mesh_size"]
     xs_seed = np.size(MLm,0)
@@ -441,13 +535,13 @@ def XSP(varVal,CADfile = "none_A000_JK"):
     #close SQL handles 
     dc_X('NCC',cnnB,crrB)
     print("meshing took:"+str(time.time()-st118)+" seconds") 
-    np.save("D:\\IDPcode\\catiafiles\\meshfiles\\"+MeshFile+"_nodes.npy", MLm)
+    np.save(lPath+"\\catiafiles\\meshfiles\\"+MeshFile+"_nodes.npy", MLm)
     return(MeshFile, span_ele_size, xs_seed)
         #save all points - into CATIA for check? 
         
 #MeshFile = "timeCompX"
 #varVal, varMin,varMax = getBase()
-#varVal["mesh_size"] = 1
+#varVal["mesh_size"] = 3
 #MLm,xAnchor,yAnchor = XSP(varVal)
 #print(MLm)
 #IDP_inpGen.plotXSP(MLm,xAnchor,yAnchor,varVal)

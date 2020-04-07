@@ -27,11 +27,11 @@ var1=VCmd.Activate( 1, r"VHostManagerPlugin.VhmInterface", r"VhmCommand" )
 import VHostManager
 import VE
 
-with open("D:\\IDPcode\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
     text_file.write("The initial simulation starts here:")
 
 #input file - instead function arguments - which are not possible due to the command line passing
-fl = open("D:\\IDPcode\\Temporary\\RTM_in.txt", "rt")
+fl = open("D:\\sysi\\Temporary\\RTM_in.txt", "rt")
 flstr = fl.read() 
 RTMfile = flstr.split("---")[1]
 
@@ -41,7 +41,7 @@ var2=VCmd.Activate( 1, r"VSessionManager.Command", r"SessionCommand" )
 var3=VCmd.Activate( 1, r"VToolKit.VSectionCutInterface", r"VEAction" )
 ret=VE.ChangeContext( r"Visual-RTM" )
 VE.SetActiveWindow( r"p1w1" )
-ret=VExpMngr.LoadFile( r"D:\\IDPcode\\pamrtm\\mainSimFiles\\"+RTMfile+".vdb", 0 )
+ret=VExpMngr.LoadFile( r"D:\\sysi\\pamrtm\\mainSimFiles\\"+RTMfile+".vdb", 0 )
 VE.SetCurrentPage( 1 )
 ret=VE.ModelChange( "M  @0" )
 

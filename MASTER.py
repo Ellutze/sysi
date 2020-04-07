@@ -1,7 +1,7 @@
 from optis import SingleCAD, MultiMesh
 
 
-import Braid_CMD_C 
+#import Braid_CMD_C 
 import Braid_CMD_P 
 
 
@@ -50,6 +50,7 @@ def is_empty(any_structure):
         return True
 
 def SingleLoop(varVal):
+    lPath = os.path.dirname(os.path.abspath(__file__))
     #input: variable variation (5 atm)
     
     #this is where the loop really starts.
@@ -111,7 +112,7 @@ def SingleLoop(varVal):
     #close SQL handles 
     dc_X('NCC',cnnC,crrC)
 
-    with open("D:\\IDPcode\\temporary\\underground.txt", "a") as text_file:
+    with open(lPath+"\\temporary\\underground.txt", "a") as text_file:
         text_file.write("Generating CAD shape.\n")
 
     #MAIN BODY OF THE SCRIPT
@@ -146,7 +147,7 @@ def SingleLoop(varVal):
     #close SQL handles 
     dc_X('NCC',cnnC,crrC)
     
-    with open("D:\\IDPcode\\temporary\\underground.txt", "a") as text_file:
+    with open(lPath+"\\temporary\\underground.txt", "a") as text_file:
         text_file.write("Running braiding simulation.\n")
 
     #Braiding and meshing could be run in parallel - if separate catia 
@@ -271,7 +272,7 @@ def SingleLoop(varVal):
     dc_X('NCC',cnnC,crrC)
     
     
-    with open("D:\\IDPcode\\temporary\\underground.txt", "a") as text_file:
+    with open(lPath+"\\temporary\\underground.txt", "a") as text_file:
         text_file.write("Meshing.\n")
     print("Braiding module finished "+BraidFile+", commencing FE module")
     
@@ -328,7 +329,7 @@ def SingleLoop(varVal):
         MeshFile, span_ele_size, xs_seed = MultiMesh(CADfile,varVal)
         os.system("TASKKILL /F /IM Cnext.exe")
         varVal["mesh_size"] = hold
-        with open("D:\\IDPcode\\temporary\\underground.txt", "a") as text_file:
+        with open(lPath+"\\temporary\\underground.txt", "a") as text_file:
             text_file.write("Running flow simulation.\n")
         print("FE module finished "+FeFile+", commencing infusion module")
         #you need a resin for both structural and rtm analysis... no data yet
@@ -359,7 +360,7 @@ def SingleLoop(varVal):
     #time also into sql
     print("Combined simulation time:--- %s seconds ---" % (simulation_time))
     #add overall fitness result to the SQL
-    with open("D:\\IDPcode\\temporary\\underground.txt", "a") as text_file:
+    with open(lPath+"\\temporary\\underground.txt", "a") as text_file:
         text_file.write("atm:"+str(datetime.datetime.now())+"\n")
     #If pre-GUI scripts are used MS should be passed back as well
     

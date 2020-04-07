@@ -16,6 +16,7 @@ def is_empty(any_structure):
         return True
 
 def abaMain(BraidFile,MeshFile,CADfile,varVal,meshType,XSS):
+    lPath = os.path.dirname(os.path.abspath(__file__))
     st986 = time.time()
     #runs from python, it is used to run other abaqus related scripts through command line
     #SQL is used here to store iteration data, while the inputs and outputs to command line scripts are done through temporary text files
@@ -84,20 +85,20 @@ def abaMain(BraidFile,MeshFile,CADfile,varVal,meshType,XSS):
     cmd("abaqus cae noGUI=abaqus_inst.py")
     
     #move generated files into temporary folder, from the script folder
-    path = 'D:\\IDPcode\\'
-    for i in os.listdir(path):
-        if os.path.isfile(os.path.join(path,i)) and 'Task-1.odb' in i:
-            shutil.move(os.path.join("D:\\IDPcode\\",i), os.path.join("D:\\IDPcode\\Temporary\\", i))
+    #path = 'D:\\IDPcode\\'
+    for i in os.listdir(lPath):
+        if os.path.isfile(os.path.join(lPath,i)) and 'Task-1.odb' in i:
+            shutil.move(os.path.join(lPath+"\\",i), os.path.join(lPath+"\\Temporary\\", i))
     
     #run post-processing abaqus script
     cmd("abaqus cae noGUI=abaqus_postProc.py")
     
     #obtains relevant information from abaqus results
-    fl = open("D:\\IDPcode\\Temporary\\fe_out.txt", "rt")
+    fl = open(lPath+"\\Temporary\\fe_out.txt", "rt")
     flstr = fl.read() 
     flval = float(flstr)
     flval = round(flval, 3)
-    fl = open("D:\\IDPcode\\Temporary\\mass_out.txt","rt")
+    fl = open(lPath+"\\Temporary\\mass_out.txt","rt")
     flstr = fl.read() 
     flval2 = float(flstr)
     mass = flval2
@@ -126,23 +127,23 @@ def abaMain(BraidFile,MeshFile,CADfile,varVal,meshType,XSS):
     dc_X('NCC',cnnA,crrA)
     
     #move task-, .rpy, .sat and .rec files from script folder - empty trash folder manually (dont want to accidnetally move a script)
-    for i in os.listdir(path):
-        if os.path.isfile(os.path.join(path,i)) and '.rec' in i:
-            shutil.move(os.path.join("D:\\IDPcode\\",i), os.path.join("D:\\IDPcode\\trash\\", i))
-    for i in os.listdir(path):
-        if os.path.isfile(os.path.join(path,i)) and '.rpy' in i:
-            shutil.move(os.path.join("D:\\IDPcode\\",i), os.path.join("D:\\IDPcode\\trash\\", i))
-    for i in os.listdir(path):
-        if os.path.isfile(os.path.join(path,i)) and '.sat' in i:
-            shutil.move(os.path.join("D:\\IDPcode\\",i), os.path.join("D:\\IDPcode\\trash\\", i))
-    for i in os.listdir(path):
-        if os.path.isfile(os.path.join(path,i)) and 'Task-' in i:
-            shutil.move(os.path.join("D:\\IDPcode\\",i), os.path.join("D:\\IDPcode\\trash\\", i))
+    for i in os.listdir(lPath):
+        if os.path.isfile(os.path.join(lPath,i)) and '.rec' in i:
+            shutil.move(os.path.join(lPath+"\\",i), os.path.join(lPath+"\\trash\\", i))
+    for i in os.listdir(lPath):
+        if os.path.isfile(os.path.join(lPath,i)) and '.rpy' in i:
+            shutil.move(os.path.join(lPath+"\\",i), os.path.join(lPath+"\\trash\\", i))
+    for i in os.listdir(lPath):
+        if os.path.isfile(os.path.join(lPath,i)) and '.sat' in i:
+            shutil.move(os.path.join(lPath+"\\",i), os.path.join(lPath+"\\trash\\", i))
+    for i in os.listdir(lPath):
+        if os.path.isfile(os.path.join(lPath,i)) and 'Task-' in i:
+            shutil.move(os.path.join(lPath+"\\",i), os.path.join(lPath+"\\trash\\", i))
             
-    path2 = 'D:\\IDPcode\\Temporary\\'
+    path2 = lPath+'\\Temporary\\'
     for i in os.listdir(path2):
         if os.path.isfile(os.path.join(path2,i)) and 'Task-' in i:
-            shutil.move(os.path.join("D:\\IDPcode\\Temporary\\",i), os.path.join("D:\\IDPcode\\trash\\", i))
+            shutil.move(os.path.join(lPath+"\\Temporary\\",i), os.path.join(lPath+"\\trash\\", i))
     
     print("Total FEA time:--- %s seconds ---" % (time.time() - st986))
     return(flval,mass,FeFile)

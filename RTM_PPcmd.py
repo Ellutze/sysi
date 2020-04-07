@@ -51,7 +51,7 @@ def getPhill(RTMfile):
     #not work.
     i = 124
 
-    strX = "D:\\IDPcode\\pamrtm\\mainSimFiles\\"+str(RTMfile)+"_RESULT.erfh5"
+    strX = "D:\\sysi\\pamrtm\\mainSimFiles\\"+str(RTMfile)+"_RESULT.erfh5"
     #__________________ VtkContourDlg BEGIN __________________
     var4=VCmd.Activate( 1, r"VToolKit.VToolKitInterface", r"VtkContourDlg" )
     VCmd.SetStringValue( var4, r"FileName", strX )
@@ -68,7 +68,7 @@ def getPhill(RTMfile):
     VCmd.SetStringValue( var4, r"ExportAsVectorScalar", r"SCALAR" )
     VCmd.SetStringValue( var4, r"ExportPath", r"D:\\IDPcode\\pamrtm\\mainSimFiles\\FILLING_FACTOR"+str(i)+".txt" )
     ret=VCmd.ExecuteCommand( var4, r"ExportContour" )
-    with open("D:\\IDPcode\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("FILLING_FACTORS124.txt file has been created\n")
         
 def getALLff(RTMfile,nS):
@@ -77,9 +77,9 @@ def getALLff(RTMfile,nS):
     #This function exports filling factors as text files for each analysis 
     #frame.
     
-    strX = "D:\\IDPcode\\pamrtm\\mainSimFiles\\"+str(RTMfile)+"_RESULT.erfh5"   
+    strX = "D:\\sysi\\pamrtm\\mainSimFiles\\"+str(RTMfile)+"_RESULT.erfh5"   
     ii = int(0) 
-    with open("D:\\IDPcode\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("tell me where is Gandalf "+str(nS)+"\n")
     while ii < int(nS):
         #__________________ VtkContourDlg BEGIN __________________
@@ -107,7 +107,7 @@ def getVisc(RTMfile):
     
     #This function is currently not used within other scripts. It will require 
     #adjustments if included.
-    with open("D:\\IDPcode\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("wegotsomewhere3\n")
     i= 0
 
@@ -115,7 +115,7 @@ def getVisc(RTMfile):
 
         var4=VCmd.Activate( 1, r"VToolKit.VToolKitInterface", r"VtkContourDlg" )
         VCmd.SetStringValue( var4, r"FileName", r"D:\\IDPcode\\pamrtm\\mainSimFiles\\IDP_spar_A145_M001_B001_R002_RESULT.erfh5" )
-        with open("D:\\IDPcode\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("wegotsomewhere88\n")
         VCmd.SetStringValue( var4, r"ContourMethod", r"ByEntity" )
         VCmd.SetStringValue( var4, r"ContourParentName", r"NODE" )
@@ -130,10 +130,10 @@ def getVisc(RTMfile):
         VCmd.SetStringValue( var4, r"ExportAsVectorScalar", r"SCALAR" )
         VCmd.SetStringValue( var4, r"ExportPath", r"D:\\IDPcode\\pamrtm\\mainSimFiles\\VISCOSITY.txt" )
         ret=VCmd.ExecuteCommand( var4, r"ExportContour" )
-        with open("D:\\IDPcode\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("wegotsomewhere14\n")
      
-        eef = open("D:\\IDPcode\\pamrtm\\mainSimFiles\\VISCOSITY.txt", "rt")
+        eef = open("D:\\sysi\\pamrtm\\mainSimFiles\\VISCOSITY.txt", "rt")
         ee = eef.read() 
         #doesnt work for non full infusion ... number 42 becomes number TOP, while top needs to be found
         numbers = ee.split("Number	42")[1]
@@ -157,11 +157,11 @@ def getVisc(RTMfile):
         else:
             allmat = np.concatenate((allmat,nmat),1)
         i = i + 1
-    np.save(r"D:\\IDPcode\\pamrtm\\mainSimFiles\\"+RTMfile+"_VISCOSITY.npy", allmat)
+    np.save(r"D:\\sysi\\pamrtm\\mainSimFiles\\"+RTMfile+"_VISCOSITY.npy", allmat)
     
 #This section interprets the PP_request file.
 #Runs the requested function from above and provides the necessary inputs.
-fl = open("D:\\IDPcode\\Temporary\\PP_request.txt", "rt")
+fl = open("D:\\sysi\\Temporary\\PP_request.txt", "rt")
 flstr = fl.read() 
 RTMfile = flstr.split("---")[0]
 command = flstr.split("---")[1]

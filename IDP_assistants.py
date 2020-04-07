@@ -5,6 +5,7 @@ import numpy as np
 import random
 from MASTER import SingleLoop
 from IDP_cheats import togglePulse
+import os
 
 
 def is_empty(any_structure):
@@ -38,6 +39,7 @@ def Steph(population,specie,generation,BCs,optiTable,varVar,varVal):
     return(BCs)
           
 def Linda(generation,specie,GENtable,varVal,varVar):
+    lPath = os.path.dirname(os.path.abspath(__file__))
     #Linda2 is for GUI
     cnnT,crrT = cnt_X('NCC')
     #print(GENtable)
@@ -64,7 +66,7 @@ def Linda(generation,specie,GENtable,varVal,varVar):
         dc_X('NCC',cnnT,crrT)
     
         #evaluate the simulations -- use fitness function to establish value of each individual
-        with open("D:\\IDPcode\\temporary\\underground.txt", "a") as text_file:
+        with open(lPath+"\\temporary\\underground.txt", "a") as text_file:
             text_file.write("Initiating complete analysis.\n")
         fitness,arunID = SingleLoop(varVal)
         print("Hurrah! New individual was born into the populaiton!")

@@ -25,11 +25,11 @@ def ashape():
     from visualization import *
     from connectorBehavior import *
     
-    with open("D:\\IDPcode\\temporary\\CAP.txt", "a") as text_file:
+    with open("D:\\sysi\\temporary\\CAP.txt", "a") as text_file:
         text_file.write("Initiated abaqus model generation.\n")
 
     #input file - instead function arguments - which are not possible due to the command line passing
-    fl = open("D:\\IDPcode\\Temporary\\fe_in.txt", "rt")
+    fl = open("D:\\sysi\\Temporary\\fe_in.txt", "rt")
     flstr = fl.read() 
     FeFile = flstr.split("---")[1]
     MeshFile = flstr.split("---")[0]+"_JK"
@@ -42,7 +42,7 @@ def ashape():
     #open the iges file required for analysis
     if meshType == "CATIA":
         #this section only works when pre-mesh geometry is imported
-        igs = "D:\\IDPcode\\CatiaFiles\\MeshFiles\\"+MeshFile+".igs"
+        igs = "D:\\sysi\\CatiaFiles\\MeshFiles\\"+MeshFile+".igs"
         mdb.openIges(igs, msbo=False, scaleFromFile=OFF, trimCurve=DEFAULT)
         #mesh the part, only for purposes of abaqus, the shape should already be discretized into elements
         #the only reason to increase the element numbers here is for more precise assignment of material properties, the FE calculation itself should not improve
@@ -54,9 +54,9 @@ def ashape():
     elif meshType == "numimesh":
         #the default version of mesh, faster than CATIA.
         #Orphan mesh is uploaded with this option.
-        mdb.models['Model-1'].PartFromInputFile(inputFileName="D:\\IDPcode\\catiafiles\\meshfiles\\"+MeshFile+".inp")
+        mdb.models['Model-1'].PartFromInputFile(inputFileName="D:\\sysi\\catiafiles\\meshfiles\\"+MeshFile+".inp")
 
-    with open("D:\\IDPcode\\abaqusfiles\\cp.txt", "a") as text_file:
+    with open("D:\\sysi\\abaqusfiles\\cp.txt", "a") as text_file:
             text_file.write("File imported.\n")   
     #retreives the material properties calculated by cnn_main
     with open("Temporary\\BraidData.csv",'r')as ins:
@@ -94,7 +94,7 @@ def ashape():
     #oritentation is kept 0 - the braid angles are accounted for in the properties calculated for this (principle) direction
     
     #under construction: multi layer option addition
-    with open("D:\\IDPcode\\abaqusfiles\\cp.txt", "a") as text_file:
+    with open("D:\\sysi\\abaqusfiles\\cp.txt", "a") as text_file:
         text_file.write("Materials defined.\n")
     
     #the layers inputed are always 2, so the number of layers and thickness are translated into total thickness which is halfed
@@ -143,12 +143,12 @@ def ashape():
     mdb.jobs['Task-BC'].submit(consistencyChecking=OFF)
     
     #under construction: multi layer option addition
-    with open("D:\\IDPcode\\abaqusfiles\\cp.txt", "a") as text_file:
+    with open("D:\\sysi\\abaqusfiles\\cp.txt", "a") as text_file:
         text_file.write("Fake job created.\n")
    
     #use the input file for the job above to extract nodal information 
     #if meshType == "CATIA":
-    fl = open("D:\\IDPcode\\Task-BC.inp", "rt")
+    fl = open("D:\\sysi\\Task-BC.inp", "rt")
     #if meshType == "numimesh":
     #    fl = open("D:\\IDPcode\\catiafiles\\meshfiles\\"+MeshFile+".inp","rt")
     flstr = fl.read() 
@@ -220,7 +220,7 @@ def ashape():
         ele_mat = np.delete(ele_mat, (0), axis=0)
         
     #under construction: multi layer option addition
-    with open("D:\\IDPcode\\abaqusfiles\\cp.txt", "a") as text_file:
+    with open("D:\\sysi\\abaqusfiles\\cp.txt", "a") as text_file:
         text_file.write("Nodes and element matrices created.\n")
 
     elPOS = np.zeros([1,4])
@@ -258,7 +258,7 @@ def ashape():
     #del mdb.models['Model-1'].boundaryConditions['BC-3']
     
     #under construction: multi layer option addition
-    with open("D:\\IDPcode\\abaqusfiles\\cp.txt", "a") as text_file:
+    with open("D:\\sysi\\abaqusfiles\\cp.txt", "a") as text_file:
         text_file.write("Boundary condition defined.\n")
     
     #bring in the segmentation (boundaries) matrix -- section, x max, x min, y max, y min, z max, z min
@@ -266,7 +266,7 @@ def ashape():
     #The details of coordinate systems are provided separately, further below.
     seg_mat = np.loadtxt(open("Temporary\\BraidSegments.csv", "rb"), delimiter=",")
     
-    with open("D:\\IDPcode\\temporary\\CAP.txt", "a") as text_file:
+    with open("D:\\sysi\\temporary\\CAP.txt", "a") as text_file:
         text_file.write("Adjustment here:"+str(seg_mat)+"\n")
         
     #delete previous section assignment
@@ -353,7 +353,7 @@ def ashape():
             else:
                 i = i + 1
                 
-        with open("D:\\IDPcode\\abaqusfiles\\cp.txt", "a") as text_file:
+        with open("D:\\sysi\\abaqusfiles\\cp.txt", "a") as text_file:
             text_file.write("Set "+str(ii)+" is being assigned.\n")
         #this if prevents reassignment of empty sets, when ErrRat forces new loop 
         if count != 0:
@@ -398,7 +398,7 @@ def ashape():
     del mdb.models['Model-1'].loads['Load-1']
     del mdb.models['Model-1'].rootAssembly.sets['Set-2']
     
-    with open("D:\\IDPcode\\abaqusfiles\\cp.txt", "a") as text_file:
+    with open("D:\\sysi\\abaqusfiles\\cp.txt", "a") as text_file:
         text_file.write("Deletion of unused settings.\n")
     
     #the all node matrix is filtered for nodes at the tip of the spar
@@ -427,7 +427,7 @@ def ashape():
                 
     mdb.models['Model-1'].rootAssembly.Set(name='Set-22', nodes=vrc)
 
-    with open("D:\\IDPcode\\abaqusfiles\\cp.txt", "a") as text_file:
+    with open("D:\\sysi\\abaqusfiles\\cp.txt", "a") as text_file:
         text_file.write("Set for force application created.\n")
     #troubleshooting broken section 22
     #STRx = BuildCommand
@@ -452,11 +452,11 @@ def ashape():
     numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type= ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
     mdb.jobs['Task-1'].submit(consistencyChecking=OFF)
     
-    with open("D:\\IDPcode\\abaqusfiles\\cp.txt", "a") as text_file:
+    with open("D:\\sysi\\abaqusfiles\\cp.txt", "a") as text_file:
         text_file.write("Job Created and submited.\n")
     
     #the mdb file is saved for reference, might not be required in the future (switch off during looping?)
-    filesave = "D:\\IDPcode\\AbaqusFiles\\"
+    filesave = "D:\\sysi\\AbaqusFiles\\"
     filesave = filesave + FeFile +".cae"
     mdb.saveAs(filesave)
     fl.close()

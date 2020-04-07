@@ -112,6 +112,7 @@ def loopCAD():
 #below line for testing
 #loopCAD()
 def MeshOne(CADfile,spn,rnc):
+    lPath = os.path.dirname(os.path.abspath(__file__))
     #this function assembles all meshing steps
     time1 = time.time()
     
@@ -194,7 +195,7 @@ def MeshOne(CADfile,spn,rnc):
     catia_mesh.cnxl(part1,HSF1,MD,rnc)
     catia_mesh.sweep(part1,HSF1,MD,rnc)
     
-    np.save('D:\\IDPcode\\Temporary\\for_spheres', MD)
+    np.save(lPath+'\\Temporary\\for_spheres', MD)
     
     print("---Meshing this part took: %s seconds ---" % (time.time() - time1))
     return(partDocument1,cse)
@@ -203,6 +204,7 @@ def MeshOne(CADfile,spn,rnc):
 #MeshOne("IDP_SparIteration0204_1901_A001_JK",20,10)
     
 def MultiMesh(CADfile,varVal):
+    lPath = os.path.dirname(os.path.abspath(__file__))
     #configure SQL connection
     st118 = time.time()
     cnnB,crrB = cnt_X('NCC')
@@ -287,10 +289,10 @@ def MultiMesh(CADfile,varVal):
     #close SQL handles 
     dc_X('NCC',cnnB,crrB)
     #save the CADfile of the mesh (might not be necessary)
-    silo = "D:\\IDPcode\\CatiaFiles\\MeshFiles\\"+MeshFile+"_JK.CatPart"
+    silo = lPath+"\\CatiaFiles\\MeshFiles\\"+MeshFile+"_JK.CatPart"
     partDocument1.SaveAs(silo)
     #save the IGES file
-    silo2 = "D:\\IDPcode\\CatiaFiles\\MeshFiles\\"+MeshFile+"_JK.igs"
+    silo2 = lPath+"\\CatiaFiles\\MeshFiles\\"+MeshFile+"_JK.igs"
     partDocument1.ExportData(silo2, "igs")
     
     
