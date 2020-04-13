@@ -11,6 +11,10 @@ import PySimpleGUI as sg
 import numpy as np
 from IDP_agents import AgentSutler, AgentKurnik
 from MySQL_utils import dropDownInfo
+from pathing import adj
+
+#adjusts paths, only relevant when moving files to new folder
+adj()
 
 specie = "test"
 

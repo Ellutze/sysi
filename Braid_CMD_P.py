@@ -89,7 +89,7 @@ def baseBraid(varVal,CADfile,MeshFile):
     
     #find points on mandrel centreline
     datum, cdArr = IDP_geometry.centreline(MD)
-    
+    print(datum)
     WW = 0
     while WW < 2:
         YARN = 0

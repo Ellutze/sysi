@@ -23,7 +23,10 @@ import numpy as np
 import os
 #required inputs
 
-fl = open("D:\\sysi\\Temporary\\RTM_in.txt", "rt")
+#automatically adjusted path
+lPath_auto='D:\sysi'
+
+lPath_auto='D:\sysi'
 flstr = fl.read() 
 MeshFile = flstr.split("---")[0]+"_JK"
 
@@ -68,8 +71,8 @@ def initiate(MeshFile):
     #__________________ ModelingTolerance END __________________
     ret=VExpMngr.LoadFile( "D:\\sysi\\catiafiles\\meshfiles\\"+MeshFile+".igs", 4 )
     VE.SetCurrentPage( 1 )
-    with open("D:\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
-        text_file.write("D:\\sysi\\catiafiles\\meshfiles\\"+MeshFile+".igs\n")
+lPath_auto='D:\sysi'
+lPath_auto='D:\sysi'
     return(var1)
     
 def surfaceLocator(mesh_info):
@@ -95,7 +98,7 @@ def surfaceLocator(mesh_info):
         #Generate .inp file for the single meshed surface.
         VistaDb.ModelSetExportKeyWordOrder( "M  @0", 0 )
         VistaDb.ModelSetExportStateAsNoInclude( "M  @0", 1 )
-        VExpMngr.ExportFile( "D:\\sysi\\pamrtm\\mainSimFiles\\240\\"+str(iy)+r".inp", 34 )
+lPath_auto='D:\sysi'
         #Delete the mesh, preparing it for the next element export.
         #__________________ TopologyMesh BEGIN __________________
         var444=VCmd.Activate( 1, r"VMeshModeler.VmmICommandGui", r"TopologyMesh" )
@@ -109,7 +112,7 @@ def surfaceLocator(mesh_info):
         #Next section processes the exported input file.
         #The nodes exported are collected, and their coordinates averaged.
         filer = str(iy)+".inp"
-        eex = open("D:\\sysi\\pamrtm\\mainSimFiles\\240\\"+filer, "rt")
+lPath_auto='D:\sysi'
         ff = eex.read() 
         ff = ff.split("*NODE")[1]
         ff = ff.split("*")[0]
@@ -162,7 +165,7 @@ def surfaceLocator(mesh_info):
     #eex.close()
     
     #Just a marker of progress for log file.
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+lPath_auto='D:\sysi'
         text_file.write("chopchop\n")
     
     #Delete current model to prevent any remaining mesh settings to affect
@@ -176,12 +179,12 @@ def surfaceLocator(mesh_info):
     VE.NewSession(  )
 
     #Safe the surface matrix.
-    np.save("D:\\sysi\\temporary\\RTM_surfaces.npy", surf_mat)
+lPath_auto='D:\sysi'
     
     #Delete the input files.
-    filelist = [ f for f in os.listdir("D:\\sysi\\pamrtm\\mainSimFiles\\240\\") if f.endswith(".inp") ]
+lPath_auto='D:\sysi'
     for f in filelist:
-        os.remove(os.path.join("D:\\sysi\\pamrtm\\mainSimFiles\\240\\", f))
+lPath_auto='D:\sysi'
 
 var1 = initiate(MeshFile)   
 surfaceLocator(mesh_info)

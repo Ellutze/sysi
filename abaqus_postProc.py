@@ -2,8 +2,12 @@ from abaqus import *
 from abaqusConstants import *
 from odbMaterial import *
 from odbSection import *
+
+#automatically adjusted path
+lPath_auto='D:\sysi'
+
 # Open the odb
-myOdb = session.openOdb(name='D:\\sysi\\Temporary\\Task-1.odb')
+lPath_auto='D:\sysi'
 frames = myOdb.steps["Step-1"].frames
 numFrames = len(frames)
 # Isolate the instance, get the number of nodes and elements

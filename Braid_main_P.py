@@ -42,10 +42,26 @@ def braidAngle(NS,t,f):
     #print(alphad)
     return(i,alphad)
 
-def findClosest(MD,count,seg,poc1):
+def findClosest(MD,count,seg,poc1,forDelete = []):
     #find closest specified number of points
     #Done by 3D pythagoras 
-    MD1 = np.copy(MD)
+    MD1 = np.copy(MD)    
+    
+    #forDelete = np.matrix([[1,0,0]])
+    try:
+        magd = forDelete[0]**2+forDelete[1]**2+forDelete[2]**2
+    except:
+        magd = 0
+    
+    if magd != 0:
+        #look through MD1 to delete 
+        iii = 0
+        while iii < np.size(MD1,0):
+            if MD1[iii,1,seg] == forDelete[0] and MD1[iii,2,seg] == forDelete[1] and MD1[iii,3,seg] == forDelete[2]:
+                MD1 = np.delete(MD1,iii,axis=0)
+                iii = np.size(MD1,0)+1
+            iii = iii +1
+
     ii = 0
     CP0 = np.zeros([count,3])
     #for each point required
@@ -229,7 +245,7 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
                         dt = dist
                     i = i + 1
             #prints out the fix, so that user can check if it worked
-            print("pt",p2, "fixed?")
+            print("pt2",p2, "fixed?")
             if p3[0]==p4[0] and p3[1]==p4[1]:
                 CPX = findClosest(MD,4,seg,p3)
                 dt = 9999999999
@@ -242,7 +258,7 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
                         dt = dist
                     i = i + 1    
             #prints out the fix, so that user can check if it worked
-            print("pt",p4, "fixed?")
+            print("pt4",p4, "fixed?")
             l1 = p4 - p3
             l2 = p4 - p2 
             normal = np.cross(l1,l2)
@@ -294,6 +310,8 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
         l2_mag = np.sqrt((l2[0])**2+(l2[1])**2+(l2[2])**2)
         l2 = l2/l2_mag
         
+
+        
         #find the shortest yarn path between poc1 and spp
         mD = 999999999
         prop = np.array([0,0,0])
@@ -339,8 +357,10 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
             p2 = np.copy(p4)
             
             dt = 0
+
             CPX = findClosest(MD,1,seg+1,p1)
             p3 = np.array([CPX[0,0],CPX[0,1],CPX[0,2]])
+
             CPX = findClosest(MD,1,seg+1,p2)
             p4 = np.array([CPX[0,0],CPX[0,1],CPX[0,2]])
        
@@ -348,7 +368,8 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
             #propagation along cross-section
             p1 = np.copy(p2)
             p3 = np.copy(p4)
-            CPX = findClosest(MD,3,seg,p1)
+            #implementing optional deletion , check if works
+            CPX = findClosest(MD,3,seg,p1,p1)
             dt = 9999999999
             i = 0
             while i < np.size(CPX,0):
@@ -358,7 +379,8 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
                     p2 = np.copy(pt)
                     dt = dist
                 i = i + 1
-            CPX = findClosest(MD,3,seg+1,p3)
+            #implementing optional deletion , check if works
+            CPX = findClosest(MD,3,seg+1,p3,p3)
             dt = 9999999999
             i = 0
             while i < np.size(CPX,0):

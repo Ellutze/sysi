@@ -55,7 +55,7 @@ def mRTM(MeshFile,BraidFile,resin,varVal):
     print(sd)
     
     #One of the input files for visual-rtm scripts
-    np.save(r"D:\\IDPcode\\temporary\\mesh_info.npy", sd)
+    np.save(lPath+"\\temporary\\mesh_info.npy", sd)
     
     #Flow matrix baseline
     flowM = np.zeros([1000,12])

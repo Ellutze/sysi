@@ -41,6 +41,8 @@ meshsize = 2
 
 with open("D:\\sysyi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
     text_file.write("toolbox initiated\n")
+    
+lPath_auto='D:\sysi'
 
 #input file - instead function arguments - which are not possible due to the command line passing
 fl = open("D:\\sysi\\Temporary\\RTM_in.txt", "rt")

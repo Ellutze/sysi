@@ -539,6 +539,7 @@ def braidAV(secPTS,secVECy,secVECz, BraidFile,secs,varVal):
                 if (iv-12) >0:
                     c = c + 1
                     v = v + output[iv-12,iiv]
+                output[iv,iiv]=v/c
                 print("0 value encountered, average of neighbouring sections is used:",output[iv,iiv])       
                 count = count + 1
                 if count > 100:

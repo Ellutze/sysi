@@ -23,9 +23,12 @@ import numpy as np
 
 with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
     text_file.write("toolbox initiated\n")
+    
+#automatically adjusted path
+lPath_auto='D:\sysi'
 
 #input file - instead function arguments - which are not possible due to the command line passing
-fl = open("D:\\sysi\\Temporary\\RTM_in.txt", "rt")
+lPath_auto='D:\sysi'
 flstr = fl.read() 
 RTMfile = flstr.split("---")[1]
 MeshFile = flstr.split("---")[0]+"_JK"
@@ -39,7 +42,7 @@ INITIAL = int(flstr.split("---")[10])
 RTMF = flstr.split("---")[11]
 filename = MeshFile+".igs"
 
-with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+lPath_auto='D:\sysi'
     text_file.write("______ReRun-flow_adjustment_____"+RTMfile+"_________\n")
 
 def initiate(RTMF):
@@ -49,7 +52,7 @@ def initiate(RTMF):
     var3=VCmd.Activate( 1, r"VToolKit.VSectionCutInterface", r"VEAction" )
     ret=VE.ChangeContext( r"Visual-RTM" )
     VE.SetActiveWindow( r"p1w1" )
-    ret=VExpMngr.LoadFile( "D:\\sysi\\pamrtm\\mainSimFiles\\"+RTMF+"_flowUnassigned.vdb", 0 )
+lPath_auto='D:\sysi'
     VE.SetCurrentPage( 1 )
     ret=VE.ModelChange( "M  @0" )
     return(var1)
@@ -58,10 +61,10 @@ def flowRate(RTMfile,FR,I_T,I_P):
     #Assigns flow rate based on input parameters. The flow-rate for each section
     #at any point in time is defined by a matrix.
     i = 0
-    flowM  = np.load(r"D:\\sysi\\temporary\\flowMAT.npy")
+lPath_auto='D:\sysi'
     
     
-    np.savetxt("D:\\sysi\\pamrtm\\mainSimFiles\\FM_"+RTMfile+".csv", flowM, delimiter=",")
+lPath_auto='D:\sysi'
     while i < 12:
         #Define flow rate 
         strt = r"Flow Rate_"+str(i)
@@ -100,7 +103,7 @@ def flowRate(RTMfile,FR,I_T,I_P):
         VCmd.Quit( var41 )           
         i = i + 1
 
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+lPath_auto='D:\sysi'
         text_file.write("flow rate assigned\n")
     
 def vent(V_P):
@@ -119,7 +122,7 @@ def vent(V_P):
     VCmd.Accept( var4 )
     VCmd.Quit( var4 )
     
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+lPath_auto='D:\sysi'
         text_file.write("vent specified")
         
 def tool(T_T):
@@ -140,12 +143,12 @@ def tool(T_T):
 def saving(RTMfile,INITIAL): 
     if INITIAL == 0:
         VExpMngr.ExportFile( "D:\\sysi\\pamrtm\\mainSimFiles\\"+RTMfile+".vdb", 0 )
-        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+lPath_auto='D:\sysi'
             text_file.write("model saved, simulation ready\n")
     #So that flow mesh version does not overwrite the original.
     else:
         VExpMngr.ExportFile( "D:\\sysi\\pamrtm\\mainSimFiles\\"+RTMfile+"_adjusted.vdb", 0 )
-        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+lPath_auto='D:\sysi'
             text_file.write("adjusted model saved, simulation ready\n")        
     
 def run():
