@@ -21,8 +21,8 @@ st42 = time.time()
 CATIA = win32com.client.Dispatch("CATIA.Application")
 CATIA.RefreshDisplay = False
 #documents1 = CATIA.Documents # this line is not currently in use
-cadFile = "IDP_spar_A632_JK"
-braidFile = "IDP_spar_A632_B001"
+cadFile = "IDP_spar_A641_JK"
+braidFile = "IDP_spar_A641_B001"
 
 #location of CATIA file to be meshed
 #delete after testing:
@@ -97,7 +97,7 @@ import os
 
 lPath = os.path.dirname(os.path.abspath(__file__))
 #np import spheres
-II = np.load(lPath+'\\catiafiles\\meshfiles\\IDP_spar_A632_N001_nodes.npy')
+II = np.load(lPath+'\\catiafiles\\meshfiles\\IDP_spar_A641_N001_nodes.npy')
 print(II)
 hb91 = hbs.Add()
 hb91.Name="mesh"

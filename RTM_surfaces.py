@@ -26,16 +26,16 @@ import os
 #automatically adjusted path
 lPath_auto='D:\sysi'
 
-lPath_auto='D:\sysi'
+fl = open(lPath_auto+"\\Temporary\\RTM_in.txt","rt")
 flstr = fl.read() 
 MeshFile = flstr.split("---")[0]+"_JK"
 
 #Meshsize is only for identificaion of average 3D position of the surface. 
 #It doesn't affect the actual mesh used for simulation.
 meshsize = 3
-mesh_info = np.load(r"D:\\sysi\\temporary\\mesh_info.npy")
+mesh_info = np.load(lPath_auto+"\\temporary\\mesh_info.npy")
 
-def initiate(MeshFile):
+def initiate(MeshFile, lPath_auto):
 
     #This function only opens the relevant .igs file
     #__________________ VhmCommand BEGIN __________________
@@ -69,13 +69,13 @@ def initiate(MeshFile):
     var5=VCmd.Activate( 0, r"VMeshModeler.VmmICommandGui", r"ModelingTolerance" )
     VCmd.Quit( var5 )
     #__________________ ModelingTolerance END __________________
-    ret=VExpMngr.LoadFile( "D:\\sysi\\catiafiles\\meshfiles\\"+MeshFile+".igs", 4 )
+    ret=VExpMngr.LoadFile( lPath_auto+"\\catiafiles\\meshfiles\\"+MeshFile+".igs", 4 )
     VE.SetCurrentPage( 1 )
-lPath_auto='D:\sysi'
-lPath_auto='D:\sysi'
+    with open(lPath_auto+"\\pamrtm\\mainsimfiles\\currentProgress.txt","a") as text_file:
+        text_file.write("__"+MeshFile+".igs\n")
     return(var1)
     
-def surfaceLocator(mesh_info):
+def surfaceLocator(mesh_info, lPath_auto):
 
     #This function generates matrix of surfaces with their approximate 3D position.
     #The 3D position is recorded in global coordinate systems, as per CATIA .iges.
@@ -98,7 +98,7 @@ def surfaceLocator(mesh_info):
         #Generate .inp file for the single meshed surface.
         VistaDb.ModelSetExportKeyWordOrder( "M  @0", 0 )
         VistaDb.ModelSetExportStateAsNoInclude( "M  @0", 1 )
-lPath_auto='D:\sysi'
+        VExpMngr.ExportFile(lPath_auto+"\\pamrtm\\mainsimfiles\\240\\"+str(iy)+r".inp",34)
         #Delete the mesh, preparing it for the next element export.
         #__________________ TopologyMesh BEGIN __________________
         var444=VCmd.Activate( 1, r"VMeshModeler.VmmICommandGui", r"TopologyMesh" )
@@ -112,7 +112,7 @@ lPath_auto='D:\sysi'
         #Next section processes the exported input file.
         #The nodes exported are collected, and their coordinates averaged.
         filer = str(iy)+".inp"
-lPath_auto='D:\sysi'
+        eex = open(lPath_auto+"\\pamrtm\\mainsimfiles\\240\\"+filer, "rt")
         ff = eex.read() 
         ff = ff.split("*NODE")[1]
         ff = ff.split("*")[0]
@@ -165,7 +165,7 @@ lPath_auto='D:\sysi'
     #eex.close()
     
     #Just a marker of progress for log file.
-lPath_auto='D:\sysi'
+    with open(lPath_auto+"\\pamrtm\\mainsimfiles\\currentProgress.txt","a") as text_file:
         text_file.write("chopchop\n")
     
     #Delete current model to prevent any remaining mesh settings to affect
@@ -179,12 +179,12 @@ lPath_auto='D:\sysi'
     VE.NewSession(  )
 
     #Safe the surface matrix.
-lPath_auto='D:\sysi'
+    np.save(lPath_auto+"\\temporary\\RTM_surfaces.npy", surf_mat)
     
     #Delete the input files.
-lPath_auto='D:\sysi'
+    filelist = [f for f in os.listdir(lPath_auto+"\\pamrtm\\mainsimfiles\\240\\") if f.endswith(".inp")]
     for f in filelist:
-lPath_auto='D:\sysi'
+        os.remove(os.path.join(lPath_auto+"\\pamrtm\\mainsimfiles\\240\\",f))
 
-var1 = initiate(MeshFile)   
-surfaceLocator(mesh_info)
+var1 = initiate(MeshFile, lPath_auto)   
+surfaceLocator(mesh_info, lPath_auto)

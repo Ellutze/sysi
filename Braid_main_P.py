@@ -201,6 +201,16 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
         p1 = CP0[1,:]
         p2 = CP0[0,:]
         
+    #find the index of each point 
+    e = 0
+    while e < np.size(MD,0):
+        if p1[0] == MD[e,1,0] and p1[1] == MD[e,2,0] and p1[2] == MD[e,3,0]:
+            Ip1 = e
+        if p2[0] == MD[e,1,0] and p2[1] == MD[e,2,0] and p2[2] == MD[e,3,0]:
+            Ip2 = e
+        e = e + 1
+
+        
     #find nearest points at z + mesh 
     #pt3 is further away from spp
     #pt4 is closer to spp
@@ -214,6 +224,7 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
         p4 = CP1[0,:]  
     
     #Main iteration
+
     while seg < np.size(MD,2)-2:
         #find current position of spool
         SPP = noSerpent(T,YARN,maxR,gd,WW,rota,spoolsWa,MS,imd,datum)
@@ -224,6 +235,13 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
         normal = np.cross(l1,l2)
         #turn into unit vector
         n_mag = np.sqrt((normal[0])**2+(normal[1])**2+(normal[2])**2)
+        if n_mag == 0:
+            print("ots right now",p1,p2,p3,p4)
+            print("Ip1",Ip1,"Ip2",Ip2)
+            print(WW)
+            print(normal)
+            print(l1,l2)
+        """
         if n_mag == 0:
             print("normal broken, two of the same point used")
             print("p1",p1)
@@ -264,7 +282,7 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
             normal = np.cross(l1,l2)
             #turn into unit vector
             n_mag = np.sqrt((normal[0])**2+(normal[1])**2+(normal[2])**2)
-        
+        """
         #Turn normal into unit vector
         normal = normal/n_mag
         
@@ -304,6 +322,7 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
                 print("Houston, we have a problem")
                 print("p1",p1,"p2",p2,"p3",p3,"p4",p4)
                 print(bn)
+                breakhere
         #now that tst < 0
         l1_mag = np.sqrt((l1[0])**2+(l1[1])**2+(l1[2])**2)
         l1 = l1/l1_mag
@@ -346,6 +365,14 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
                 prop = ptx
                 bn = 1
             i = i + snip
+            
+        #check if p4 is actually the closest point
+        X1 = np.sqrt((SPP[0]-p4[0])**2+(SPP[1]-p4[1])**2+(SPP[2]-p4[2])**2)
+        X2 = np.sqrt((poc1[0]-p4[0])**2+(poc1[1]-p4[1])**2+(poc1[2]-p4[2])**2)
+        X = X1 + X2
+        if X <= mD:
+            bn = 2
+            
         
         poc1 = prop
         #propagate points (p1,p2,p3,p4)
@@ -355,41 +382,45 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
             seg = seg+1
             p1 = np.copy(p3)
             p2 = np.copy(p4)
-            
-            dt = 0
+            p3  = np.array([MD[Ip1,1,seg+1],MD[Ip1,2,seg+1],MD[Ip1,3,seg+1]])
+            p4  = np.array([MD[Ip2,1,seg+1],MD[Ip2,2,seg+1],MD[Ip2,3,seg+1]])
 
-            CPX = findClosest(MD,1,seg+1,p1)
-            p3 = np.array([CPX[0,0],CPX[0,1],CPX[0,2]])
-
-            CPX = findClosest(MD,1,seg+1,p2)
-            p4 = np.array([CPX[0,0],CPX[0,1],CPX[0,2]])
        
         else:
-            #propagation along cross-section
-            p1 = np.copy(p2)
-            p3 = np.copy(p4)
-            #implementing optional deletion , check if works
-            CPX = findClosest(MD,3,seg,p1,p1)
-            dt = 9999999999
-            i = 0
-            while i < np.size(CPX,0):
-                pt = np.array([CPX[i,0],CPX[i,1],CPX[i,2]])
-                dist = np.sqrt((SPP[0]-pt[0])**2+(SPP[1]-pt[1])**2+(SPP[2]-pt[2])**2)
-                if dist < dt:
-                    p2 = np.copy(pt)
-                    dt = dist
-                i = i + 1
-            #implementing optional deletion , check if works
-            CPX = findClosest(MD,3,seg+1,p3,p3)
-            dt = 9999999999
-            i = 0
-            while i < np.size(CPX,0):
-                pt = np.array([CPX[i,0],CPX[i,1],CPX[i,2]])
-                dist = np.sqrt((SPP[0]-pt[0])**2+(SPP[1]-pt[1])**2+(SPP[2]-pt[2])**2)
-                if dist < dt:
-                    p4 = np.copy(pt)
-                    dt = dist
-                i = i + 1
+            #for propagation spanwise or diagonal            
+            if WW == 0:
+                if Ip1 == np.size(MD,0)-1:
+                    Ip1 = 0
+                else:
+                    Ip1 = Ip1 + 1
+                if Ip2 == np.size(MD,0)-1:
+                    Ip2 = 0
+                else:
+                    Ip2 = Ip2 + 1
+            
+            elif WW == 1: 
+                if Ip1 == 0:
+                    Ip1 = np.size(MD,0)-1
+                else:
+                    Ip1 = Ip1 - 1
+                if Ip2 == 0:
+                    Ip2 = np.size(MD,0)-1
+                else:
+                    Ip2 = Ip2 - 1 
+            if bn == 1:
+                #propagation along cross-section
+                p1 = np.copy(p2)
+                p3 = np.copy(p4)
+                p2  = np.array([MD[Ip2,1,seg],MD[Ip2,2,seg],MD[Ip2,3,seg]])
+                p4  = np.array([MD[Ip2,1,seg+1],MD[Ip2,2,seg+1],MD[Ip2,3,seg+1]])            
+            elif bn == 2:
+                #both spanwsie and xs-wise propagation
+                p1 = np.copy(p4)
+                seg = seg + 1
+                p2  = np.array([MD[Ip2,1,seg],MD[Ip2,2,seg],MD[Ip2,3,seg]])
+                p3  = np.array([MD[Ip1,1,seg+1],MD[Ip1,2,seg+1],MD[Ip1,3,seg+1]])
+                p4  = np.array([MD[Ip2,1,seg+1],MD[Ip2,2,seg+1],MD[Ip2,3,seg+1]])
+            
 
         #find normal to points 2,3,4
         l1 = p4 - p3

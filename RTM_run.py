@@ -30,11 +30,11 @@ import VE
 #automatically adjusted path
 lPath_auto='D:\sysi'
 
-lPath_auto='D:\sysi'
+with open(lPath_auto+"\\pamrtm\\mainsimfiles\\currentProgress.txt","a") as text_file:
     text_file.write("The initial simulation starts here:")
 
 #input file - instead function arguments - which are not possible due to the command line passing
-lPath_auto='D:\sysi'
+fl = open(lPath_auto+"\\temporary\\RTM_in.txt","rt")
 flstr = fl.read() 
 RTMfile = flstr.split("---")[1]
 
@@ -44,7 +44,7 @@ var2=VCmd.Activate( 1, r"VSessionManager.Command", r"SessionCommand" )
 var3=VCmd.Activate( 1, r"VToolKit.VSectionCutInterface", r"VEAction" )
 ret=VE.ChangeContext( r"Visual-RTM" )
 VE.SetActiveWindow( r"p1w1" )
-lPath_auto='D:\sysi'
+ret = VExpMngr.LoadFile(lPath_auto+"\\pamrtm\\mainsimfiles\\"+RTMfile+".vdb",0)
 VE.SetCurrentPage( 1 )
 ret=VE.ModelChange( "M  @0" )
 

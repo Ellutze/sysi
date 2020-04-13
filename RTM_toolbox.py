@@ -39,13 +39,14 @@ import math
 meshsize = 2
 #mesh_info = np.load(r"C:\IDPcode\pamrtm\testfiles\mesh_info.npy")
 
-with open("D:\\sysyi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
-    text_file.write("toolbox initiated\n")
-    
 lPath_auto='D:\sysi'
 
+with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    text_file.write("toolbox initiated\n")
+
+
 #input file - instead function arguments - which are not possible due to the command line passing
-fl = open("D:\\sysi\\Temporary\\RTM_in.txt", "rt")
+fl = open(lPath_auto+"\\Temporary\\RTM_in.txt", "rt")
 flstr = fl.read() 
 RTMfile = flstr.split("---")[1]
 MeshFile = flstr.split("---")[0]+"_JK"
@@ -120,7 +121,7 @@ def GlobalToLocal(point1,point2,cSYS1,cSYS2,GCP):
 with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
     text_file.write("______NewRun-_____"+filename+"_________\n")
 
-def initiate(filename):
+def initiate(filename,lPath_auto):
     #Basic settings and opening mesh-file.
     
     #__________________ VhmCommand BEGIN __________________
@@ -154,25 +155,25 @@ def initiate(filename):
     var5=VCmd.Activate( 0, r"VMeshModeler.VmmICommandGui", r"ModelingTolerance" )
     VCmd.Quit( var5 )
     #__________________ ModelingTolerance END __________________
-    ret=VExpMngr.LoadFile( "D:\\sysi\\catiafiles\\meshfiles\\"+filename, 4 )
+    ret=VExpMngr.LoadFile( lPath_auto+"\\catiafiles\\meshfiles\\"+filename, 4 )
     VE.SetCurrentPage( 1 )
     
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("initiated\n")
     return(var1)
     
     
-def asnSurf(var1,INITIAL):
+def asnSurf(var1,INITIAL,lPath_auto):
     #For each section create a list of surfaces that correspond to it
     #assign it as new part.
-    BCs = np.loadtxt(open("D:\\sysi\\temporary\\braidsegments.csv", "rb"), delimiter=",")
+    BCs = np.loadtxt(open(lPath_auto+"\\temporary\\braidsegments.csv", "rb"), delimiter=",")
     if INITIAL == 0:
-        surf_mat = np.load(r"D:\\sysi\\temporary\\RTM_surfaces.npy")
+        surf_mat = np.load(lPath_auto+"\\temporary\\RTM_surfaces.npy")
     elif INITIAL == 1:
-        surf_mat = np.load(r"D:\\sysi\\temporary\\RTM_surfaces_2.npy")
+        surf_mat = np.load(lPath_auto+"\\temporary\\RTM_surfaces_2.npy")
     else:
         print("something went horribly wrong")
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("yupgogoyup\n")
         
     refPTS = np.loadtxt(open("D:\\sysi\\temporary\\secPTS.csv","rb"), delimiter=",")
@@ -185,7 +186,7 @@ def asnSurf(var1,INITIAL):
     #The points section reference points are provided in local coordinate systems.
     #Therefore the surface coordinate systems have to be also translated, 
     #globalToLocal function is used.
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("yupyup\n")
     step = refPTS[0,2]
     u = 0
@@ -204,8 +205,8 @@ def asnSurf(var1,INITIAL):
                 surf_mat[u,2] = kopyto[1]     
             uu = uu + 1
         u = u + 1
-    np.savetxt("D:\\sysi\\Temporary\\verify_toolbox.csv",surf_mat,delimiter=",")
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    np.savetxt(lPath_auto+"\\Temporary\\verify_toolbox.csv",surf_mat,delimiter=",")
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("eaiho\n")
     
     #Match surfaces to parts.
@@ -221,7 +222,7 @@ def asnSurf(var1,INITIAL):
                 surf_mat = np.delete(surf_mat, (ii), axis=0)
                 ii = ii - 1
             ii = ii + 1
-        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+        with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("ssssss"+stringASN+"\n")
         if stringASN =="  MFace  ":
             US.append(BCs[i,0])
@@ -241,16 +242,16 @@ def asnSurf(var1,INITIAL):
         VExpMngr.RefreshExplorer( r"Elements" )           
         i = i + 1
         
-    with open(r"D:\\sysi\\temporary\\RTM_surf_matRR.txt", "w") as text_file:
+    with open(lPath_auto+"\\temporary\\RTM_surf_matRR.txt", "w") as text_file:
         text_file.write(str(surf_mat))
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("surfaces assigned\n")
     
-    VExpMngr.ExportFile( "D:\\sysi\\pamrtm\\mainSimFiles\\vcelkamaja.vdb", 0 )
+    VExpMngr.ExportFile( lPath_auto+"\\pamrtm\\mainSimFiles\\vcelkamaja.vdb", 0 )
     
     #Below adds flow mesh surface if already available.
     if INITIAL == 1:
-        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+        with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("flow mesh surface 1\n")
         FM_surf = np.load(r"D:\\sysi\\temporary\\FM_surfaces.npy")
         
@@ -275,13 +276,13 @@ def asnSurf(var1,INITIAL):
         VMaterial.VMeCadDataMove( lst1_count, lst1, NULL )
         VExpMngr.RefreshExplorer( r"Parts" )
         VExpMngr.RefreshExplorer( r"Elements" )
-        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+        with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("flow mesh surfaces assigned\n")    
-        VExpMngr.ExportFile( "D:\\sysi\\pamrtm\\mainSimFiles\\broukpytlik.vdb", 0 )
+        VExpMngr.ExportFile( lPath_auto+"\\pamrtm\\mainSimFiles\\broukpytlik.vdb", 0 )
         
     return(US)
     
-def automesh(meshsize,RTMfile,RTMF):
+def automesh(meshsize,RTMfile,RTMF,lPath_auto):
     #Automatically generates mesh for the simulation.
     ret=VE.ChangeContext( r"Visual-Mesh" )
     ret=VE.ChangeSkin( r"General" )
@@ -299,9 +300,9 @@ def automesh(meshsize,RTMfile,RTMF):
     VCmd.Cancel( var6 )
     VistaDb.ModelSetExportKeyWordOrder( "M  @0", 0 )
     VistaDb.ModelSetExportStateAsNoInclude( "M  @0", 1 )
-    VExpMngr.ExportFile( r"D:\\sysi\\pamrtm\\mainSimFiles\\"+RTMF+".inp", 34 )
+    VExpMngr.ExportFile( lPath_auto+"\\pamrtm\\mainSimFiles\\"+RTMF+".inp", 34 )
     
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("meshed\n")
     
 def simPar(resin):
@@ -316,10 +317,10 @@ def simPar(resin):
     VCmd.SetIntValue( var116, r"DetectAirTraps", 1 )
     VCmd.Accept( var116 )
     VCmd.Quit( var116 )  
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("simulation parameters selected\n")
     
-def rosalia(ros_nodes):
+def rosalia(ros_nodes,lPath_auto):
     #Creates a coordinate system for each of the 12 segments around cross-section.
     i = 0
     while i < 12:
@@ -362,25 +363,25 @@ def rosalia(ros_nodes):
             y1 = y - 1
             z1 = z + 1
             p3 = str(x1)+" "+str(y1)+" "+str(z1)+" "
-        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+        with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("p1"+str(p1)+"\n")
-        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+        with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("p2"+str(p2)+"\n")
-        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+        with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("p3"+str(p3)+"\n")
         VCmd.SetPoint3Value( var12, r"OriginPoint", p1 )
         VCmd.SetPoint3Value( var12, r"XAxisPoint", p2 )
         VCmd.SetPoint3Value( var12, r"XYPlanePoint", p3 )
         VCmd.Accept( var12 )
         VCmd.Quit( var12 )
-        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+        with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("Direction set\n")
         i = i + 1
     
-def defMat():
-    K = np.loadtxt(open("D:\\sysi\\temporary\\BraidData.csv", "rb"), delimiter=",")
+def defMat(lPath_auto):
+    K = np.loadtxt(open(lPath_auto+"\\temporary\\BraidData.csv", "rb"), delimiter=",")
     i = 0
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("K:\n"+str(K)+"\n")
     while i < 240:
         var6=VCmd.Activate( 1, r"VMaterial.VMaterialInterface", r"GenericMaterialEditor" )
@@ -436,17 +437,17 @@ def defMat():
         #VCmd.Quit( var6 )      
         i = i + 1
         
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("reinforcement materials created\n")
     
-def layupManager(var1,INITIAL,US,NL):
+def layupManager(var1,INITIAL,US,NL,lPath_auto):
     #This is the main bottleneck of model recreation.
     #It matches materials with parts.
     
     #__________________ RtmLayerDesignManager BEGIN __________________
     var1000=VCmd.Activate( 1, r"VCompUtils.VCompUtilsCmdInterface", r"RtmLayerDesignManager" )
     VCmd.SetGuStringValue( var1000, r"LayerLaminateListFlag", r"LayerList" )    
-    VExpMngr.ExportFile( "D:\\sysi\\pamrtm\\mainSimFiles\\morgiana.vdb", 0 )
+    VExpMngr.ExportFile( lPath_auto+"\\pamrtm\\mainSimFiles\\morgiana.vdb", 0 )
     n = 0
     i = 1
     #Works for 240 segments, rework will be required if alternative number of 
@@ -478,15 +479,15 @@ def layupManager(var1,INITIAL,US,NL):
         VCmd.SetStringValue( var1000, r"MatNameFilter", r"y"+str(mrm)+"y" )
         VCmd.SetIntValue( var1000, r"SameMatAssignmentOtherLayerFlag", 7 )
         ret=VCmd.ExecuteCommand( var1000, r"TransferMaterialToInterfaceList" )
-        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+        with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("Material and Part matched__"+str(i)+"\n")       
         
         i = i + 1     
     
-    VExpMngr.ExportFile( "D:\\sysi\\pamrtm\\mainSimFiles\\xxx1.vdb", 0 )
+    VExpMngr.ExportFile( lPath_auto+"\\pamrtm\\mainSimFiles\\xxx1.vdb", 0 )
     VCmd.Accept( var1000 ) 
     VCmd.Quit( var1000 )
-    VExpMngr.ExportFile( "D:\\sysi\\pamrtm\\mainSimFiles\\xxx2.vdb", 0 )
+    VExpMngr.ExportFile( lPath_auto+"\\pamrtm\\mainSimFiles\\xxx2.vdb", 0 )
     #because part 16 does never work for some reason (delete below if run works without...)
     var13=VCmd.Activate( 1, r"VCompUtils.VCompUtilsCmdInterface", r"RtmLayerDesignManager" )
     VCmd.SetIntValue( var13, r"SelectedRowForAssignment", 239 )
@@ -503,7 +504,7 @@ def layupManager(var1,INITIAL,US,NL):
     VCmd.Accept( var13 )
     VCmd.Quit( var13 )
  
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("all non-flow mewsh related layers done\n")
     
     #For re-runs due to mesh addition:
@@ -530,11 +531,11 @@ def layupManager(var1,INITIAL,US,NL):
         VCmd.Accept( var13 )
         VCmd.Quit( var13 )
     
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("layup manager done\n")
-    VExpMngr.ExportFile( "D:\\sysi\\pamrtm\\mainSimFiles\\xxx3.vdb", 0 ) 
+    VExpMngr.ExportFile( lPath_auto+"\\pamrtm\\mainSimFiles\\xxx3.vdb", 0 ) 
     
-    K = np.loadtxt(open("D:\\sysi\\temporary\\BraidData.csv", "rb"), delimiter=",")
+    K = np.loadtxt(open(lPath_auto+"\\temporary\\BraidData.csv", "rb"), delimiter=",")
     
     i = 0
     while i < 240:
@@ -549,13 +550,13 @@ def layupManager(var1,INITIAL,US,NL):
         VCmd.SetDoubleValue( var6, r"VolumeFraction", float(K[i,12])  )        
         VCmd.Accept( var6 )
         VCmd.Quit( var6 )
-        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+        with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("test"+str(i)+"\n")
         i = i + 1
         
-    VExpMngr.ExportFile( "D:\\sysi\\pamrtm\\mainSimFiles\\xxx4.vdb", 0 )
+    VExpMngr.ExportFile( lPath_auto+"\\pamrtm\\mainSimFiles\\xxx4.vdb", 0 )
     
-def oPart(RTMF):
+def oPart(RTMF,lPath_auto):
     #Matching segments to the appropriate rosettes.
     #First loop creates parts with wrong rosette assigned. 
     i = 0
@@ -572,7 +573,7 @@ def oPart(RTMF):
         else:
             I = str(k)
     
-        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+        with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write(r" 10"+I+"/PART_10"+I+"  ""\n")
         ret=VCmd.ExecuteCommand( var10, r"CreateNewOrientation" )
         lst1_count,lst1 =  VScn.StringList( r" 10"+I+"/PART_10"+I+"  "  )
@@ -615,30 +616,30 @@ def oPart(RTMF):
         VCmd.Quit( var4 )
         i = i + 1
 
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("orientations assigned\n")
-    VExpMngr.ExportFile( "D:\\sysi\\pamrtm\\mainSimFiles\\"+RTMF+"_flowUnassigned.vdb", 0 )
+    VExpMngr.ExportFile( lPath_auto+"\\pamrtm\\mainSimFiles\\"+RTMF+"_flowUnassigned.vdb", 0 )
     
-def regions(var1,RTMfile,RTMF):
+def regions(var1,RTMfile,RTMF,lPath_auto):
     #Defines regions for boundary conditions.
     z = 0
     zMax = z + 2
     zMin = z - 2
     file = RTMF+".inp"
-    nodes  = getNodes(file,zMin=zMin,zMax=zMax)
+    nodes  = getNodes(lPath_auto,file,zMin=zMin,zMax=zMax)
     orig_nodes = np.copy(nodes)
     ros_nodes = np.zeros([12,4])
     node_len = np.size(nodes,0)
-    BCs = np.loadtxt(open("D:\\sysi\\temporary\\braidsegments.csv", "rb"), delimiter=",")
+    BCs = np.loadtxt(open(lPath_auto+"\\temporary\\braidsegments.csv", "rb"), delimiter=",")
     
     #here add LocalToGlobal to translate the nodes into correct coordinates
-    refPTS = np.loadtxt(open("D:\\sysi\\temporary\\secPTS.csv","rb"), delimiter=",")
-    secVECz = np.loadtxt(open("D:\\sysi\\temporary\\secVECz.csv","rb"), delimiter=",")
-    secVECy = np.loadtxt(open("D:\\sysi\\temporary\\secVECy.csv","rb"), delimiter=",")
+    refPTS = np.loadtxt(open(lPath_auto+"\\temporary\\secPTS.csv","rb"), delimiter=",")
+    secVECz = np.loadtxt(open(lPath_auto+"\\temporary\\secVECz.csv","rb"), delimiter=",")
+    secVECy = np.loadtxt(open(lPath_auto+"\\temporary\\secVECy.csv","rb"), delimiter=",")
     secPTS = refPTS
     
     #The segmentation boundaries are translated into local coordinate systems.
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("yupyup2\n")
     step = refPTS[0,2]
     u = 0
@@ -657,8 +658,8 @@ def regions(var1,RTMfile,RTMF):
                 nodes[u,2] = kopyto[1]    
             uu = uu + 1
         u = u + 1
-    np.savetxt("D:\\sysi\\Temporary\\verify_toolbox2.csv",nodes,delimiter=",")
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    np.savetxt(lPath_auto+"\\Temporary\\verify_toolbox2.csv",nodes,delimiter=",")
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("eaiho2\n")
     
     #Segment the root of the spar for varying flow rate. Also record a node for
@@ -678,7 +679,7 @@ def regions(var1,RTMfile,RTMF):
                 ros_nodes[ii,3] = orig_nodes[i,3]
             i = i + 1            
         nSTR = nSTR[:-1]      
-        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+        with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("crash-checkc"+str(ii)+"_____"+nSTR+"___"+"\n")         
         #__________________ UserDefineRegion BEGIN __________________ REGION FOR flow rate
         var14=VCmd.Activate( 1, r"VMeshModeler.VmmICommandGui", r"UserDefineRegion" )
@@ -698,7 +699,7 @@ def regions(var1,RTMfile,RTMF):
     z = span
     zMax = z + 2
     zMin = z - 2
-    nodes  = getNodes(file,zMin=zMin,zMax=zMax)
+    nodes  = getNodes(lPath_auto,file,zMin=zMin,zMax=zMax)
     node_len = np.size(nodes,0)
     i = 0
     nSTR = ""
@@ -708,7 +709,7 @@ def regions(var1,RTMfile,RTMF):
             nSTR =nSTR+r"| "
         i = i + 1
         
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("check the working one_____"+nSTR+"___"+"\n")
     #_____________Region for vent____________
     var19=VCmd.Activate( 1, r"VMeshModeler.VmmICommandGui", r"UserDefineRegion" )
@@ -724,7 +725,7 @@ def regions(var1,RTMfile,RTMF):
     #Assign temperature to all nodes.
     zMin = -10000
     zMax = 10000
-    nodes  = getNodes(file,zMin=zMin,zMax=zMax)
+    nodes  = getNodes(lPath_auto,file,zMin=zMin,zMax=zMax)
     node_len = np.size(nodes,0)
     i = 0
     nSTR = ""
@@ -744,17 +745,17 @@ def regions(var1,RTMfile,RTMF):
     VCmd.Cancel( var199 )
     VCmd.Quit( var199 )    
     
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("BC regions created\n")
         
     #VExpMngr.ExportFile( "D:\\IDPcode\\SpecialRTMTestIDP\\IDP_zip_2.0\\IDPcode\\pamrtm\\mainSimFiles\\"+RTMfile+"_flowUnassigned.vdb", 0 )
     return(ros_nodes)
     
-def flowRate(FR,I_T,I_P):
+def flowRate(FR,I_T,I_P,lPath_auto):
     #Assigns flow rate based on input parameters. The flow-rate for each section
     #at any point in time is defined by a matrix.
     i = 0
-    flowM  = np.load(r"D:\\sysi\\temporary\\flowMAT.npy")
+    flowM  = np.load(lPath_auto+"\\temporary\\flowMAT.npy")
     while i < 12:
         #Define flow rate 
         strt = r"Flow Rate_"+str(i)
@@ -793,10 +794,10 @@ def flowRate(FR,I_T,I_P):
         VCmd.Quit( var41 )   
         i = i + 1
 
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("flow rate assigned\n")
     
-def vent(V_P):
+def vent(V_P,lPath_auto):
     #Assigns the vent region and parameters.
     #__________________ BoundaryConditions BEGIN __________________
     var4=VCmd.Activate( 1, r"VRTMUtilities.VRTMInterface", r"BoundaryConditions" )
@@ -813,7 +814,7 @@ def vent(V_P):
     VCmd.Accept( var4 )
     VCmd.Quit( var4 )
     
-    with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("vent specified")
         
 def tool(T_T):
@@ -831,9 +832,9 @@ def tool(T_T):
     VCmd.Accept( var27 )
     VCmd.Quit( var27 )
     
-def getNodes(file,xMax = 10000, xMin = -10000,yMax = 10000,yMin=-10000,zMax=10000,zMin = -10000):
+def getNodes(lPath_auto,file,xMax = 10000, xMin = -10000,yMax = 10000,yMin=-10000,zMax=10000,zMin = -10000):
     #This section helps to collect nodes for specific region in 3D space.
-    eef = open("D:\\sysi\\pamrtm\\mainSimFiles\\"+file, "rt")
+    eef = open(lPath_auto+"\\pamrtm\\mainSimFiles\\"+file, "rt")
     ee = eef.read() 
     ee = ee.split("*NODE")[1]
     ee = ee.split("*")[0]
@@ -864,17 +865,17 @@ def getNodes(file,xMax = 10000, xMin = -10000,yMax = 10000,yMin=-10000,zMax=1000
     return(node_list)
 
 
-def saving(RTMfile,INITIAL):
+def saving(RTMfile,INITIAL,lPath_auto):
     
     if INITIAL == 0:
-        VExpMngr.ExportFile( "D:\\sysi\\pamrtm\\mainSimFiles\\"+RTMfile+"_orig.vdb", 0 )
-        VExpMngr.ExportFile( "D:\\sysi\\pamrtm\\mainSimFiles\\"+RTMfile+".vdb", 0 )
-        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+        VExpMngr.ExportFile( lPath_auto+"\\pamrtm\\mainSimFiles\\"+RTMfile+"_orig.vdb", 0 )
+        VExpMngr.ExportFile( lPath_auto+"\\pamrtm\\mainSimFiles\\"+RTMfile+".vdb", 0 )
+        with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("model saved, simulation ready\n")
     #Not to overwrite original file when adding flow mesh:
     else:
-        VExpMngr.ExportFile( "D:\\IDPcode\\pamrtm\\mainSimFiles\\"+RTMfile+"_adjusted.vdb", 0 )
-        with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+        VExpMngr.ExportFile( lPath_auto+"\\pamrtm\\mainSimFiles\\"+RTMfile+"_adjusted.vdb", 0 )
+        with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("adjusted model saved, simulation ready\n")        
     
 def run():
@@ -886,19 +887,19 @@ def run():
     #C:\Program Files\ESI Group\PAM-COMPOSITES\2019.0\RTMSolver\bin
     #C:\Program Files\ESI Group\Visual-Environment\14.5\COMMON\Resources\VisualProcessExec\user_scripts\CompositeLoadResult.py
 
-var1 = initiate(filename)
-US = asnSurf(var1,INITIAL)
-automesh(meshsize,RTMfile,RTMF)
-simPar(resin)
-ros_nodes = regions(var1,RTMfile,RTMF) 
-rosalia(ros_nodes)
-defMat()
-layupManager(var1,INITIAL,US,NL)
-oPart(RTMF)
-flowRate(FR,I_T,I_P)
-vent(V_P)
+var1 = initiate(filename, lPath_auto)
+US = asnSurf(var1,INITIAL,lPath_auto)
+automesh(meshsize,RTMfile,RTMF,lPath_auto)
+simPar(resin,lPath_auto)
+ros_nodes = regions(var1,RTMfile,RTMF,lPath_auto) 
+rosalia(ros_nodes,lPath_auto)
+defMat(lPath_auto)
+layupManager(var1,INITIAL,US,NL,lPath_auto)
+oPart(RTMF,lPath_auto)
+flowRate(FR,I_T,I_P,lPath_auto)
+vent(V_P,lPath_auto)
 tool(T_T)
-saving(RTMfile,INITIAL)
+saving(RTMfile,INITIAL,lPath_auto)
 #run()
 
 

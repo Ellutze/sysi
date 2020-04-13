@@ -21,14 +21,14 @@ import VE
 #other imports
 import numpy as np
 
-with open("D:\\sysi\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
-    text_file.write("toolbox initiated\n")
-    
 #automatically adjusted path
 lPath_auto='D:\sysi'
 
+with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
+    text_file.write("toolbox initiated\n")
+
 #input file - instead function arguments - which are not possible due to the command line passing
-lPath_auto='D:\sysi'
+fl = open(lPath_auto+"\\Temporary\\RTM_in.txt", "rt")
 flstr = fl.read() 
 RTMfile = flstr.split("---")[1]
 MeshFile = flstr.split("---")[0]+"_JK"
@@ -42,29 +42,29 @@ INITIAL = int(flstr.split("---")[10])
 RTMF = flstr.split("---")[11]
 filename = MeshFile+".igs"
 
-lPath_auto='D:\sysi'
+with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
     text_file.write("______ReRun-flow_adjustment_____"+RTMfile+"_________\n")
 
-def initiate(RTMF):
+def initiate(RTMF,lPath_auto):
     #Open the initial file saved before flow rate assignment.
     var1=VCmd.Activate( 1, r"VHostManagerPlugin.VhmInterface", r"VhmCommand" )
     var2=VCmd.Activate( 1, r"VSessionManager.Command", r"SessionCommand" )
     var3=VCmd.Activate( 1, r"VToolKit.VSectionCutInterface", r"VEAction" )
     ret=VE.ChangeContext( r"Visual-RTM" )
     VE.SetActiveWindow( r"p1w1" )
-lPath_auto='D:\sysi'
+    ret=VExpMngr.LoadFile( lPath_auto+"\\pamrtm\\mainSimFiles\\"+RTMF+"_flowUnassigned.vdb", 0 )
     VE.SetCurrentPage( 1 )
     ret=VE.ModelChange( "M  @0" )
     return(var1)
       
-def flowRate(RTMfile,FR,I_T,I_P):    
+def flowRate(RTMfile,FR,I_T,I_P,lPath_auto):    
     #Assigns flow rate based on input parameters. The flow-rate for each section
     #at any point in time is defined by a matrix.
     i = 0
-lPath_auto='D:\sysi'
+    flowM  = np.load(lPath_auto+"\\temporary\\flowMAT.npy")
     
     
-lPath_auto='D:\sysi'
+    np.savetxt(lPath_auto+"\\pamrtm\\mainSimFiles\\FM_"+RTMfile+".csv", flowM, delimiter=",")
     while i < 12:
         #Define flow rate 
         strt = r"Flow Rate_"+str(i)
@@ -103,10 +103,10 @@ lPath_auto='D:\sysi'
         VCmd.Quit( var41 )           
         i = i + 1
 
-lPath_auto='D:\sysi'
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("flow rate assigned\n")
     
-def vent(V_P):
+def vent(V_P,lPath_auto):
     #Defining the vent boundary condition.
     var4=VCmd.Activate( 1, r"VRTMUtilities.VRTMInterface", r"BoundaryConditions" )
     VCmd.SetStringValue( var4, r"ActiveBcType", r"Vent" )
@@ -122,7 +122,7 @@ def vent(V_P):
     VCmd.Accept( var4 )
     VCmd.Quit( var4 )
     
-lPath_auto='D:\sysi'
+    with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("vent specified")
         
 def tool(T_T):
@@ -140,15 +140,15 @@ def tool(T_T):
     VCmd.Accept( var27 )
     VCmd.Quit( var27 )
     
-def saving(RTMfile,INITIAL): 
+def saving(RTMfile,INITIAL,lPath_auto): 
     if INITIAL == 0:
-        VExpMngr.ExportFile( "D:\\sysi\\pamrtm\\mainSimFiles\\"+RTMfile+".vdb", 0 )
-lPath_auto='D:\sysi'
+        VExpMngr.ExportFile( lPath_auto+"\\pamrtm\\mainSimFiles\\"+RTMfile+".vdb", 0 )
+        with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("model saved, simulation ready\n")
     #So that flow mesh version does not overwrite the original.
     else:
-        VExpMngr.ExportFile( "D:\\sysi\\pamrtm\\mainSimFiles\\"+RTMfile+"_adjusted.vdb", 0 )
-lPath_auto='D:\sysi'
+        VExpMngr.ExportFile( lPath_auto+"\\pamrtm\\mainSimFiles\\"+RTMfile+"_adjusted.vdb", 0 )
+        with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("adjusted model saved, simulation ready\n")        
     
 def run():
@@ -157,12 +157,12 @@ def run():
     ret=VCmd.ExecuteCommand( var4, r"OpenLogFile" )
     VScn.ExecutePythonInterpeter( r"C:\Program Files\ESI Group\Visual-Environment\15.0\COMMON\Resources\VisualProcessExec\user_scripts\CompositeLoadResult.py" )
     
-var1 = initiate(RTMF)
-flowRate(RTMfile,FR,I_T,I_P)
-vent(V_P)
+var1 = initiate(RTMF,lPath_auto)
+flowRate(RTMfile,FR,I_T,I_P,lPath_auto)
+vent(V_P,lPath_auto)
 tool(T_T)
 #simPar()
-saving(RTMfile,INITIAL)
+saving(RTMfile,INITIAL,lPath_auto)
 run()
 
 

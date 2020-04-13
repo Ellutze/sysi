@@ -54,7 +54,7 @@ def getPhill(RTMfile):
     #not work.
     i = 124
 
-lPath_auto='D:\sysi'
+    strX = lPath_auto+"\\pamrtm\\mainsimfiles\\"+str(RTMfile)+"_RESULTS.erfh5"
     #__________________ VtkContourDlg BEGIN __________________
     var4=VCmd.Activate( 1, r"VToolKit.VToolKitInterface", r"VtkContourDlg" )
     VCmd.SetStringValue( var4, r"FileName", strX )
@@ -69,10 +69,9 @@ lPath_auto='D:\sysi'
     VCmd.SetStringValue( var4, r"ExportStates", r"CURRENT STATE" )
     VCmd.SetStringValue( var4, r"ExportAppliedOn", r"ON MODEL" )
     VCmd.SetStringValue( var4, r"ExportAsVectorScalar", r"SCALAR" )
-lPath_auto='D:\sysi'
+    VCmd.SetStringValue(var4,r"ExportPath", lPath_auto+"\\pamrtm\\mainsimfiles\\Filling_factor"+str(i)+".txt")
     ret=VCmd.ExecuteCommand( var4, r"ExportContour" )
-lPath_auto='D:\sysi'
-        text_file.write("FILLING_FACTORS124.txt file has been created\n")
+
         
 def getALLff(RTMfile,nS):
     #Assuming file is already open.
@@ -80,9 +79,9 @@ def getALLff(RTMfile,nS):
     #This function exports filling factors as text files for each analysis 
     #frame.
     
-lPath_auto='D:\sysi'
+    strX = "D:\\IDPcode\\pamrtm\\mainSimFiles\\"+str(RTMfile)+"_RESULT.erfh5"   
     ii = int(0) 
-lPath_auto='D:\sysi'
+    with open("D:\\IDPcode\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("tell me where is Gandalf "+str(nS)+"\n")
     while ii < int(nS):
         #__________________ VtkContourDlg BEGIN __________________
@@ -99,7 +98,7 @@ lPath_auto='D:\sysi'
         VCmd.SetStringValue( var4, r"ExportStates", r"CURRENT STATE" )
         VCmd.SetStringValue( var4, r"ExportAppliedOn", r"ON MODEL" )
         VCmd.SetStringValue( var4, r"ExportAsVectorScalar", r"SCALAR" )
-lPath_auto='D:\sysi'
+        VCmd.SetStringValue( var4, r"ExportPath", r"D:\\IDPcode\\pamrtm\\mainSimFiles\\FILLING_FACTOR"+str(ii)+".txt" )
         ret=VCmd.ExecuteCommand( var4, r"ExportContour" )  
         ii = ii + 1
     
@@ -110,7 +109,7 @@ def getVisc(RTMfile):
     
     #This function is currently not used within other scripts. It will require 
     #adjustments if included.
-lPath_auto='D:\sysi'
+    with open("D:\\IDPcode\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("wegotsomewhere3\n")
     i= 0
 
@@ -118,7 +117,7 @@ lPath_auto='D:\sysi'
 
         var4=VCmd.Activate( 1, r"VToolKit.VToolKitInterface", r"VtkContourDlg" )
         VCmd.SetStringValue( var4, r"FileName", r"D:\\IDPcode\\pamrtm\\mainSimFiles\\IDP_spar_A145_M001_B001_R002_RESULT.erfh5" )
-lPath_auto='D:\sysi'
+        with open("D:\\IDPcode\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("wegotsomewhere88\n")
         VCmd.SetStringValue( var4, r"ContourMethod", r"ByEntity" )
         VCmd.SetStringValue( var4, r"ContourParentName", r"NODE" )
@@ -133,10 +132,10 @@ lPath_auto='D:\sysi'
         VCmd.SetStringValue( var4, r"ExportAsVectorScalar", r"SCALAR" )
         VCmd.SetStringValue( var4, r"ExportPath", r"D:\\IDPcode\\pamrtm\\mainSimFiles\\VISCOSITY.txt" )
         ret=VCmd.ExecuteCommand( var4, r"ExportContour" )
-lPath_auto='D:\sysi'
+        with open("D:\\IDPcode\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
             text_file.write("wegotsomewhere14\n")
      
-lPath_auto='D:\sysi'
+        eef = open("D:\\IDPcode\\pamrtm\\mainSimFiles\\VISCOSITY.txt", "rt")
         ee = eef.read() 
         #doesnt work for non full infusion ... number 42 becomes number TOP, while top needs to be found
         numbers = ee.split("Number	42")[1]
@@ -160,11 +159,11 @@ lPath_auto='D:\sysi'
         else:
             allmat = np.concatenate((allmat,nmat),1)
         i = i + 1
-lPath_auto='D:\sysi'
+    np.save(r"D:\\IDPcode\\pamrtm\\mainSimFiles\\"+RTMfile+"_VISCOSITY.npy", allmat)
     
 #This section interprets the PP_request file.
 #Runs the requested function from above and provides the necessary inputs.
-lPath_auto='D:\sysi'
+fl = open(lPath_auto+"\\Temporary\\PP_request.txt", "rt")
 flstr = fl.read() 
 RTMfile = flstr.split("---")[0]
 command = flstr.split("---")[1]

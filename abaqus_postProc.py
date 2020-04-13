@@ -7,7 +7,7 @@ from odbSection import *
 lPath_auto='D:\sysi'
 
 # Open the odb
-lPath_auto='D:\sysi'
+myOdb = session.openOdb(name=lPath_auto+'\\Temporary\\Task-1.odb')
 frames = myOdb.steps["Step-1"].frames
 numFrames = len(frames)
 # Isolate the instance, get the number of nodes and elements
