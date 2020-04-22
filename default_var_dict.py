@@ -3,7 +3,7 @@
 def getBase():
 
     varVal = {'span': 400,'twist_0': 0,'chord_0': 150,'no_layers': 8,'twist_1':0,'chord_1':150,'matrix':"Bakelite EPR-L20",'twist_2':0,'chord_2':150,'reinforcement':"AKSAca A-42",'twist_3':0,'chord_3':150,
-          'mesh_size':2.75,'airfoil_0':"clarkYdata.dat",'sweep_0':0,'spools':168,'airfoil_1':"clarkYdata.dat",'sweep_1':0,'RAD':3, 'airfoil_2':"clarkYdata.dat",'sweep_2':0,'mandrel_speed':7,'airfoil_3':"clarkYdata.dat",'sweep_3':0,
+          'mesh_size':1.75,'airfoil_0':"clarkYdata.dat",'sweep_0':0,'spools':168,'airfoil_1':"clarkYdata.dat",'sweep_1':0,'RAD':3, 'airfoil_2':"clarkYdata.dat",'sweep_2':0,'mandrel_speed':7,'airfoil_3':"clarkYdata.dat",'sweep_3':0,
           'dihedral_0':0,'dihedral_1':0,'dihedral_2':0,'dihedral_3':0,'c_min':0.30,'c_max':0.45,'guide_rad':400,'IMD':100,'inlet_temp':410,'tool_temp':300,
           'inlet_pressure':200000000,'vent_pressure':10,'flow_rate':(1.0*10**(-8))}
     

@@ -218,11 +218,14 @@ def mRTM(MeshFile,BraidFile,resin,varVal):
     #mf,time = outputS1()
     #print("Fill:",mf)
     #print("Infusion time:",time)
-    RTM_postProc.cmdReach(RTMFile)
-    with open(lPath+"\\pamrtm\\mainSimFiles\\FILLING_FACTOR124.txt", "r") as fin:
-        data = fin.read().splitlines(True)
-    with open(lPath+'\\pamrtm\\mainSimFiles\\FILLING_FACTOR125.txt', 'w') as fout:
-        fout.writelines(data[14:])
+    #
+    
+    #unused?
+    #RTM_postProc.cmdReach(RTMFile)
+    #with open(lPath+"\\pamrtm\\mainSimFiles\\FILLING_FACTOR124.txt", "r") as fin:
+    #    data = fin.read().splitlines(True)
+    #with open(lPath+'\\pamrtm\\mainSimFiles\\FILLING_FACTOR125.txt', 'w') as fout:
+    #    fout.writelines(data[14:])
     
     return(RTMFile)
 

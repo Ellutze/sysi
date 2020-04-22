@@ -305,7 +305,7 @@ def automesh(meshsize,RTMfile,RTMF,lPath_auto):
     with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
         text_file.write("meshed\n")
     
-def simPar(resin):
+def simPar(resin,lPath_auto):
     #Specify the RTM parameters.
     VE.SetActiveWindow( r"p1w1" )
     ret=VE.ChangeContext( r"Visual-RTM" )

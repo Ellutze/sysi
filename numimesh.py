@@ -240,14 +240,16 @@ def XSP(varVal,CADfile = "none_A000_JK"):
     
         #check if enough space to use prescribed radius
         RADi = 0
-        while RADi <= varVal["RAD"]:
+        while RADi <= varVal["RAD"]*3:
             #find the distance between the front nodes of the spars, and aft nodes of the spar, consider the smaller gap
             RADi = min(abs(TT[0,2]-BB[BBl-1,2])/2 , abs(TT[TTl-1,2]-BB[0,2])/2)
-            if RADi < varVal["RAD"]*5:
+            if RADi <= varVal["RAD"]*3:
                 varVal["RAD"] = varVal["RAD"]*0.95
                 print("radius has been adjusted")
                 print(varVal["RAD"])
         #print(varVal["RAD"],"RAD")
+        
+        
         
         #ML2 is the front wall of the spar
         if meepo != 0:
@@ -267,6 +269,9 @@ def XSP(varVal,CADfile = "none_A000_JK"):
         while i < nE:
             ML2 = np.insert(ML2, (i), np.matrix([2+0.0001*i,ML2[(i-1),1]-(MLYs/nE),ML2[(i-1),2]-(ML2s/nE),z]), axis=0)
             i = i + 1
+            
+            
+            
         if meepo !=0:
             if np.size(ML2,0) != np.size(ML2_old,0):
                 print("error has occured, third sections have varying number of elements")     
@@ -300,13 +305,10 @@ def XSP(varVal,CADfile = "none_A000_JK"):
         #Corners 
         if meepo != 0:
             ML99_old = np.copy(ML99)
-            
+
         ML99 = np.zeros([1,4])
         #ML_ =np.zeros([1,4])
-        #print(ML0)
-        #print(ML2)
-        #print(ML4)
-        #print(ML6)
+
         #print(ML0[np.size(ML0,0)-1,1])
         ML8 = ML0
         ii = 0
@@ -332,18 +334,16 @@ def XSP(varVal,CADfile = "none_A000_JK"):
                 
             else:
                 iy = -1
-            print(x1,x2,y1,y2,"x1,x2,y1,y2")
+            #print(x1,x2,y1,y2,"x1,x2,y1,y2")
             Vx = (abs(x1-x2)*ix)/(d*2)
             Vy = (abs(y1-y2)*iy)/(d*2)
             
-            print(Vx,Vy,"Vx,Vy")
+            #print(Vx,Vy,"Vx,Vy")
         
             ptx = ((x1+x2)/2)+A*Vx
             pty = ((y1+y2)/2)+A*Vy
             
-            print(ptx)
-            print(pty)
-            
+
             #the embeded if/else prevents division by 0, assigns the straight line 
             #angles that would result.
             if ii == 0 or ii == 2:
@@ -370,8 +370,9 @@ def XSP(varVal,CADfile = "none_A000_JK"):
                 o = 1
                 cca = int((d*2)/(mshI/o))
                 #check if this works, prevents division by 0
-                if cca == 0:
-                    cca = 1
+                #at least 2 elements in corner are required
+                if cca < 2:
+                    cca = 2
             else:
                 count = 0
                 mj = 0
@@ -398,7 +399,7 @@ def XSP(varVal,CADfile = "none_A000_JK"):
                 i = i + 1
             ii = ii + 1  
         ML99 = np.delete(ML99,0,axis=0)
-        print(ML99)
+        #print(ML99)
     
         if meepo !=0:
             if np.size(ML99,0) != np.size(ML99_old,0):
@@ -418,8 +419,7 @@ def XSP(varVal,CADfile = "none_A000_JK"):
         ML[:,:,meepo]=MLX
         #print(np.size(ML,0))
         
-        
-        
+
         #assemble all groups of points into the first matrix of ML
         meepo = meepo + 1    
         #note down the number of points in each section... next iteration/cross-section will have element size based on number of elements in first
@@ -430,6 +430,7 @@ def XSP(varVal,CADfile = "none_A000_JK"):
         #create matrix of vectors
         #the spanwise size of elements depends on local cross-section size
         #use the vectors to generate all points
+
     MLm = np.copy(ML)
     
     #the for spheres table:
@@ -462,26 +463,26 @@ def XSP(varVal,CADfile = "none_A000_JK"):
             else:
                 localLen = np.sqrt((ML[iv,1,i+1]-ML[iv+1,1,i+1])**2 + (ML[iv,2,i+1]-ML[iv+1,2,i+1])**2)
             csL2 = csL2 + localLen
-            iv = iv + 1
-            
+            iv = iv + 1  
         
-        GRAD = (csL2/csL)#/(ML[0,3,i+1]-ML[0,3,i])
+        ratio = (csL2/csL)#/(ML[0,3,i+1]-ML[0,3,i])
 
         if i == 0:
             mesh1 = varVal["mesh_size"]
-            mesh2 = varVal["mesh_size"]*GRAD
+            mesh2 = varVal["mesh_size"]*ratio
         else:
             mesh1 = mesh2
-            mesh2 = mesh2*GRAD
+            mesh2 = mesh1*ratio
         RAT = (mesh2-mesh1)/(ML[0,3,i+1]-ML[0,3,i])
+        print("RAT",RAT)
         RAT100 = RAT/100
-        #only chance meshsize when gradient is non-zero
-        if abs(GRAD) >0.01:
-
+        #only change meshsize when gradient is non-zero
+        if abs(RAT) >0.0001:
+            print("some kind of taper")
             remain = 0
             lm = mesh1
     
-            while varVal["mesh_size"]*0.85 > remain:
+            while mesh2*0.85 > remain:
                 zi = ML[0,3,i] +lm
                 SM = np.matrix([[0,0]])
                 while zi < ML[0,3,i+1]:
@@ -494,23 +495,25 @@ def XSP(varVal,CADfile = "none_A000_JK"):
                     SM = np.concatenate((SM,SMtemp),axis= 0)
                     #calculate cumulative distance
                     zi = zi + lm
+ 
                 SM = np.delete(SM,0,axis=0)
                 
                     
                 #on
                 remain = ML[0,3,i+1]-(zi - lm)
-                if remain < 0.85*varVal["mesh_size"]:                
+                if remain < 0.85*mesh2:                
                     RAT = RAT-RAT100
-                    lm = varVal["mesh_size"]
+                    lm = mesh1
+                    print("ADJUSTED RAT")
+                    print(RAT)
                         #refresh the mesh table
-                
                 #after the gap was fine
-                
+               
                 #you have the mesh table, use this later in numimesh, export this for spheres
                 #UNDER CONSTRUCTION
         else:
             #SM generation
-            
+            print("no taper")
             zdif = ML[0,3,i+1]-ML[0,3,i]
             mshTii = abs(int(zdif/mshI))
             mshTi = zdif/mshTii
@@ -524,6 +527,11 @@ def XSP(varVal,CADfile = "none_A000_JK"):
             mesh2 = varVal["mesh_size"]
             
             # output to for_spheres
+        
+        #check if the last generated zi is exactly the same one from core section
+        if ML[0,3,i+1]-SM[(np.size(SM,0)-1),0] < mesh2*0.5:########################0.7 under trial
+            SM = np.delete(SM,np.size(SM,0)-1,axis=0)
+            print("duplicate segment correction executed")
         
         ii = 0
         z = ML[0,3,i]
@@ -545,10 +553,14 @@ def XSP(varVal,CADfile = "none_A000_JK"):
             
         #combine pre-existing mesh sizes, newly generated ones, and end mesh size for current section
         smMain = np.concatenate((smMain,SM,np.matrix([[ML[0,3,i+1],mesh2]])),axis = 0)  
-        
     
             
         i = i + 1
+        
+    
+
+        
+        
     print("here fore the tes")
     #save for spheres
     np.save(lPath+'\\Temporary\\for_spheres', smMain)
@@ -572,17 +584,20 @@ def XSP(varVal,CADfile = "none_A000_JK"):
     print("meshing took:"+str(time.time()-st118)+" seconds") 
     np.save(lPath+"\\catiafiles\\meshfiles\\"+MeshFile+"_nodes.npy", MLm)
     return(MeshFile, span_ele_size, xs_seed)
+    
+    #only for visual
+    #return(MLm,xAnchor,yAnchor)
         #save all points - into CATIA for check? 
  
-'''      
+'''
 #MeshFile = "xxxX"
 varVal, varMin,varMax = getBase()
-varVal["mesh_size"] =2
+varVal["mesh_size"] =1.3
 varVal["chord_1"]=135.8
-varVal["chord_3"]=62.7
-varVal["RAD"]=4.68
+varVal["chord_3"]=400
+varVal["RAD"]=12
 MLm,xAnchor,yAnchor = XSP(varVal)
 print(MLm)
-#IDP_inpGen.plotXSP(MLm,xAnchor,yAnchor,varVal)
+IDP_inpGen.plotXSP(MLm,xAnchor,yAnchor,varVal)
 #IDP_inpGen.inpGen(MLm,MeshFile)
 '''

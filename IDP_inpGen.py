@@ -113,10 +113,10 @@ def plotXSP(MLm,xAnchor,yAnchor,varVal):
     #s1.triangle(X3[:,3], x, size=10, color="firebrick", alpha=0.5,legend="predictions")
     
     #Create second plot
-    s2 = figure(title="Infusion time with different tool temperatures",plot_width=1800, plot_height=400)
+    s2 = figure(title="Spar section mesh",plot_width=1800, plot_height=400)
     i = 0
     while i < np.size(MLm,2):
-        s2.circle(MLm[:,1,i], MLm[:,2,i], size=10, color="firebrick", alpha=0.5,legend="1")
+        s2.circle(MLm[:,1,i], MLm[:,2,i], size=5, color="firebrick", alpha=0.5,legend="datum")
         i = i + 1
     
     #s2.circle(ML[:,1,1], ML[:,2,1], size=10, color="firebrick", alpha=0.5,legend="1")
@@ -124,10 +124,10 @@ def plotXSP(MLm,xAnchor,yAnchor,varVal):
     #s2.circle(ML[:,1,2], ML[:,2,2], color="green", alpha =0.5,legend="2")
     #s2.circle(ML[:,1,3], ML[:,2,3], color="black", alpha =0.5,legend="3")
     
-    s2.triangle(airfoil[:,0],airfoil[:,1],color="purple",alpha = 0.5,legend="airfoil")
-    s2.triangle(xAnchor,yAnchor,color="green",alpha = 0.5,legend="Anchor")
-    s2.xaxis.axis_label = 'pos2'
-    s2.yaxis.axis_label = 'inf perc'
+    s2.triangle(airfoil[:,0],airfoil[:,1],color="blue",alpha = 0.5,legend="airfoil")
+    s2.triangle(xAnchor,yAnchor,color="green",alpha = 0.5,legend="spar")
+    s2.xaxis.axis_label = 'x'
+    s2.yaxis.axis_label = 'y'
     s2.legend.location = "top_right"
     
     # put the results in a row

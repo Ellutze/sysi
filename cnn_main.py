@@ -3,7 +3,7 @@ import lam_tools
 import numpy as np
 import time
 import os
-import spheres
+
 #import MySQL_utils
 
 def aba_inputProp(BraidFile,CADfile,varVal):
@@ -12,8 +12,6 @@ def aba_inputProp(BraidFile,CADfile,varVal):
     #run function to obtain spheres input
     
     
-    
-    #spheres.spheres(varVal)
     
     #this function segments the part into uniform material propertis areas
     #then it calculates the appropriate properties from the results of braiding analysis

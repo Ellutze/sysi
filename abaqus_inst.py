@@ -12,7 +12,6 @@ lPath_auto='D:\sysi'
 def mean(numbers):
     return float(sum(numbers)) / max(len(numbers), 1)
     
-
 from part import *
 from material import *
 from section import *
@@ -30,8 +29,7 @@ from connectorBehavior import *
 with open(lPath_auto+"\\temporary\\CAP.txt", "a") as text_file:
     text_file.write("Initiated abaqus model generation.\n")
         
-
-    #input file - instead function arguments - which are not possible due to the command line passing
+#input file - instead function arguments - which are not possible due to the command line passing
 fl = open(lPath_auto+"\\temporary\\fe_in.txt","rt")
 flstr = fl.read() 
 FeFile = flstr.split("---")[1]
@@ -54,16 +52,15 @@ if meshType == "CATIA":
     MeshDivision = 1  #changing this doesnt work now, the spheres allocation are defined  for default ("1") mesh division
     mdb.models['Model-1'].parts['x'].seedEdgeByNumber(constraint=FINER, edges=mdb.models['Model-1'].parts['x'].edges.getSequenceFromMask(('[#ffffffff:250 #3fffffff ]', ), ), number=MeshDivision)
     mdb.models['Model-1'].parts['x'].generateMesh()
-elif meshType == "numimesh":
-    #the default version of mesh, faster than CATIA.
-    #Orphan mesh is uploaded with this option
-
-    mdb.models['Model-1'].PartFromInputFile(inputFileName=lPath_auto+"\\catiafiles\\meshfiles\\"+MeshFile+".inp")
-
-
+    
     #mesh the part, only for purposes of abaqus, the shape should already be discretized into elements
     #the only reason to increase the element numbers here is for more precise assignment of material properties, the FE calculation itself should not improve
     #mesh division allows for more fidelity in assigning manufacturing material properties
+    
+elif meshType == "numimesh":
+    #the default version of mesh, faster than CATIA.
+    #Orphan mesh is uploaded with this option
+    mdb.models['Model-1'].PartFromInputFile(inputFileName=lPath_auto+"\\catiafiles\\meshfiles\\"+MeshFile+".inp")
 
 with open(lPath_auto+"\\abaqusfiles\\cp.txt", "a") as text_file:
         text_file.write("File imported.\n")
@@ -104,7 +101,7 @@ with open("Temporary\\BraidData.csv",'r')as ins:
 #therefore the braided layer is defined by two unidirectional layers of provided properties
 #oritentation is kept 0 - the braid angles are accounted for in the properties calculated for this (principle) direction
     
-    #under construction: multi layer option addition
+#multi layer option addition
 with open(lPath_auto+"\\abaqusfiles\\cp.txt", "a") as text_file:
         text_file.write("Materials defined.\n")
     

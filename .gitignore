@@ -13,3 +13,7 @@ layout.html
 
 /catiafiles/braidfiles
 /pamrtm
+*currentProgress.txt
+abaqus1.rec
+abaqus_acis.log
+/pamrtm/mainSimFiles

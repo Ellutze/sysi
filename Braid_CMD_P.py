@@ -53,7 +53,7 @@ def baseBraid(varVal,CADfile,MeshFile):
     
     #ammending the number of iterations required based on expected braid angles
     ratio2 = MS/rotax
-    spoolsWa =  max(4,int(0.4*ratio2))
+    spoolsWa =  max(4,int(0.8*ratio2))
     print(spoolsWa)
     
     trimfile = CADfile.split("_")[0]+"_"+CADfile.split("_")[1]+"_"\
