@@ -504,8 +504,7 @@ def XSP(varVal,CADfile = "none_A000_JK"):
                 if remain < 0.85*mesh2:                
                     RAT = RAT-RAT100
                     lm = mesh1
-                    print("ADJUSTED RAT")
-                    print(RAT)
+
                         #refresh the mesh table
                 #after the gap was fine
                

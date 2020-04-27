@@ -385,11 +385,12 @@ while ii < lenSM:
         #after assigning faces return ErrRat to base value
         ErrRat = 1
     ii = ii + 1
+    
     if lenSM == ii:
         #this is used to correct for unassigned regions
         if np.size(elPOS,0) > 0:
             ii = 0
-            offs = 600
+            offs = offs+300
             cnt = 0
             ErrRat = 1.1*ErrRat
     

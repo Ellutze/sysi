@@ -224,6 +224,9 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
         p4 = CP1[0,:]  
     
     #Main iteration
+    #Distancing matrix used for troubleshooting
+    dCheck = np.matrix([[0,0,0]])
+    ts = np.matrix([[SPP[0],SPP[1],SPP[2],poc1[0],poc1[1],poc1[2]]])
 
     while seg < np.size(MD,2)-2:
         #find current position of spool
@@ -311,6 +314,11 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
             SPP = noSerpent(T,YARN,maxR,gd,WW,rota,spoolsWa,MS,imd,datum)
             #move spool (by rotation and mandrel speed)
             #find if spp is above or below plane
+            
+            
+            tsTemp = np.matrix([[SPP[0],SPP[1],SPP[2],poc1[0],poc1[1],poc1[2]]])
+            ts = np.concatenate((ts,tsTemp),0)
+            
             tst = np.dot(normalX,(SPP-p4))
                 #tst    dot(normal,(spp-p0)) -- where p0 is p4
             ui = ui + 1
@@ -375,6 +383,10 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
             
         
         poc1 = prop
+        
+        tsTemp = np.matrix([[SPP[0],SPP[1],SPP[2],poc1[0],poc1[1],poc1[2]]])
+        ts = np.concatenate((ts,tsTemp),0)
+        
         #propagate points (p1,p2,p3,p4)
         #refer to sketch for point propagation. TBD
         if bn == 0:
@@ -453,6 +465,9 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
         sppList = np.concatenate((sppList,np.matrix([[SPP[0],SPP[1],SPP[2]]])))
         #append to list of pocs
         
+        dCheckT = np.matrix([[poc1[2],SPP[2],(SPP[2]-poc1[2])]])
+        dCheck = np.concatenate((dCheck,dCheckT),0)
+        
         z = poc1[2]
     
         #seg = seg + 1
@@ -480,6 +495,10 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
     #store pocList and sppList for troubleshooting and review
     np.save(lPath+"\\temporary\\pocList.npy", pocList[:,1:4])    
     np.save(lPath+"\\temporary\\sppList.npy", sppList) 
+    
+    #for t-shoot:
+    np.save(lPath+"\\temporary\\dCheck.npy",dCheck)
+    np.save(lPath+"\\temporary\\"+str(YARN)+"yarn"+str(WW)+".npy",ts)
     #add to matrix?
     
     print("YARN "+str(YARN)+" simulation time :--- %s seconds ---" % (time.time() - st2)) 

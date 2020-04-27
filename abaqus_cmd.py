@@ -9,4 +9,4 @@ def cmd(command):
     print(proc_stdout)
     
 
-#cmd("abaqus cae noGUI=abaqus_postProc.py")
+#cmd("abaqus cae noGUI=abaqus_inst.py")

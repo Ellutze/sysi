@@ -21,8 +21,8 @@ st42 = time.time()
 CATIA = win32com.client.Dispatch("CATIA.Application")
 CATIA.RefreshDisplay = False
 #documents1 = CATIA.Documents # this line is not currently in use
-cadFile = "IDP_spar_A730_JK"
-braidFile = "IDP_spar_A730_B001"
+cadFile = "IDP_spar_A758_JK"
+braidFile = "IDP_spar_A758_B001"
 
 #location of CATIA file to be meshed
 #delete after testing:
@@ -66,7 +66,7 @@ hss1.SetSupport(ref1)
 count = 0
 for row in rows:
     
-    if count < 4:
+    if count < 2:
         BP.append(row)
         yr = int(row[0])
         if yarn < yr:
@@ -96,8 +96,9 @@ hb2.AppendHybridShape(hss1)
 import os
 
 lPath = os.path.dirname(os.path.abspath(__file__))
+
 #np import spheres
-II = np.load(lPath+'\\catiafiles\\meshfiles\\IDP_spar_A730_N001_nodes.npy')
+II = np.load(lPath+'\\catiafiles\\meshfiles\\IDP_spar_A758_N001_nodes.npy')
 print(II)
 hb91 = hbs.Add()
 hb91.Name="mesh"
@@ -114,7 +115,27 @@ while i < np.size(II,0):
     i = i + 1
 
 
+'''
+hb11 = hbs.Add()
+hb11.Name="SPP"
+hb22 = hbs.Add()
+hb22.Name="poc1"
+hb = hbs.Add()
+hb.Name="connections"
+p = np.load(lPath+'\\temporary\\1yarn0.npy')
+i = 0
+while i < np.size(p,0):
+    cord1 = HSF.AddNewPointCoord(p[i,0], p[i,1], p[i,2])
+    hb11.AppendHybridShape(cord1)
+    cord2 = HSF.AddNewPointCoord(p[i,3], p[i,4], p[i,5])
+    hb22.AppendHybridShape(cord2)    
+    ref2 = part1.CreateReferenceFromObject(cord1)
+    ref1 = part1.CreateReferenceFromObject(cord2)
+    hslx = HSF.AddNewLinePtPt(ref1, ref2)
+    hb.AppendHybridShape(hslx)
+    i = i + 1
 
+'''
 part1.Update 
 
 
