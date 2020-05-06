@@ -528,7 +528,7 @@ def XSP(varVal,CADfile = "none_A000_JK"):
             # output to for_spheres
         
         #check if the last generated zi is exactly the same one from core section
-        if ML[0,3,i+1]-SM[(np.size(SM,0)-1),0] < mesh2*0.5:########################0.7 under trial
+        if ML[0,3,i+1]-SM[(np.size(SM,0)-1),0] < mesh2*0.25:########################0.7 under trial
             SM = np.delete(SM,np.size(SM,0)-1,axis=0)
             print("duplicate segment correction executed")
         
@@ -558,9 +558,6 @@ def XSP(varVal,CADfile = "none_A000_JK"):
         
     
 
-        
-        
-    print("here fore the tes")
     #save for spheres
     np.save(lPath+'\\Temporary\\for_spheres', smMain)
     

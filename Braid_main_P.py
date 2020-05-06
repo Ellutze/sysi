@@ -497,8 +497,8 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
     np.save(lPath+"\\temporary\\sppList.npy", sppList) 
     
     #for t-shoot:
-    np.save(lPath+"\\temporary\\dCheck.npy",dCheck)
-    np.save(lPath+"\\temporary\\"+str(YARN)+"yarn"+str(WW)+".npy",ts)
+    #np.save(lPath+"\\temporary\\dCheck.npy",dCheck)
+    #np.save(lPath+"\\temporary\\"+str(YARN)+"yarn"+str(WW)+".npy",ts)
     #add to matrix?
     
     print("YARN "+str(YARN)+" simulation time :--- %s seconds ---" % (time.time() - st2)) 

@@ -9694,4 +9694,2874 @@ test239
 orientations assigned
 flow rate assigned
 vent specifiedmodel saved, simulation ready
-The initial simulation starts here:
+The initial simulation starts here:__IDP_spar_A795_M002_JK.igs
+chopchop
+toolbox initiated
+______NewRun-_____IDP_spar_A795_M002_JK.igs_________
+initiated
+yupgogoyup
+yupyup
+eaiho
+ssssss  MFace  @0/@0 @0/@1 @0/@3 @0/@4 @0/@6 @0/@9 @0/@11 @0/@18 
+ssssss  MFace  @0/@2 @0/@5 @0/@7 @0/@10 @0/@12 @0/@17 @0/@19 @0/@28 
+ssssss  MFace  @0/@14 @0/@21 @0/@30 @0/@41 
+ssssss  MFace  @0/@23 @0/@32 @0/@43 @0/@56 
+ssssss  MFace  @0/@34 @0/@45 @0/@58 @0/@73 
+ssssss  MFace  @0/@47 @0/@60 @0/@62 @0/@75 @0/@77 @0/@91 @0/@93 @0/@109 
+ssssss  MFace  @0/@79 @0/@95 @0/@111 @0/@127 
+ssssss  MFace  @0/@63 @0/@78 @0/@94 @0/@110 
+ssssss  MFace  @0/@48 @0/@61 @0/@76 @0/@92 
+ssssss  MFace  @0/@35 @0/@46 @0/@59 @0/@74 
+ssssss  MFace  @0/@15 @0/@22 @0/@24 @0/@31 @0/@33 @0/@42 @0/@44 @0/@57 
+ssssss  MFace  @0/@8 @0/@13 @0/@20 @0/@29 
+ssssss  MFace  @0/@16 @0/@25 @0/@27 @0/@36 @0/@38 @0/@49 @0/@51 @0/@66 
+ssssss  MFace  @0/@26 @0/@37 @0/@39 @0/@50 @0/@52 @0/@65 @0/@67 @0/@83 
+ssssss  MFace  @0/@54 @0/@69 @0/@85 @0/@101 
+ssssss  MFace  @0/@71 @0/@87 @0/@103 @0/@119 
+ssssss  MFace  @0/@89 @0/@105 @0/@121 @0/@137 
+ssssss  MFace  @0/@107 @0/@123 @0/@125 @0/@139 @0/@141 @0/@155 @0/@157 @0/@173 
+ssssss  MFace  @0/@143 @0/@159 @0/@175 @0/@191 
+ssssss  MFace  @0/@126 @0/@142 @0/@158 @0/@174 
+ssssss  MFace  @0/@108 @0/@124 @0/@140 @0/@156 
+ssssss  MFace  @0/@90 @0/@106 @0/@122 @0/@138 
+ssssss  MFace  @0/@55 @0/@70 @0/@72 @0/@86 @0/@88 @0/@102 @0/@104 @0/@120 
+ssssss  MFace  @0/@40 @0/@53 @0/@68 @0/@84 
+ssssss  MFace  @0/@64 @0/@80 @0/@82 @0/@96 @0/@98 @0/@112 @0/@114 @0/@130 
+ssssss  MFace  @0/@81 @0/@97 @0/@99 @0/@113 @0/@115 @0/@129 @0/@131 @0/@147 
+ssssss  MFace  @0/@117 @0/@133 @0/@149 @0/@165 
+ssssss  MFace  @0/@135 @0/@151 @0/@167 @0/@183 
+ssssss  MFace  @0/@153 @0/@169 @0/@185 @0/@201 
+ssssss  MFace  @0/@171 @0/@187 @0/@189 @0/@203 @0/@205 @0/@219 @0/@221 @0/@237 
+ssssss  MFace  @0/@207 @0/@223 @0/@239 @0/@255 
+ssssss  MFace  @0/@190 @0/@206 @0/@222 @0/@238 
+ssssss  MFace  @0/@172 @0/@188 @0/@204 @0/@220 
+ssssss  MFace  @0/@154 @0/@170 @0/@186 @0/@202 
+ssssss  MFace  @0/@118 @0/@134 @0/@136 @0/@150 @0/@152 @0/@166 @0/@168 @0/@184 
+ssssss  MFace  @0/@100 @0/@116 @0/@132 @0/@148 
+ssssss  MFace  @0/@128 @0/@144 @0/@146 @0/@160 @0/@162 @0/@176 @0/@178 @0/@194 
+ssssss  MFace  @0/@145 @0/@161 @0/@163 @0/@177 @0/@179 @0/@193 @0/@195 @0/@211 
+ssssss  MFace  @0/@181 @0/@197 @0/@213 @0/@229 
+ssssss  MFace  @0/@199 @0/@215 @0/@231 @0/@247 
+ssssss  MFace  @0/@217 @0/@233 @0/@249 @0/@265 
+ssssss  MFace  @0/@235 @0/@251 @0/@253 @0/@267 @0/@269 @0/@283 @0/@285 @0/@301 
+ssssss  MFace  @0/@271 @0/@287 @0/@303 @0/@319 
+ssssss  MFace  @0/@254 @0/@270 @0/@286 @0/@302 
+ssssss  MFace  @0/@236 @0/@252 @0/@268 @0/@284 
+ssssss  MFace  @0/@218 @0/@234 @0/@250 @0/@266 
+ssssss  MFace  @0/@182 @0/@198 @0/@200 @0/@214 @0/@216 @0/@230 @0/@232 @0/@248 
+ssssss  MFace  @0/@164 @0/@180 @0/@196 @0/@212 
+ssssss  MFace  @0/@192 @0/@208 @0/@210 @0/@224 @0/@226 @0/@240 @0/@242 @0/@258 
+ssssss  MFace  @0/@209 @0/@225 @0/@227 @0/@241 @0/@243 @0/@257 @0/@259 @0/@275 
+ssssss  MFace  @0/@245 @0/@261 @0/@277 @0/@293 
+ssssss  MFace  @0/@263 @0/@279 @0/@295 @0/@311 
+ssssss  MFace  @0/@281 @0/@297 @0/@313 @0/@329 
+ssssss  MFace  @0/@299 @0/@315 @0/@317 @0/@331 @0/@333 @0/@347 @0/@349 @0/@365 
+ssssss  MFace  @0/@335 @0/@351 @0/@367 @0/@383 
+ssssss  MFace  @0/@318 @0/@334 @0/@350 @0/@366 
+ssssss  MFace  @0/@300 @0/@316 @0/@332 @0/@348 
+ssssss  MFace  @0/@282 @0/@298 @0/@314 @0/@330 
+ssssss  MFace  @0/@246 @0/@262 @0/@264 @0/@278 @0/@280 @0/@294 @0/@296 @0/@312 
+ssssss  MFace  @0/@228 @0/@244 @0/@260 @0/@276 
+ssssss  MFace  @0/@256 @0/@272 @0/@274 @0/@288 @0/@290 @0/@304 @0/@306 @0/@322 
+ssssss  MFace  @0/@273 @0/@289 @0/@291 @0/@305 @0/@307 @0/@321 @0/@323 @0/@339 
+ssssss  MFace  @0/@309 @0/@325 @0/@341 @0/@357 
+ssssss  MFace  @0/@327 @0/@343 @0/@359 @0/@375 
+ssssss  MFace  @0/@345 @0/@361 @0/@377 @0/@393 
+ssssss  MFace  @0/@363 @0/@379 @0/@381 @0/@395 @0/@397 @0/@411 @0/@413 @0/@429 
+ssssss  MFace  @0/@399 @0/@415 @0/@431 @0/@447 
+ssssss  MFace  @0/@382 @0/@398 @0/@414 @0/@430 
+ssssss  MFace  @0/@364 @0/@380 @0/@396 @0/@412 
+ssssss  MFace  @0/@346 @0/@362 @0/@378 @0/@394 
+ssssss  MFace  @0/@310 @0/@326 @0/@328 @0/@342 @0/@344 @0/@358 @0/@360 @0/@376 
+ssssss  MFace  @0/@292 @0/@308 @0/@324 @0/@340 
+ssssss  MFace  @0/@320 @0/@336 @0/@338 @0/@352 @0/@354 @0/@368 @0/@370 @0/@386 
+ssssss  MFace  @0/@337 @0/@353 @0/@355 @0/@369 @0/@371 @0/@385 @0/@387 @0/@403 
+ssssss  MFace  @0/@373 @0/@389 @0/@405 @0/@421 
+ssssss  MFace  @0/@391 @0/@407 @0/@423 @0/@439 
+ssssss  MFace  @0/@409 @0/@425 @0/@441 @0/@457 
+ssssss  MFace  @0/@427 @0/@443 @0/@445 @0/@459 @0/@461 @0/@475 @0/@477 @0/@493 
+ssssss  MFace  @0/@463 @0/@479 @0/@495 @0/@511 
+ssssss  MFace  @0/@446 @0/@462 @0/@478 @0/@494 
+ssssss  MFace  @0/@428 @0/@444 @0/@460 @0/@476 
+ssssss  MFace  @0/@410 @0/@426 @0/@442 @0/@458 
+ssssss  MFace  @0/@374 @0/@390 @0/@392 @0/@406 @0/@408 @0/@422 @0/@424 @0/@440 
+ssssss  MFace  @0/@356 @0/@372 @0/@388 @0/@404 
+ssssss  MFace  @0/@384 @0/@400 @0/@402 @0/@416 @0/@418 @0/@432 @0/@434 @0/@450 
+ssssss  MFace  @0/@401 @0/@417 @0/@419 @0/@433 @0/@435 @0/@449 @0/@451 @0/@467 
+ssssss  MFace  @0/@437 @0/@453 @0/@469 @0/@485 
+ssssss  MFace  @0/@455 @0/@471 @0/@487 @0/@503 
+ssssss  MFace  @0/@473 @0/@489 @0/@505 @0/@521 
+ssssss  MFace  @0/@491 @0/@507 @0/@509 @0/@523 @0/@525 @0/@539 @0/@541 @0/@557 
+ssssss  MFace  @0/@527 @0/@543 @0/@559 @0/@575 
+ssssss  MFace  @0/@510 @0/@526 @0/@542 @0/@558 
+ssssss  MFace  @0/@492 @0/@508 @0/@524 @0/@540 
+ssssss  MFace  @0/@474 @0/@490 @0/@506 @0/@522 
+ssssss  MFace  @0/@438 @0/@454 @0/@456 @0/@470 @0/@472 @0/@486 @0/@488 @0/@504 
+ssssss  MFace  @0/@420 @0/@436 @0/@452 @0/@468 
+ssssss  MFace  @0/@448 @0/@464 @0/@466 @0/@480 @0/@482 @0/@496 @0/@498 @0/@514 
+ssssss  MFace  @0/@465 @0/@481 @0/@483 @0/@497 @0/@499 @0/@513 @0/@515 @0/@531 
+ssssss  MFace  @0/@501 @0/@517 @0/@533 @0/@549 
+ssssss  MFace  @0/@519 @0/@535 @0/@551 @0/@567 
+ssssss  MFace  @0/@537 @0/@553 @0/@569 @0/@585 
+ssssss  MFace  @0/@555 @0/@571 @0/@573 @0/@587 @0/@589 @0/@603 @0/@605 @0/@621 
+ssssss  MFace  @0/@591 @0/@607 @0/@623 @0/@639 
+ssssss  MFace  @0/@574 @0/@590 @0/@606 @0/@622 
+ssssss  MFace  @0/@556 @0/@572 @0/@588 @0/@604 
+ssssss  MFace  @0/@538 @0/@554 @0/@570 @0/@586 
+ssssss  MFace  @0/@502 @0/@518 @0/@520 @0/@534 @0/@536 @0/@550 @0/@552 @0/@568 
+ssssss  MFace  @0/@484 @0/@500 @0/@516 @0/@532 
+ssssss  MFace  @0/@512 @0/@528 @0/@530 @0/@544 @0/@546 @0/@560 @0/@562 @0/@578 
+ssssss  MFace  @0/@529 @0/@545 @0/@547 @0/@561 @0/@563 @0/@577 @0/@579 @0/@595 
+ssssss  MFace  @0/@565 @0/@581 @0/@597 @0/@613 
+ssssss  MFace  @0/@583 @0/@599 @0/@615 @0/@631 
+ssssss  MFace  @0/@601 @0/@617 @0/@633 @0/@649 
+ssssss  MFace  @0/@619 @0/@635 @0/@637 @0/@651 @0/@653 @0/@667 @0/@669 @0/@685 
+ssssss  MFace  @0/@655 @0/@671 @0/@687 @0/@703 
+ssssss  MFace  @0/@638 @0/@654 @0/@670 @0/@686 
+ssssss  MFace  @0/@620 @0/@636 @0/@652 @0/@668 
+ssssss  MFace  @0/@602 @0/@618 @0/@634 @0/@650 
+ssssss  MFace  @0/@566 @0/@582 @0/@584 @0/@598 @0/@600 @0/@614 @0/@616 @0/@632 
+ssssss  MFace  @0/@548 @0/@564 @0/@580 @0/@596 
+ssssss  MFace  @0/@576 @0/@592 @0/@594 @0/@608 @0/@610 @0/@624 @0/@626 @0/@642 
+ssssss  MFace  @0/@593 @0/@609 @0/@611 @0/@625 @0/@627 @0/@641 @0/@643 @0/@659 
+ssssss  MFace  @0/@629 @0/@645 @0/@661 @0/@677 
+ssssss  MFace  @0/@647 @0/@663 @0/@679 @0/@695 
+ssssss  MFace  @0/@665 @0/@681 @0/@697 @0/@713 
+ssssss  MFace  @0/@683 @0/@699 @0/@701 @0/@715 @0/@717 @0/@731 @0/@733 @0/@749 
+ssssss  MFace  @0/@719 @0/@735 @0/@751 @0/@767 
+ssssss  MFace  @0/@702 @0/@718 @0/@734 @0/@750 
+ssssss  MFace  @0/@684 @0/@700 @0/@716 @0/@732 
+ssssss  MFace  @0/@666 @0/@682 @0/@698 @0/@714 
+ssssss  MFace  @0/@630 @0/@646 @0/@648 @0/@662 @0/@664 @0/@678 @0/@680 @0/@696 
+ssssss  MFace  @0/@612 @0/@628 @0/@644 @0/@660 
+ssssss  MFace  @0/@640 @0/@656 @0/@658 @0/@672 @0/@674 @0/@688 @0/@690 @0/@706 
+ssssss  MFace  @0/@657 @0/@673 @0/@675 @0/@689 @0/@691 @0/@705 @0/@707 @0/@723 
+ssssss  MFace  @0/@693 @0/@709 @0/@725 @0/@741 
+ssssss  MFace  @0/@711 @0/@727 @0/@743 @0/@759 
+ssssss  MFace  @0/@729 @0/@745 @0/@761 @0/@777 
+ssssss  MFace  @0/@747 @0/@763 @0/@765 @0/@779 @0/@781 @0/@795 @0/@797 @0/@813 
+ssssss  MFace  @0/@783 @0/@799 @0/@815 @0/@831 
+ssssss  MFace  @0/@766 @0/@782 @0/@798 @0/@814 
+ssssss  MFace  @0/@748 @0/@764 @0/@780 @0/@796 
+ssssss  MFace  @0/@730 @0/@746 @0/@762 @0/@778 
+ssssss  MFace  @0/@694 @0/@710 @0/@712 @0/@726 @0/@728 @0/@742 @0/@744 @0/@760 
+ssssss  MFace  @0/@676 @0/@692 @0/@708 @0/@724 
+ssssss  MFace  @0/@704 @0/@720 @0/@722 @0/@736 @0/@738 @0/@752 @0/@754 @0/@770 
+ssssss  MFace  @0/@721 @0/@737 @0/@739 @0/@753 @0/@755 @0/@769 @0/@771 @0/@787 
+ssssss  MFace  @0/@757 @0/@773 @0/@789 @0/@805 
+ssssss  MFace  @0/@775 @0/@791 @0/@807 @0/@823 
+ssssss  MFace  @0/@793 @0/@809 @0/@825 @0/@841 
+ssssss  MFace  @0/@811 @0/@827 @0/@829 @0/@843 @0/@845 @0/@859 @0/@861 @0/@877 
+ssssss  MFace  @0/@847 @0/@863 @0/@879 @0/@895 
+ssssss  MFace  @0/@830 @0/@846 @0/@862 @0/@878 
+ssssss  MFace  @0/@812 @0/@828 @0/@844 @0/@860 
+ssssss  MFace  @0/@794 @0/@810 @0/@826 @0/@842 
+ssssss  MFace  @0/@758 @0/@774 @0/@776 @0/@790 @0/@792 @0/@806 @0/@808 @0/@824 
+ssssss  MFace  @0/@740 @0/@756 @0/@772 @0/@788 
+ssssss  MFace  @0/@768 @0/@784 @0/@786 @0/@800 @0/@802 @0/@816 @0/@818 @0/@834 
+ssssss  MFace  @0/@785 @0/@801 @0/@803 @0/@817 @0/@819 @0/@833 @0/@835 @0/@851 
+ssssss  MFace  @0/@821 @0/@837 @0/@853 @0/@869 
+ssssss  MFace  @0/@839 @0/@855 @0/@871 @0/@887 
+ssssss  MFace  @0/@857 @0/@873 @0/@889 @0/@905 
+ssssss  MFace  @0/@875 @0/@891 @0/@893 @0/@907 @0/@909 @0/@923 @0/@925 @0/@941 
+ssssss  MFace  @0/@911 @0/@927 @0/@943 @0/@959 
+ssssss  MFace  @0/@894 @0/@910 @0/@926 @0/@942 
+ssssss  MFace  @0/@876 @0/@892 @0/@908 @0/@924 
+ssssss  MFace  @0/@858 @0/@874 @0/@890 @0/@906 
+ssssss  MFace  @0/@822 @0/@838 @0/@840 @0/@854 @0/@856 @0/@870 @0/@872 @0/@888 
+ssssss  MFace  @0/@804 @0/@820 @0/@836 @0/@852 
+ssssss  MFace  @0/@832 @0/@848 @0/@850 @0/@864 @0/@866 @0/@880 @0/@882 @0/@898 
+ssssss  MFace  @0/@849 @0/@865 @0/@867 @0/@881 @0/@883 @0/@897 @0/@899 @0/@915 
+ssssss  MFace  @0/@885 @0/@901 @0/@917 @0/@933 
+ssssss  MFace  @0/@903 @0/@919 @0/@935 @0/@951 
+ssssss  MFace  @0/@921 @0/@937 @0/@953 @0/@969 
+ssssss  MFace  @0/@939 @0/@955 @0/@957 @0/@971 @0/@973 @0/@987 @0/@989 @0/@1005 
+ssssss  MFace  @0/@975 @0/@991 @0/@1007 @0/@1023 
+ssssss  MFace  @0/@958 @0/@974 @0/@990 @0/@1006 
+ssssss  MFace  @0/@940 @0/@956 @0/@972 @0/@988 
+ssssss  MFace  @0/@922 @0/@938 @0/@954 @0/@970 
+ssssss  MFace  @0/@886 @0/@902 @0/@904 @0/@918 @0/@920 @0/@934 @0/@936 @0/@952 
+ssssss  MFace  @0/@868 @0/@884 @0/@900 @0/@916 
+ssssss  MFace  @0/@896 @0/@912 @0/@914 @0/@928 @0/@930 @0/@944 @0/@946 @0/@962 
+ssssss  MFace  @0/@913 @0/@929 @0/@931 @0/@945 @0/@947 @0/@961 @0/@963 @0/@979 
+ssssss  MFace  @0/@949 @0/@965 @0/@981 @0/@997 
+ssssss  MFace  @0/@967 @0/@983 @0/@999 @0/@1015 
+ssssss  MFace  @0/@985 @0/@1001 @0/@1017 @0/@1033 
+ssssss  MFace  @0/@1003 @0/@1019 @0/@1021 @0/@1035 @0/@1037 @0/@1051 @0/@1053 @0/@1069 
+ssssss  MFace  @0/@1039 @0/@1055 @0/@1071 @0/@1087 
+ssssss  MFace  @0/@1022 @0/@1038 @0/@1054 @0/@1070 
+ssssss  MFace  @0/@1004 @0/@1020 @0/@1036 @0/@1052 
+ssssss  MFace  @0/@986 @0/@1002 @0/@1018 @0/@1034 
+ssssss  MFace  @0/@950 @0/@966 @0/@968 @0/@982 @0/@984 @0/@998 @0/@1000 @0/@1016 
+ssssss  MFace  @0/@932 @0/@948 @0/@964 @0/@980 
+ssssss  MFace  @0/@960 @0/@976 @0/@978 @0/@992 @0/@994 @0/@1008 @0/@1010 @0/@1026 
+ssssss  MFace  @0/@977 @0/@993 @0/@995 @0/@1009 @0/@1011 @0/@1025 @0/@1027 @0/@1043 
+ssssss  MFace  @0/@1013 @0/@1029 @0/@1045 @0/@1061 
+ssssss  MFace  @0/@1031 @0/@1047 @0/@1063 @0/@1079 
+ssssss  MFace  @0/@1049 @0/@1065 @0/@1081 @0/@1097 
+ssssss  MFace  @0/@1067 @0/@1083 @0/@1085 @0/@1099 @0/@1101 @0/@1115 @0/@1117 @0/@1133 
+ssssss  MFace  @0/@1103 @0/@1119 @0/@1135 @0/@1151 
+ssssss  MFace  @0/@1086 @0/@1102 @0/@1118 @0/@1134 
+ssssss  MFace  @0/@1068 @0/@1084 @0/@1100 @0/@1116 
+ssssss  MFace  @0/@1050 @0/@1066 @0/@1082 @0/@1098 
+ssssss  MFace  @0/@1014 @0/@1030 @0/@1032 @0/@1046 @0/@1048 @0/@1062 @0/@1064 @0/@1080 
+ssssss  MFace  @0/@996 @0/@1012 @0/@1028 @0/@1044 
+ssssss  MFace  @0/@1024 @0/@1040 @0/@1042 @0/@1056 @0/@1058 @0/@1072 @0/@1074 @0/@1090 
+ssssss  MFace  @0/@1041 @0/@1057 @0/@1059 @0/@1073 @0/@1075 @0/@1089 @0/@1091 @0/@1107 
+ssssss  MFace  @0/@1077 @0/@1093 @0/@1109 @0/@1125 
+ssssss  MFace  @0/@1095 @0/@1111 @0/@1127 @0/@1143 
+ssssss  MFace  @0/@1113 @0/@1129 @0/@1145 @0/@1161 
+ssssss  MFace  @0/@1131 @0/@1147 @0/@1149 @0/@1163 @0/@1165 @0/@1179 @0/@1181 @0/@1197 
+ssssss  MFace  @0/@1167 @0/@1183 @0/@1199 @0/@1215 
+ssssss  MFace  @0/@1150 @0/@1166 @0/@1182 @0/@1198 
+ssssss  MFace  @0/@1132 @0/@1148 @0/@1164 @0/@1180 
+ssssss  MFace  @0/@1114 @0/@1130 @0/@1146 @0/@1162 
+ssssss  MFace  @0/@1078 @0/@1094 @0/@1096 @0/@1110 @0/@1112 @0/@1126 @0/@1128 @0/@1144 
+ssssss  MFace  @0/@1060 @0/@1076 @0/@1092 @0/@1108 
+ssssss  MFace  @0/@1088 @0/@1104 @0/@1106 @0/@1120 @0/@1122 @0/@1136 @0/@1138 @0/@1154 
+ssssss  MFace  @0/@1105 @0/@1121 @0/@1123 @0/@1137 @0/@1139 @0/@1153 @0/@1155 @0/@1171 
+ssssss  MFace  @0/@1141 @0/@1157 @0/@1173 @0/@1189 
+ssssss  MFace  @0/@1159 @0/@1175 @0/@1191 @0/@1207 
+ssssss  MFace  @0/@1177 @0/@1193 @0/@1209 @0/@1224 
+ssssss  MFace  @0/@1195 @0/@1211 @0/@1213 @0/@1226 @0/@1228 @0/@1239 @0/@1241 @0/@1252 
+ssssss  MFace  @0/@1230 @0/@1243 @0/@1254 @0/@1263 
+ssssss  MFace  @0/@1214 @0/@1229 @0/@1242 @0/@1253 
+ssssss  MFace  @0/@1196 @0/@1212 @0/@1227 @0/@1240 
+ssssss  MFace  @0/@1178 @0/@1194 @0/@1210 @0/@1225 
+ssssss  MFace  @0/@1142 @0/@1158 @0/@1160 @0/@1174 @0/@1176 @0/@1190 @0/@1192 @0/@1208 
+ssssss  MFace  @0/@1124 @0/@1140 @0/@1156 @0/@1172 
+ssssss  MFace  @0/@1152 @0/@1168 @0/@1170 @0/@1184 @0/@1186 @0/@1200 @0/@1202 @0/@1217 
+ssssss  MFace  @0/@1169 @0/@1185 @0/@1187 @0/@1201 @0/@1203 @0/@1216 @0/@1218 @0/@1231 
+ssssss  MFace  @0/@1205 @0/@1220 @0/@1233 @0/@1244 
+ssssss  MFace  @0/@1222 @0/@1235 @0/@1246 @0/@1255 
+ssssss  MFace  @0/@1237 @0/@1248 @0/@1257 @0/@1264 
+ssssss  MFace  @0/@1250 @0/@1259 @0/@1261 @0/@1266 @0/@1268 @0/@1271 @0/@1273 @0/@1276 
+ssssss  MFace  @0/@1270 @0/@1275 @0/@1278 @0/@1279 
+ssssss  MFace  @0/@1262 @0/@1269 @0/@1274 @0/@1277 
+ssssss  MFace  @0/@1251 @0/@1260 @0/@1267 @0/@1272 
+ssssss  MFace  @0/@1238 @0/@1249 @0/@1258 @0/@1265 
+ssssss  MFace  @0/@1206 @0/@1221 @0/@1223 @0/@1234 @0/@1236 @0/@1245 @0/@1247 @0/@1256 
+ssssss  MFace  @0/@1188 @0/@1204 @0/@1219 @0/@1232 
+surfaces assigned
+meshed
+simulation parameters selected
+yupyup2
+eaiho2
+crash-checkc0_____ Node  9 / 9 | Node  10 / 10 | Node  11 / 11 | Node  12 / 12 | Node  13 / 13 | Node  14 / 14 | Node  15 / 15 | Node  49 / 49 | Node  50 / 50 | Node  52 / 52 ___
+crash-checkc1_____ Node  7 / 7 | Node  8 / 8 | Node  37 / 37 | Node  38 / 38 | Node  39 / 39 | Node  40 / 40 | Node  41 / 41 | Node  42 / 42 | Node  97 / 97 | Node  98 / 98 | Node  99 / 99 | Node  100 / 100 | Node  101 / 101 | Node  102 / 102 | Node  185 / 185 ___
+crash-checkc2_____ Node  181 / 181 | Node  182 / 182 | Node  183 / 183 | Node  184 / 184 ___
+crash-checkc3_____ Node  179 / 179 | Node  180 / 180 | Node  287 / 287 | Node  289 / 289 ___
+crash-checkc4_____ Node  283 / 283 | Node  284 / 284 | Node  285 / 285 | Node  286 / 286 | Node  288 / 288 | Node  407 / 407 | Node  409 / 409 | Node  410 / 410 | Node  411 / 411 | Node  412 / 412 | Node  413 / 413 ___
+crash-checkc5_____ Node  554 / 554 | Node  555 / 555 | Node  556 / 556 | Node  559 / 559 | Node  560 / 560 | Node  727 / 727 | Node  728 / 728 | Node  729 / 729 ___
+crash-checkc6_____ Node  723 / 723 | Node  724 / 724 | Node  725 / 725 | Node  726 / 726 | Node  912 / 912 | Node  913 / 913 | Node  914 / 914 | Node  915 / 915 | Node  916 / 916 ___
+crash-checkc7_____ Node  737 / 737 | Node  738 / 738 | Node  739 / 739 | Node  740 / 740 | Node  741 / 741 ___
+crash-checkc8_____ Node  567 / 567 | Node  568 / 568 | Node  569 / 569 | Node  570 / 570 | Node  571 / 571 | Node  572 / 572 | Node  735 / 735 | Node  736 / 736 ___
+crash-checkc9_____ Node  296 / 296 | Node  298 / 298 | Node  299 / 299 | Node  300 / 300 | Node  419 / 419 | Node  420 / 420 | Node  421 / 421 | Node  422 / 422 | Node  423 / 423 | Node  424 / 424 | Node  425 / 425 | Node  566 / 566 ___
+crash-checkc10_____ Node  191 / 191 | Node  192 / 192 | Node  193 / 193 | Node  194 / 194 | Node  195 / 195 | Node  196 / 196 | Node  197 / 197 | Node  294 / 294 | Node  295 / 295 | Node  297 / 297 ___
+crash-checkc11_____ Node  51 / 51 | Node  53 / 53 | Node  54 / 54 | Node  55 / 55 | Node  109 / 109 | Node  110 / 110 | Node  111 / 111 | Node  112 / 112 | Node  113 / 113 | Node  114 / 114 | Node  115 / 115 ___
+check the working one_____ Node  12888 / 12888 |  Node  12889 / 12889 |  Node  12890 / 12890 |  Node  12891 / 12891 |  Node  12892 / 12892 |  Node  12893 / 12893 |  Node  12899 / 12899 |  Node  12900 / 12900 |  Node  12901 / 12901 |  Node  13059 / 13059 |  Node  13060 / 13060 |  Node  13061 / 13061 |  Node  13062 / 13062 |  Node  13066 / 13066 |  Node  13067 / 13067 |  Node  13068 / 13068 |  Node  13069 / 13069 |  Node  13070 / 13070 |  Node  13071 / 13071 |  Node  13076 / 13076 |  Node  13077 / 13077 |  Node  13078 / 13078 |  Node  13216 / 13216 |  Node  13217 / 13217 |  Node  13218 / 13218 |  Node  13219 / 13219 |  Node  13223 / 13223 |  Node  13224 / 13224 |  Node  13225 / 13225 |  Node  13226 / 13226 |  Node  13227 / 13227 |  Node  13228 / 13228 |  Node  13233 / 13233 |  Node  13234 / 13234 |  Node  13235 / 13235 |  Node  13353 / 13353 |  Node  13354 / 13354 |  Node  13355 / 13355 |  Node  13356 / 13356 |  Node  13357 / 13357 |  Node  13358 / 13358 |  Node  13363 / 13363 |  Node  13364 / 13364 |  Node  13365 / 13365 |  Node  13366 / 13366 |  Node  13367 / 13367 |  Node  13372 / 13372 |  Node  13373 / 13373 |  Node  13374 / 13374 |  Node  13470 / 13470 |  Node  13471 / 13471 |  Node  13472 / 13472 |  Node  13473 / 13473 |  Node  13474 / 13474 |  Node  13475 / 13475 |  Node  13480 / 13480 |  Node  13481 / 13481 |  Node  13482 / 13482 |  Node  13483 / 13483 |  Node  13488 / 13488 |  Node  13489 / 13489 |  Node  13490 / 13490 |  Node  13565 / 13565 |  Node  13566 / 13566 |  Node  13567 / 13567 |  Node  13568 / 13568 |  Node  13569 / 13569 |  Node  13570 / 13570 |  Node  13575 / 13575 |  Node  13576 / 13576 |  Node  13577 / 13577 |  Node  13578 / 13578 |  Node  13579 / 13579 |  Node  13584 / 13584 |  Node  13585 / 13585 |  Node  13586 / 13586 |  Node  13639 / 13639 |  Node  13640 / 13640 |  Node  13641 / 13641 |  Node  13642 / 13642 |  Node  13643 / 13643 |  Node  13644 / 13644 |  Node  13649 / 13649 |  Node  13650 / 13650 |  Node  13651 / 13651 |  Node  13652 / 13652 |  Node  13653 / 13653 |  Node  13658 / 13658 |  Node  13659 / 13659 |  Node  13660 / 13660 |  Node  13691 / 13691 |  Node  13692 / 13692 |  Node  13693 / 13693 |  Node  13694 / 13694 |  Node  13695 / 13695 |  Node  13696 / 13696 |  Node  13701 / 13701 |  Node  13702 / 13702 |  Node  13703 / 13703 |  Node  13704 / 13704 |  Node  13705 / 13705 |  Node  13710 / 13710 |  Node  13711 / 13711 |  Node  13712 / 13712 |  Node  13721 / 13721 |  Node  13722 / 13722 |  Node  13723 / 13723 |  Node  13724 / 13724 |  Node  13728 / 13728 ___
+BC regions created
+p19.62986899989 13.2520418137 1.71928412405 
+p29.62986899989 13.2520418137 60 
+p310.6298689999 14.2520418137 2.71928412405 
+Direction set
+p114.7779319513 2.95407643921 1.65753129955 
+p214.7779319513 2.95407643921 60 
+p314.7779319513 0. 60 
+Direction set
+p113.935011462 1.37700337648 1.7193809276 
+p213.935011462 1.37700337648 60 
+p313.935011462 0. 60 
+Direction set
+p111.0891978745 -1.97522341421 1.70718804842 
+p211.0891978745 -1.97522341421 60 
+p312.0891978745 -2.97522341421 2.70718804842 
+Direction set
+p15.45293999925 -3.33276722754 1.65747383147 
+p25.45293999925 -3.33276722754 60 
+p30. -3.33276722754 60 
+Direction set
+p1-7.15106552585 -3.80366078997 1.65749997177 
+p2-7.15106552585 -3.80366078997 60 
+p30. -3.80366078997 60 
+Direction set
+p1-13.4018476112 -3.4195313634 1.26651283398 
+p2-13.4018476112 -3.4195313634 60 
+p3-12.4018476112 -2.4195313634 2.26651283398 
+Direction set
+p1-17.6234769404 -0.906881885347 1.66666666669 
+p2-17.6234769404 -0.906881885347 60 
+p3-17.6234769404 0. 60 
+Direction set
+p1-19.2331823122 2.88181648747 3.71274451308e-11 
+p2-19.2331823122 2.88181648747 60 
+p3-19.2331823122 0. 60 
+Direction set
+p1-18.062079917 9.16779333037 1.91679016804 
+p2-18.062079917 9.16779333037 60 
+p3-17.062079917 8.16779333037 2.91679016804 
+Direction set
+p1-9.24210503105 13.6076204092 1.71938450305 
+p2-9.24210503105 13.6076204092 60 
+p30. 13.6076204092 60 
+Direction set
+p10.454515098361 13.7313003762 1.66666666667 
+p20.454515098361 13.7313003762 60 
+p30. 13.7313003762 60 
+Direction set
+K:
+[[  1.00000000e+00   8.42868944e+03   2.32524619e+04 ...,   8.62097425e-14
+    7.42699082e-01   1.90796327e+00]
+ [  2.00000000e+00   8.39219677e+03   2.36365867e+04 ...,   8.75740301e-14
+    7.42699082e-01   1.90796327e+00]
+ [  3.00000000e+00   8.38853467e+03   2.36772359e+04 ...,   8.77186349e-14
+    7.42699082e-01   1.90796327e+00]
+ ..., 
+ [  2.38000000e+02   1.26659112e+04   1.14072266e+04 ...,   2.11331294e-14
+    7.42699082e-01   1.90796327e+00]
+ [  2.39000000e+02   1.26428297e+04   1.14254945e+04 ...,   2.12628511e-14
+    7.42699082e-01   1.90796327e+00]
+ [  2.40000000e+02   1.26995857e+04   1.13809940e+04 ...,   2.09487896e-14
+    7.42699082e-01   1.90796327e+00]]
+reinforcement materials created
+Material and Part matched__1
+Material and Part matched__2
+Material and Part matched__3
+Material and Part matched__4
+Material and Part matched__5
+Material and Part matched__6
+Material and Part matched__7
+Material and Part matched__8
+Material and Part matched__9
+Material and Part matched__10
+Material and Part matched__11
+Material and Part matched__12
+Material and Part matched__13
+Material and Part matched__14
+Material and Part matched__15
+Material and Part matched__16
+Material and Part matched__17
+Material and Part matched__18
+Material and Part matched__19
+Material and Part matched__20
+Material and Part matched__21
+Material and Part matched__22
+Material and Part matched__23
+Material and Part matched__24
+Material and Part matched__25
+Material and Part matched__26
+Material and Part matched__27
+Material and Part matched__28
+Material and Part matched__29
+Material and Part matched__30
+Material and Part matched__31
+Material and Part matched__32
+Material and Part matched__33
+Material and Part matched__34
+Material and Part matched__35
+Material and Part matched__36
+Material and Part matched__37
+Material and Part matched__38
+Material and Part matched__39
+Material and Part matched__40
+Material and Part matched__41
+Material and Part matched__42
+Material and Part matched__43
+Material and Part matched__44
+Material and Part matched__45
+Material and Part matched__46
+Material and Part matched__47
+Material and Part matched__48
+Material and Part matched__49
+Material and Part matched__50
+Material and Part matched__51
+Material and Part matched__52
+Material and Part matched__53
+Material and Part matched__54
+Material and Part matched__55
+Material and Part matched__56
+Material and Part matched__57
+Material and Part matched__58
+Material and Part matched__59
+Material and Part matched__60
+Material and Part matched__61
+Material and Part matched__62
+Material and Part matched__63
+Material and Part matched__64
+Material and Part matched__65
+Material and Part matched__66
+Material and Part matched__67
+Material and Part matched__68
+Material and Part matched__69
+Material and Part matched__70
+Material and Part matched__71
+Material and Part matched__72
+Material and Part matched__73
+Material and Part matched__74
+Material and Part matched__75
+Material and Part matched__76
+Material and Part matched__77
+Material and Part matched__78
+Material and Part matched__79
+Material and Part matched__80
+Material and Part matched__81
+Material and Part matched__82
+Material and Part matched__83
+Material and Part matched__84
+Material and Part matched__85
+Material and Part matched__86
+Material and Part matched__87
+Material and Part matched__88
+Material and Part matched__89
+Material and Part matched__90
+Material and Part matched__91
+Material and Part matched__92
+Material and Part matched__93
+Material and Part matched__94
+Material and Part matched__95
+Material and Part matched__96
+Material and Part matched__97
+Material and Part matched__98
+Material and Part matched__99
+Material and Part matched__100
+Material and Part matched__101
+Material and Part matched__102
+Material and Part matched__103
+Material and Part matched__104
+Material and Part matched__105
+Material and Part matched__106
+Material and Part matched__107
+Material and Part matched__108
+Material and Part matched__109
+Material and Part matched__110
+Material and Part matched__111
+Material and Part matched__112
+Material and Part matched__113
+Material and Part matched__114
+Material and Part matched__115
+Material and Part matched__116
+Material and Part matched__117
+Material and Part matched__118
+Material and Part matched__119
+Material and Part matched__120
+Material and Part matched__121
+Material and Part matched__122
+Material and Part matched__123
+Material and Part matched__124
+Material and Part matched__125
+Material and Part matched__126
+Material and Part matched__127
+Material and Part matched__128
+Material and Part matched__129
+Material and Part matched__130
+Material and Part matched__131
+Material and Part matched__132
+Material and Part matched__133
+Material and Part matched__134
+Material and Part matched__135
+Material and Part matched__136
+Material and Part matched__137
+Material and Part matched__138
+Material and Part matched__139
+Material and Part matched__140
+Material and Part matched__141
+Material and Part matched__142
+Material and Part matched__143
+Material and Part matched__144
+Material and Part matched__145
+Material and Part matched__146
+Material and Part matched__147
+Material and Part matched__148
+Material and Part matched__149
+Material and Part matched__150
+Material and Part matched__151
+Material and Part matched__152
+Material and Part matched__153
+Material and Part matched__154
+Material and Part matched__155
+Material and Part matched__156
+Material and Part matched__157
+Material and Part matched__158
+Material and Part matched__159
+Material and Part matched__160
+Material and Part matched__161
+Material and Part matched__162
+Material and Part matched__163
+Material and Part matched__164
+Material and Part matched__165
+Material and Part matched__166
+Material and Part matched__167
+Material and Part matched__168
+Material and Part matched__169
+Material and Part matched__170
+Material and Part matched__171
+Material and Part matched__172
+Material and Part matched__173
+Material and Part matched__174
+Material and Part matched__175
+Material and Part matched__176
+Material and Part matched__177
+Material and Part matched__178
+Material and Part matched__179
+Material and Part matched__180
+Material and Part matched__181
+Material and Part matched__182
+Material and Part matched__183
+Material and Part matched__184
+Material and Part matched__185
+Material and Part matched__186
+Material and Part matched__187
+Material and Part matched__188
+Material and Part matched__189
+Material and Part matched__190
+Material and Part matched__191
+Material and Part matched__192
+Material and Part matched__193
+Material and Part matched__194
+Material and Part matched__195
+Material and Part matched__196
+Material and Part matched__197
+Material and Part matched__198
+Material and Part matched__199
+Material and Part matched__200
+Material and Part matched__201
+Material and Part matched__202
+Material and Part matched__203
+Material and Part matched__204
+Material and Part matched__205
+Material and Part matched__206
+Material and Part matched__207
+Material and Part matched__208
+Material and Part matched__209
+Material and Part matched__210
+Material and Part matched__211
+Material and Part matched__212
+Material and Part matched__213
+Material and Part matched__214
+Material and Part matched__215
+Material and Part matched__216
+Material and Part matched__217
+Material and Part matched__218
+Material and Part matched__219
+Material and Part matched__220
+Material and Part matched__221
+Material and Part matched__222
+Material and Part matched__223
+Material and Part matched__224
+Material and Part matched__225
+Material and Part matched__226
+Material and Part matched__227
+Material and Part matched__228
+Material and Part matched__229
+Material and Part matched__230
+Material and Part matched__231
+Material and Part matched__232
+Material and Part matched__233
+Material and Part matched__234
+Material and Part matched__235
+Material and Part matched__236
+Material and Part matched__237
+Material and Part matched__238
+Material and Part matched__239
+Material and Part matched__240
+all non-flow mewsh related layers done
+layup manager done
+test0
+test1
+test2
+test3
+test4
+test5
+test6
+test7
+test8
+test9
+test10
+test11
+test12
+test13
+test14
+test15
+test16
+test17
+test18
+test19
+test20
+test21
+test22
+test23
+test24
+test25
+test26
+test27
+test28
+test29
+test30
+test31
+test32
+test33
+test34
+test35
+test36
+test37
+test38
+test39
+test40
+test41
+test42
+test43
+test44
+test45
+test46
+test47
+test48
+test49
+test50
+test51
+test52
+test53
+test54
+test55
+test56
+test57
+test58
+test59
+test60
+test61
+test62
+test63
+test64
+test65
+test66
+test67
+test68
+test69
+test70
+test71
+test72
+test73
+test74
+test75
+test76
+test77
+test78
+test79
+test80
+test81
+test82
+test83
+test84
+test85
+test86
+test87
+test88
+test89
+test90
+test91
+test92
+test93
+test94
+test95
+test96
+test97
+test98
+test99
+test100
+test101
+test102
+test103
+test104
+test105
+test106
+test107
+test108
+test109
+test110
+test111
+test112
+test113
+test114
+test115
+test116
+test117
+test118
+test119
+test120
+test121
+test122
+test123
+test124
+test125
+test126
+test127
+test128
+test129
+test130
+test131
+test132
+test133
+test134
+test135
+test136
+test137
+test138
+test139
+test140
+test141
+test142
+test143
+test144
+test145
+test146
+test147
+test148
+test149
+test150
+test151
+test152
+test153
+test154
+test155
+test156
+test157
+test158
+test159
+test160
+test161
+test162
+test163
+test164
+test165
+test166
+test167
+test168
+test169
+test170
+test171
+test172
+test173
+test174
+test175
+test176
+test177
+test178
+test179
+test180
+test181
+test182
+test183
+test184
+test185
+test186
+test187
+test188
+test189
+test190
+test191
+test192
+test193
+test194
+test195
+test196
+test197
+test198
+test199
+test200
+test201
+test202
+test203
+test204
+test205
+test206
+test207
+test208
+test209
+test210
+test211
+test212
+test213
+test214
+test215
+test216
+test217
+test218
+test219
+test220
+test221
+test222
+test223
+test224
+test225
+test226
+test227
+test228
+test229
+test230
+test231
+test232
+test233
+test234
+test235
+test236
+test237
+test238
+test239
+ 10001/PART_10001  
+ 10002/PART_10002  
+ 10003/PART_10003  
+ 10004/PART_10004  
+ 10005/PART_10005  
+ 10006/PART_10006  
+ 10007/PART_10007  
+ 10008/PART_10008  
+ 10009/PART_10009  
+ 10010/PART_10010  
+ 10011/PART_10011  
+ 10012/PART_10012  
+ 10013/PART_10013  
+ 10014/PART_10014  
+ 10015/PART_10015  
+ 10016/PART_10016  
+ 10017/PART_10017  
+ 10018/PART_10018  
+ 10019/PART_10019  
+ 10020/PART_10020  
+ 10021/PART_10021  
+ 10022/PART_10022  
+ 10023/PART_10023  
+ 10024/PART_10024  
+ 10025/PART_10025  
+ 10026/PART_10026  
+ 10027/PART_10027  
+ 10028/PART_10028  
+ 10029/PART_10029  
+ 10030/PART_10030  
+ 10031/PART_10031  
+ 10032/PART_10032  
+ 10033/PART_10033  
+ 10034/PART_10034  
+ 10035/PART_10035  
+ 10036/PART_10036  
+ 10037/PART_10037  
+ 10038/PART_10038  
+ 10039/PART_10039  
+ 10040/PART_10040  
+ 10041/PART_10041  
+ 10042/PART_10042  
+ 10043/PART_10043  
+ 10044/PART_10044  
+ 10045/PART_10045  
+ 10046/PART_10046  
+ 10047/PART_10047  
+ 10048/PART_10048  
+ 10049/PART_10049  
+ 10050/PART_10050  
+ 10051/PART_10051  
+ 10052/PART_10052  
+ 10053/PART_10053  
+ 10054/PART_10054  
+ 10055/PART_10055  
+ 10056/PART_10056  
+ 10057/PART_10057  
+ 10058/PART_10058  
+ 10059/PART_10059  
+ 10060/PART_10060  
+ 10061/PART_10061  
+ 10062/PART_10062  
+ 10063/PART_10063  
+ 10064/PART_10064  
+ 10065/PART_10065  
+ 10066/PART_10066  
+ 10067/PART_10067  
+ 10068/PART_10068  
+ 10069/PART_10069  
+ 10070/PART_10070  
+ 10071/PART_10071  
+ 10072/PART_10072  
+ 10073/PART_10073  
+ 10074/PART_10074  
+ 10075/PART_10075  
+ 10076/PART_10076  
+ 10077/PART_10077  
+ 10078/PART_10078  
+ 10079/PART_10079  
+ 10080/PART_10080  
+ 10081/PART_10081  
+ 10082/PART_10082  
+ 10083/PART_10083  
+ 10084/PART_10084  
+ 10085/PART_10085  
+ 10086/PART_10086  
+ 10087/PART_10087  
+ 10088/PART_10088  
+ 10089/PART_10089  
+ 10090/PART_10090  
+ 10091/PART_10091  
+ 10092/PART_10092  
+ 10093/PART_10093  
+ 10094/PART_10094  
+ 10095/PART_10095  
+ 10096/PART_10096  
+ 10097/PART_10097  
+ 10098/PART_10098  
+ 10099/PART_10099  
+ 10100/PART_10100  
+ 10101/PART_10101  
+ 10102/PART_10102  
+ 10103/PART_10103  
+ 10104/PART_10104  
+ 10105/PART_10105  
+ 10106/PART_10106  
+ 10107/PART_10107  
+ 10108/PART_10108  
+ 10109/PART_10109  
+ 10110/PART_10110  
+ 10111/PART_10111  
+ 10112/PART_10112  
+ 10113/PART_10113  
+ 10114/PART_10114  
+ 10115/PART_10115  
+ 10116/PART_10116  
+ 10117/PART_10117  
+ 10118/PART_10118  
+ 10119/PART_10119  
+ 10120/PART_10120  
+ 10121/PART_10121  
+ 10122/PART_10122  
+ 10123/PART_10123  
+ 10124/PART_10124  
+ 10125/PART_10125  
+ 10126/PART_10126  
+ 10127/PART_10127  
+ 10128/PART_10128  
+ 10129/PART_10129  
+ 10130/PART_10130  
+ 10131/PART_10131  
+ 10132/PART_10132  
+ 10133/PART_10133  
+ 10134/PART_10134  
+ 10135/PART_10135  
+ 10136/PART_10136  
+ 10137/PART_10137  
+ 10138/PART_10138  
+ 10139/PART_10139  
+ 10140/PART_10140  
+ 10141/PART_10141  
+ 10142/PART_10142  
+ 10143/PART_10143  
+ 10144/PART_10144  
+ 10145/PART_10145  
+ 10146/PART_10146  
+ 10147/PART_10147  
+ 10148/PART_10148  
+ 10149/PART_10149  
+ 10150/PART_10150  
+ 10151/PART_10151  
+ 10152/PART_10152  
+ 10153/PART_10153  
+ 10154/PART_10154  
+ 10155/PART_10155  
+ 10156/PART_10156  
+ 10157/PART_10157  
+ 10158/PART_10158  
+ 10159/PART_10159  
+ 10160/PART_10160  
+ 10161/PART_10161  
+ 10162/PART_10162  
+ 10163/PART_10163  
+ 10164/PART_10164  
+ 10165/PART_10165  
+ 10166/PART_10166  
+ 10167/PART_10167  
+ 10168/PART_10168  
+ 10169/PART_10169  
+ 10170/PART_10170  
+ 10171/PART_10171  
+ 10172/PART_10172  
+ 10173/PART_10173  
+ 10174/PART_10174  
+ 10175/PART_10175  
+ 10176/PART_10176  
+ 10177/PART_10177  
+ 10178/PART_10178  
+ 10179/PART_10179  
+ 10180/PART_10180  
+ 10181/PART_10181  
+ 10182/PART_10182  
+ 10183/PART_10183  
+ 10184/PART_10184  
+ 10185/PART_10185  
+ 10186/PART_10186  
+ 10187/PART_10187  
+ 10188/PART_10188  
+ 10189/PART_10189  
+ 10190/PART_10190  
+ 10191/PART_10191  
+ 10192/PART_10192  
+ 10193/PART_10193  
+ 10194/PART_10194  
+ 10195/PART_10195  
+ 10196/PART_10196  
+ 10197/PART_10197  
+ 10198/PART_10198  
+ 10199/PART_10199  
+ 10200/PART_10200  
+ 10201/PART_10201  
+ 10202/PART_10202  
+ 10203/PART_10203  
+ 10204/PART_10204  
+ 10205/PART_10205  
+ 10206/PART_10206  
+ 10207/PART_10207  
+ 10208/PART_10208  
+ 10209/PART_10209  
+ 10210/PART_10210  
+ 10211/PART_10211  
+ 10212/PART_10212  
+ 10213/PART_10213  
+ 10214/PART_10214  
+ 10215/PART_10215  
+ 10216/PART_10216  
+ 10217/PART_10217  
+ 10218/PART_10218  
+ 10219/PART_10219  
+ 10220/PART_10220  
+ 10221/PART_10221  
+ 10222/PART_10222  
+ 10223/PART_10223  
+ 10224/PART_10224  
+ 10225/PART_10225  
+ 10226/PART_10226  
+ 10227/PART_10227  
+ 10228/PART_10228  
+ 10229/PART_10229  
+ 10230/PART_10230  
+ 10231/PART_10231  
+ 10232/PART_10232  
+ 10233/PART_10233  
+ 10234/PART_10234  
+ 10235/PART_10235  
+ 10236/PART_10236  
+ 10237/PART_10237  
+ 10238/PART_10238  
+ 10239/PART_10239  
+ 10240/PART_10240  
+orientations assigned
+flow rate assigned
+vent specifiedmodel saved, simulation ready
+The initial simulation starts here:__IDP_spar_A799_M002_JK.igs
+chopchop
+toolbox initiated
+______NewRun-_____IDP_spar_A799_M002_JK.igs_________
+initiated
+yupgogoyup
+yupyup
+eaiho
+ssssss  MFace  @0/@15 @0/@22 @0/@24 @0/@31 @0/@33 @0/@42 @0/@44 @0/@57 
+ssssss  MFace  @0/@0 @0/@1 @0/@3 @0/@4 @0/@6 @0/@8 @0/@9 @0/@11 @0/@13 @0/@18 @0/@20 @0/@29 
+ssssss  MFace  @0/@2 @0/@5 @0/@10 @0/@17 
+ssssss  MFace  
+ssssss  MFace  @0/@7 @0/@12 @0/@19 @0/@28 
+ssssss  MFace  @0/@14 @0/@21 @0/@30 @0/@41 
+ssssss  MFace  @0/@23 @0/@32 @0/@43 @0/@56 
+ssssss  MFace  @0/@34 @0/@45 @0/@58 @0/@73 
+ssssss  MFace  @0/@47 @0/@60 @0/@62 @0/@75 @0/@77 @0/@79 @0/@91 @0/@93 @0/@95 @0/@109 @0/@111 @0/@127 
+ssssss  MFace  @0/@63 @0/@78 @0/@94 @0/@110 
+ssssss  MFace  @0/@48 @0/@61 @0/@76 @0/@92 
+ssssss  MFace  @0/@35 @0/@46 @0/@59 @0/@74 
+ssssss  MFace  @0/@55 @0/@70 @0/@72 @0/@86 @0/@88 @0/@102 @0/@104 @0/@120 
+ssssss  MFace  @0/@16 @0/@25 @0/@27 @0/@36 @0/@38 @0/@40 @0/@49 @0/@51 @0/@53 @0/@66 @0/@68 @0/@84 
+ssssss  MFace  @0/@26 @0/@37 @0/@50 @0/@65 
+ssssss  MFace  
+ssssss  MFace  @0/@39 @0/@52 @0/@67 @0/@83 
+ssssss  MFace  @0/@54 @0/@69 @0/@85 @0/@101 
+ssssss  MFace  @0/@71 @0/@87 @0/@103 @0/@119 
+ssssss  MFace  @0/@89 @0/@105 @0/@121 @0/@137 
+ssssss  MFace  @0/@107 @0/@123 @0/@125 @0/@139 @0/@141 @0/@143 @0/@155 @0/@157 @0/@159 @0/@173 @0/@175 @0/@191 
+ssssss  MFace  @0/@126 @0/@142 @0/@158 @0/@174 
+ssssss  MFace  @0/@108 @0/@124 @0/@140 @0/@156 
+ssssss  MFace  @0/@90 @0/@106 @0/@122 @0/@138 
+ssssss  MFace  @0/@118 @0/@134 @0/@136 @0/@150 @0/@152 @0/@166 @0/@168 @0/@184 
+ssssss  MFace  @0/@64 @0/@80 @0/@82 @0/@96 @0/@98 @0/@100 @0/@112 @0/@114 @0/@116 @0/@130 @0/@132 @0/@148 
+ssssss  MFace  @0/@81 @0/@97 @0/@113 @0/@129 
+ssssss  MFace  
+ssssss  MFace  @0/@99 @0/@115 @0/@131 @0/@147 
+ssssss  MFace  @0/@117 @0/@133 @0/@149 @0/@165 
+ssssss  MFace  @0/@135 @0/@151 @0/@167 @0/@183 
+ssssss  MFace  @0/@153 @0/@169 @0/@185 @0/@201 
+ssssss  MFace  @0/@171 @0/@187 @0/@189 @0/@203 @0/@205 @0/@207 @0/@219 @0/@221 @0/@223 @0/@237 @0/@239 @0/@255 
+ssssss  MFace  @0/@190 @0/@206 @0/@222 @0/@238 
+ssssss  MFace  @0/@172 @0/@188 @0/@204 @0/@220 
+ssssss  MFace  @0/@154 @0/@170 @0/@186 @0/@202 
+ssssss  MFace  @0/@182 @0/@198 @0/@200 @0/@214 @0/@216 @0/@230 @0/@232 @0/@248 
+ssssss  MFace  @0/@128 @0/@144 @0/@146 @0/@160 @0/@162 @0/@164 @0/@176 @0/@178 @0/@180 @0/@194 @0/@196 @0/@212 
+ssssss  MFace  @0/@145 @0/@161 @0/@177 @0/@193 
+ssssss  MFace  
+ssssss  MFace  @0/@163 @0/@179 @0/@195 @0/@211 
+ssssss  MFace  @0/@181 @0/@197 @0/@213 @0/@229 
+ssssss  MFace  @0/@199 @0/@215 @0/@231 @0/@247 
+ssssss  MFace  @0/@217 @0/@233 @0/@249 @0/@265 
+ssssss  MFace  @0/@235 @0/@251 @0/@253 @0/@267 @0/@269 @0/@271 @0/@283 @0/@285 @0/@287 @0/@301 @0/@303 @0/@319 
+ssssss  MFace  @0/@254 @0/@270 @0/@286 @0/@302 
+ssssss  MFace  @0/@236 @0/@252 @0/@268 @0/@284 
+ssssss  MFace  @0/@218 @0/@234 @0/@250 @0/@266 
+ssssss  MFace  @0/@246 @0/@262 @0/@264 @0/@278 @0/@280 @0/@294 @0/@296 @0/@312 
+ssssss  MFace  @0/@192 @0/@208 @0/@210 @0/@224 @0/@226 @0/@228 @0/@240 @0/@242 @0/@244 @0/@258 @0/@260 @0/@276 
+ssssss  MFace  @0/@209 @0/@225 @0/@241 @0/@257 
+ssssss  MFace  
+ssssss  MFace  @0/@227 @0/@243 @0/@259 @0/@275 
+ssssss  MFace  @0/@245 @0/@261 @0/@277 @0/@293 
+ssssss  MFace  @0/@263 @0/@279 @0/@295 @0/@311 
+ssssss  MFace  @0/@281 @0/@297 @0/@313 @0/@329 
+ssssss  MFace  @0/@299 @0/@315 @0/@317 @0/@331 @0/@333 @0/@335 @0/@347 @0/@349 @0/@351 @0/@365 @0/@367 @0/@383 
+ssssss  MFace  @0/@318 @0/@334 @0/@350 @0/@366 
+ssssss  MFace  @0/@300 @0/@316 @0/@332 @0/@348 
+ssssss  MFace  @0/@282 @0/@298 @0/@314 @0/@330 
+ssssss  MFace  @0/@310 @0/@326 @0/@328 @0/@342 @0/@344 @0/@358 @0/@360 @0/@376 
+ssssss  MFace  @0/@256 @0/@272 @0/@274 @0/@288 @0/@290 @0/@292 @0/@304 @0/@306 @0/@308 @0/@322 @0/@324 @0/@340 
+ssssss  MFace  @0/@273 @0/@289 @0/@305 @0/@321 
+ssssss  MFace  
+ssssss  MFace  @0/@291 @0/@307 @0/@323 @0/@339 
+ssssss  MFace  @0/@309 @0/@325 @0/@341 @0/@357 
+ssssss  MFace  @0/@327 @0/@343 @0/@359 @0/@375 
+ssssss  MFace  @0/@345 @0/@361 @0/@377 @0/@393 
+ssssss  MFace  @0/@363 @0/@379 @0/@381 @0/@395 @0/@397 @0/@399 @0/@411 @0/@413 @0/@415 @0/@429 @0/@431 @0/@447 
+ssssss  MFace  @0/@382 @0/@398 @0/@414 @0/@430 
+ssssss  MFace  @0/@364 @0/@380 @0/@396 @0/@412 
+ssssss  MFace  @0/@346 @0/@362 @0/@378 @0/@394 
+ssssss  MFace  @0/@374 @0/@390 @0/@392 @0/@406 @0/@408 @0/@422 @0/@424 @0/@440 
+ssssss  MFace  @0/@320 @0/@336 @0/@338 @0/@352 @0/@354 @0/@356 @0/@368 @0/@370 @0/@372 @0/@386 @0/@388 @0/@404 
+ssssss  MFace  @0/@337 @0/@353 @0/@369 @0/@385 
+ssssss  MFace  
+ssssss  MFace  @0/@355 @0/@371 @0/@387 @0/@403 
+ssssss  MFace  @0/@373 @0/@389 @0/@405 @0/@421 
+ssssss  MFace  @0/@391 @0/@407 @0/@423 @0/@439 
+ssssss  MFace  @0/@409 @0/@425 @0/@441 @0/@457 
+ssssss  MFace  @0/@427 @0/@443 @0/@445 @0/@459 @0/@461 @0/@463 @0/@475 @0/@477 @0/@479 @0/@493 @0/@495 @0/@511 
+ssssss  MFace  @0/@446 @0/@462 @0/@478 @0/@494 
+ssssss  MFace  @0/@428 @0/@444 @0/@460 @0/@476 
+ssssss  MFace  @0/@410 @0/@426 @0/@442 @0/@458 
+ssssss  MFace  @0/@438 @0/@454 @0/@456 @0/@470 @0/@472 @0/@486 @0/@488 @0/@504 
+ssssss  MFace  @0/@384 @0/@400 @0/@402 @0/@416 @0/@418 @0/@420 @0/@432 @0/@434 @0/@436 @0/@450 @0/@452 @0/@468 
+ssssss  MFace  @0/@401 @0/@417 @0/@433 @0/@449 
+ssssss  MFace  
+ssssss  MFace  @0/@419 @0/@435 @0/@451 @0/@467 
+ssssss  MFace  @0/@437 @0/@453 @0/@469 @0/@485 
+ssssss  MFace  @0/@455 @0/@471 @0/@487 @0/@503 
+ssssss  MFace  @0/@473 @0/@489 @0/@505 @0/@521 
+ssssss  MFace  @0/@491 @0/@507 @0/@509 @0/@523 @0/@525 @0/@527 @0/@539 @0/@541 @0/@543 @0/@557 @0/@559 @0/@575 
+ssssss  MFace  @0/@510 @0/@526 @0/@542 @0/@558 
+ssssss  MFace  @0/@492 @0/@508 @0/@524 @0/@540 
+ssssss  MFace  @0/@474 @0/@490 @0/@506 @0/@522 
+ssssss  MFace  @0/@502 @0/@518 @0/@520 @0/@534 @0/@536 @0/@550 @0/@552 @0/@568 
+ssssss  MFace  @0/@448 @0/@464 @0/@466 @0/@480 @0/@482 @0/@484 @0/@496 @0/@498 @0/@500 @0/@514 @0/@516 @0/@532 
+ssssss  MFace  @0/@465 @0/@481 @0/@497 @0/@513 
+ssssss  MFace  
+ssssss  MFace  @0/@483 @0/@499 @0/@515 @0/@531 
+ssssss  MFace  @0/@501 @0/@517 @0/@533 @0/@549 
+ssssss  MFace  @0/@519 @0/@535 @0/@551 @0/@567 
+ssssss  MFace  @0/@537 @0/@553 @0/@569 @0/@585 
+ssssss  MFace  @0/@555 @0/@571 @0/@573 @0/@587 @0/@589 @0/@591 @0/@603 @0/@605 @0/@607 @0/@621 @0/@623 @0/@639 
+ssssss  MFace  @0/@574 @0/@590 @0/@606 @0/@622 
+ssssss  MFace  @0/@556 @0/@572 @0/@588 @0/@604 
+ssssss  MFace  @0/@538 @0/@554 @0/@570 @0/@586 
+ssssss  MFace  @0/@566 @0/@582 @0/@584 @0/@598 @0/@600 @0/@614 @0/@616 @0/@632 
+ssssss  MFace  @0/@512 @0/@528 @0/@530 @0/@544 @0/@546 @0/@548 @0/@560 @0/@562 @0/@564 @0/@578 @0/@580 @0/@596 
+ssssss  MFace  @0/@529 @0/@545 @0/@561 @0/@577 
+ssssss  MFace  
+ssssss  MFace  @0/@547 @0/@563 @0/@579 @0/@595 
+ssssss  MFace  @0/@565 @0/@581 @0/@597 @0/@613 
+ssssss  MFace  @0/@583 @0/@599 @0/@615 @0/@631 
+ssssss  MFace  @0/@601 @0/@617 @0/@633 @0/@649 
+ssssss  MFace  @0/@619 @0/@635 @0/@637 @0/@651 @0/@653 @0/@655 @0/@667 @0/@669 @0/@671 @0/@685 @0/@687 @0/@703 
+ssssss  MFace  @0/@638 @0/@654 @0/@670 @0/@686 
+ssssss  MFace  @0/@620 @0/@636 @0/@652 @0/@668 
+ssssss  MFace  @0/@602 @0/@618 @0/@634 @0/@650 
+ssssss  MFace  @0/@630 @0/@646 @0/@648 @0/@662 @0/@664 @0/@678 @0/@680 @0/@696 
+ssssss  MFace  @0/@576 @0/@592 @0/@594 @0/@608 @0/@610 @0/@612 @0/@624 @0/@626 @0/@628 @0/@642 @0/@644 @0/@660 
+ssssss  MFace  @0/@593 @0/@609 @0/@625 @0/@641 
+ssssss  MFace  
+ssssss  MFace  @0/@611 @0/@627 @0/@643 @0/@659 
+ssssss  MFace  @0/@629 @0/@645 @0/@661 @0/@677 
+ssssss  MFace  @0/@647 @0/@663 @0/@679 @0/@695 
+ssssss  MFace  @0/@665 @0/@681 @0/@697 @0/@713 
+ssssss  MFace  @0/@683 @0/@699 @0/@701 @0/@715 @0/@717 @0/@719 @0/@731 @0/@733 @0/@735 @0/@749 @0/@751 @0/@767 
+ssssss  MFace  @0/@702 @0/@718 @0/@734 @0/@750 
+ssssss  MFace  @0/@684 @0/@700 @0/@716 @0/@732 
+ssssss  MFace  @0/@666 @0/@682 @0/@698 @0/@714 
+ssssss  MFace  @0/@694 @0/@710 @0/@712 @0/@726 @0/@728 @0/@742 @0/@744 @0/@760 
+ssssss  MFace  @0/@640 @0/@656 @0/@658 @0/@672 @0/@674 @0/@676 @0/@688 @0/@690 @0/@692 @0/@706 @0/@708 @0/@724 
+ssssss  MFace  @0/@657 @0/@673 @0/@689 @0/@705 
+ssssss  MFace  
+ssssss  MFace  @0/@675 @0/@691 @0/@707 @0/@723 
+ssssss  MFace  @0/@693 @0/@709 @0/@725 @0/@741 
+ssssss  MFace  @0/@711 @0/@727 @0/@743 @0/@759 
+ssssss  MFace  @0/@729 @0/@745 @0/@761 @0/@777 
+ssssss  MFace  @0/@747 @0/@763 @0/@765 @0/@779 @0/@781 @0/@783 @0/@795 @0/@797 @0/@799 @0/@813 @0/@815 @0/@831 
+ssssss  MFace  @0/@766 @0/@782 @0/@798 @0/@814 
+ssssss  MFace  @0/@748 @0/@764 @0/@780 @0/@796 
+ssssss  MFace  @0/@730 @0/@746 @0/@762 @0/@778 
+ssssss  MFace  @0/@758 @0/@774 @0/@776 @0/@790 @0/@792 @0/@806 @0/@808 @0/@824 
+ssssss  MFace  @0/@704 @0/@720 @0/@722 @0/@736 @0/@738 @0/@740 @0/@752 @0/@754 @0/@756 @0/@770 @0/@772 @0/@788 
+ssssss  MFace  @0/@721 @0/@737 @0/@753 @0/@769 
+ssssss  MFace  
+ssssss  MFace  @0/@739 @0/@755 @0/@771 @0/@787 
+ssssss  MFace  @0/@757 @0/@773 @0/@789 @0/@805 
+ssssss  MFace  @0/@775 @0/@791 @0/@807 @0/@823 
+ssssss  MFace  @0/@793 @0/@809 @0/@825 @0/@841 
+ssssss  MFace  @0/@811 @0/@827 @0/@829 @0/@843 @0/@845 @0/@847 @0/@859 @0/@861 @0/@863 @0/@877 @0/@879 @0/@895 
+ssssss  MFace  @0/@830 @0/@846 @0/@862 @0/@878 
+ssssss  MFace  @0/@812 @0/@828 @0/@844 @0/@860 
+ssssss  MFace  @0/@794 @0/@810 @0/@826 @0/@842 
+ssssss  MFace  @0/@822 @0/@838 @0/@840 @0/@854 @0/@856 @0/@870 @0/@872 @0/@888 
+ssssss  MFace  @0/@768 @0/@784 @0/@786 @0/@800 @0/@802 @0/@804 @0/@816 @0/@818 @0/@820 @0/@834 @0/@836 @0/@852 
+ssssss  MFace  @0/@785 @0/@801 @0/@817 @0/@833 
+ssssss  MFace  
+ssssss  MFace  @0/@803 @0/@819 @0/@835 @0/@851 
+ssssss  MFace  @0/@821 @0/@837 @0/@853 @0/@869 
+ssssss  MFace  @0/@839 @0/@855 @0/@871 @0/@887 
+ssssss  MFace  @0/@857 @0/@873 @0/@889 @0/@905 
+ssssss  MFace  @0/@875 @0/@891 @0/@893 @0/@907 @0/@909 @0/@911 @0/@923 @0/@925 @0/@927 @0/@941 @0/@943 @0/@959 
+ssssss  MFace  @0/@894 @0/@910 @0/@926 @0/@942 
+ssssss  MFace  @0/@876 @0/@892 @0/@908 @0/@924 
+ssssss  MFace  @0/@858 @0/@874 @0/@890 @0/@906 
+ssssss  MFace  @0/@886 @0/@902 @0/@904 @0/@918 @0/@920 @0/@934 @0/@936 @0/@952 
+ssssss  MFace  @0/@832 @0/@848 @0/@850 @0/@864 @0/@866 @0/@868 @0/@880 @0/@882 @0/@884 @0/@898 @0/@900 @0/@916 
+ssssss  MFace  @0/@849 @0/@865 @0/@881 @0/@897 
+ssssss  MFace  
+ssssss  MFace  @0/@867 @0/@883 @0/@899 @0/@915 
+ssssss  MFace  @0/@885 @0/@901 @0/@917 @0/@933 
+ssssss  MFace  @0/@903 @0/@919 @0/@935 @0/@951 
+ssssss  MFace  @0/@921 @0/@937 @0/@953 @0/@969 
+ssssss  MFace  @0/@939 @0/@955 @0/@957 @0/@971 @0/@973 @0/@975 @0/@987 @0/@989 @0/@991 @0/@1005 @0/@1007 @0/@1023 
+ssssss  MFace  @0/@958 @0/@974 @0/@990 @0/@1006 
+ssssss  MFace  @0/@940 @0/@956 @0/@972 @0/@988 
+ssssss  MFace  @0/@922 @0/@938 @0/@954 @0/@970 
+ssssss  MFace  @0/@950 @0/@966 @0/@968 @0/@982 @0/@984 @0/@998 @0/@1000 @0/@1016 
+ssssss  MFace  @0/@896 @0/@912 @0/@914 @0/@928 @0/@930 @0/@932 @0/@944 @0/@946 @0/@948 @0/@962 @0/@964 @0/@980 
+ssssss  MFace  @0/@913 @0/@929 @0/@945 @0/@961 
+ssssss  MFace  
+ssssss  MFace  @0/@931 @0/@947 @0/@963 @0/@979 
+ssssss  MFace  @0/@949 @0/@965 @0/@981 @0/@997 
+ssssss  MFace  @0/@967 @0/@983 @0/@999 @0/@1015 
+ssssss  MFace  @0/@985 @0/@1001 @0/@1017 @0/@1033 
+ssssss  MFace  @0/@1003 @0/@1019 @0/@1021 @0/@1035 @0/@1037 @0/@1039 @0/@1051 @0/@1053 @0/@1055 @0/@1069 @0/@1071 @0/@1087 
+ssssss  MFace  @0/@1022 @0/@1038 @0/@1054 @0/@1070 
+ssssss  MFace  @0/@1004 @0/@1020 @0/@1036 @0/@1052 
+ssssss  MFace  @0/@986 @0/@1002 @0/@1018 @0/@1034 
+ssssss  MFace  @0/@1014 @0/@1030 @0/@1032 @0/@1046 @0/@1048 @0/@1062 @0/@1064 @0/@1080 
+ssssss  MFace  @0/@960 @0/@976 @0/@978 @0/@992 @0/@994 @0/@996 @0/@1008 @0/@1010 @0/@1012 @0/@1026 @0/@1028 @0/@1044 
+ssssss  MFace  @0/@977 @0/@993 @0/@1009 @0/@1025 
+ssssss  MFace  
+ssssss  MFace  @0/@995 @0/@1011 @0/@1027 @0/@1043 
+ssssss  MFace  @0/@1013 @0/@1029 @0/@1045 @0/@1061 
+ssssss  MFace  @0/@1031 @0/@1047 @0/@1063 @0/@1079 
+ssssss  MFace  @0/@1049 @0/@1065 @0/@1081 @0/@1097 
+ssssss  MFace  @0/@1067 @0/@1083 @0/@1085 @0/@1099 @0/@1101 @0/@1103 @0/@1115 @0/@1117 @0/@1119 @0/@1133 @0/@1135 @0/@1151 
+ssssss  MFace  @0/@1086 @0/@1102 @0/@1118 @0/@1134 
+ssssss  MFace  @0/@1068 @0/@1084 @0/@1100 @0/@1116 
+ssssss  MFace  @0/@1050 @0/@1066 @0/@1082 @0/@1098 
+ssssss  MFace  @0/@1078 @0/@1094 @0/@1096 @0/@1110 @0/@1112 @0/@1126 @0/@1128 @0/@1144 
+ssssss  MFace  @0/@1024 @0/@1040 @0/@1042 @0/@1056 @0/@1058 @0/@1060 @0/@1072 @0/@1074 @0/@1076 @0/@1090 @0/@1092 @0/@1108 
+ssssss  MFace  @0/@1041 @0/@1057 @0/@1073 @0/@1089 
+ssssss  MFace  
+ssssss  MFace  @0/@1059 @0/@1075 @0/@1091 @0/@1107 
+ssssss  MFace  @0/@1077 @0/@1093 @0/@1109 @0/@1125 
+ssssss  MFace  @0/@1095 @0/@1111 @0/@1127 @0/@1143 
+ssssss  MFace  @0/@1113 @0/@1129 @0/@1145 @0/@1161 
+ssssss  MFace  @0/@1131 @0/@1147 @0/@1149 @0/@1163 @0/@1165 @0/@1167 @0/@1179 @0/@1181 @0/@1183 @0/@1197 @0/@1199 @0/@1215 
+ssssss  MFace  @0/@1150 @0/@1166 @0/@1182 @0/@1198 
+ssssss  MFace  @0/@1132 @0/@1148 @0/@1164 @0/@1180 
+ssssss  MFace  @0/@1114 @0/@1130 @0/@1146 @0/@1162 
+ssssss  MFace  @0/@1142 @0/@1158 @0/@1160 @0/@1174 @0/@1176 @0/@1190 @0/@1192 @0/@1208 
+ssssss  MFace  @0/@1088 @0/@1104 @0/@1106 @0/@1120 @0/@1122 @0/@1124 @0/@1136 @0/@1138 @0/@1140 @0/@1154 @0/@1156 @0/@1172 
+ssssss  MFace  @0/@1105 @0/@1121 @0/@1137 @0/@1153 
+ssssss  MFace  
+ssssss  MFace  @0/@1123 @0/@1139 @0/@1155 @0/@1171 
+ssssss  MFace  @0/@1141 @0/@1157 @0/@1173 @0/@1189 
+ssssss  MFace  @0/@1159 @0/@1175 @0/@1191 @0/@1207 
+ssssss  MFace  @0/@1177 @0/@1193 @0/@1209 @0/@1224 
+ssssss  MFace  @0/@1195 @0/@1211 @0/@1213 @0/@1226 @0/@1228 @0/@1230 @0/@1239 @0/@1241 @0/@1243 @0/@1252 @0/@1254 @0/@1263 
+ssssss  MFace  @0/@1214 @0/@1229 @0/@1242 @0/@1253 
+ssssss  MFace  @0/@1196 @0/@1212 @0/@1227 @0/@1240 
+ssssss  MFace  @0/@1178 @0/@1194 @0/@1210 @0/@1225 
+ssssss  MFace  @0/@1206 @0/@1221 @0/@1223 @0/@1234 @0/@1236 @0/@1245 @0/@1247 @0/@1256 
+ssssss  MFace  @0/@1152 @0/@1168 @0/@1170 @0/@1184 @0/@1186 @0/@1188 @0/@1200 @0/@1202 @0/@1204 @0/@1217 @0/@1219 @0/@1232 
+ssssss  MFace  @0/@1169 @0/@1185 @0/@1201 @0/@1216 
+ssssss  MFace  
+ssssss  MFace  @0/@1187 @0/@1203 @0/@1218 @0/@1231 
+ssssss  MFace  @0/@1205 @0/@1220 @0/@1233 @0/@1244 
+ssssss  MFace  @0/@1222 @0/@1235 @0/@1246 @0/@1255 
+ssssss  MFace  @0/@1237 @0/@1248 @0/@1257 @0/@1264 
+ssssss  MFace  @0/@1250 @0/@1259 @0/@1261 @0/@1266 @0/@1268 @0/@1270 @0/@1271 @0/@1273 @0/@1275 @0/@1276 @0/@1278 @0/@1279 
+ssssss  MFace  @0/@1262 @0/@1269 @0/@1274 @0/@1277 
+ssssss  MFace  @0/@1251 @0/@1260 @0/@1267 @0/@1272 
+ssssss  MFace  @0/@1238 @0/@1249 @0/@1258 @0/@1265 
+surfaces assigned
+meshed
+simulation parameters selected
+yupyup2
+eaiho2
+crash-checkc0_____ Node  19 / 19 | Node  21 / 21 | Node  240 / 240 | Node  242 / 242 | Node  243 / 243 | Node  244 / 244 | Node  245 / 245 | Node  246 / 246 | Node  370 / 370 | Node  371 / 371 | Node  372 / 372 | Node  373 / 373 ___
+crash-checkc1_____ Node  11 / 11 | Node  12 / 12 | Node  13 / 13 | Node  14 / 14 | Node  15 / 15 | Node  16 / 16 | Node  17 / 17 | Node  18 / 18 | Node  20 / 20 | Node  61 / 61 | Node  62 / 62 | Node  63 / 63 | Node  64 / 64 | Node  65 / 65 | Node  66 / 66 | Node  68 / 68 | Node  140 / 140 | Node  141 / 141 | Node  142 / 142 | Node  143 / 143 | Node  144 / 144 | Node  145 / 145 | Node  146 / 146 | Node  238 / 238 | Node  239 / 239 | Node  241 / 241 ___
+crash-checkc2_____ Node  50 / 50 | Node  51 / 51 | Node  52 / 52 | Node  53 / 53 | Node  54 / 54 | Node  67 / 67 | Node  69 / 69 ___
+crash-checkc3_____ Node  46 / 46 | Node  47 / 47 | Node  48 / 48 | Node  49 / 49 | Node  132 / 132 ___
+crash-checkc4_____ Node  124 / 124 | Node  125 / 125 | Node  126 / 126 | Node  127 / 127 | Node  128 / 128 | Node  129 / 129 | Node  130 / 130 | Node  131 / 131 | Node  228 / 228 | Node  230 / 230 ___
+crash-checkc5_____ Node  222 / 222 | Node  223 / 223 | Node  224 / 224 | Node  225 / 225 | Node  226 / 226 | Node  227 / 227 | Node  229 / 229 | Node  359 / 359 | Node  360 / 360 | Node  361 / 361 ___
+crash-checkc6_____ Node  353 / 353 | Node  354 / 354 | Node  355 / 355 | Node  356 / 356 | Node  357 / 357 | Node  358 / 358 | Node  514 / 514 | Node  516 / 516 ___
+crash-checkc7_____ Node  510 / 510 | Node  511 / 511 | Node  512 / 512 | Node  513 / 513 | Node  515 / 515 | Node  895 / 895 | Node  896 / 896 ___
+crash-checkc8_____ Node  508 / 508 | Node  509 / 509 | Node  691 / 691 | Node  692 / 692 | Node  693 / 693 | Node  694 / 694 | Node  695 / 695 | Node  696 / 696 | Node  697 / 697 | Node  897 / 897 | Node  898 / 898 | Node  899 / 899 | Node  900 / 900 | Node  901 / 901 | Node  918 / 918 | Node  1121 / 1121 | Node  1122 / 1122 | Node  1123 / 1123 | Node  1124 / 1124 | Node  1125 / 1125 | Node  1126 / 1126 | Node  1127 / 1127 ___
+crash-checkc9_____ Node  710 / 710 | Node  711 / 711 | Node  712 / 712 | Node  910 / 910 | Node  911 / 911 | Node  912 / 912 | Node  913 / 913 | Node  914 / 914 | Node  915 / 915 | Node  916 / 916 | Node  917 / 917 ___
+crash-checkc10_____ Node  528 / 528 | Node  530 / 530 | Node  531 / 531 | Node  532 / 532 | Node  704 / 704 | Node  705 / 705 | Node  706 / 706 | Node  707 / 707 | Node  708 / 708 | Node  709 / 709 ___
+crash-checkc11_____ Node  374 / 374 | Node  375 / 375 | Node  376 / 376 | Node  377 / 377 | Node  378 / 378 | Node  524 / 524 | Node  525 / 525 | Node  526 / 526 | Node  527 / 527 | Node  529 / 529 ___
+check the working one_____ Node  15619 / 15619 |  Node  15620 / 15620 |  Node  15621 / 15621 |  Node  15622 / 15622 |  Node  15623 / 15623 |  Node  15624 / 15624 |  Node  15625 / 15625 |  Node  15626 / 15626 |  Node  15627 / 15627 |  Node  15628 / 15628 |  Node  15826 / 15826 |  Node  15827 / 15827 |  Node  15828 / 15828 |  Node  15829 / 15829 |  Node  15830 / 15830 |  Node  15831 / 15831 |  Node  15832 / 15832 |  Node  15833 / 15833 |  Node  15839 / 15839 |  Node  15840 / 15840 |  Node  15841 / 15841 |  Node  15842 / 15842 |  Node  15843 / 15843 |  Node  15844 / 15844 |  Node  15850 / 15850 |  Node  15851 / 15851 |  Node  15852 / 15852 |  Node  16017 / 16017 |  Node  16018 / 16018 |  Node  16019 / 16019 |  Node  16020 / 16020 |  Node  16021 / 16021 |  Node  16022 / 16022 |  Node  16023 / 16023 |  Node  16024 / 16024 |  Node  16030 / 16030 |  Node  16031 / 16031 |  Node  16032 / 16032 |  Node  16033 / 16033 |  Node  16034 / 16034 |  Node  16035 / 16035 |  Node  16036 / 16036 |  Node  16181 / 16181 |  Node  16182 / 16182 |  Node  16183 / 16183 |  Node  16184 / 16184 |  Node  16185 / 16185 |  Node  16186 / 16186 |  Node  16187 / 16187 |  Node  16188 / 16188 |  Node  16194 / 16194 |  Node  16195 / 16195 |  Node  16196 / 16196 |  Node  16197 / 16197 |  Node  16198 / 16198 |  Node  16199 / 16199 |  Node  16200 / 16200 |  Node  16206 / 16206 |  Node  16207 / 16207 |  Node  16208 / 16208 |  Node  16321 / 16321 |  Node  16322 / 16322 |  Node  16323 / 16323 |  Node  16324 / 16324 |  Node  16325 / 16325 |  Node  16326 / 16326 |  Node  16327 / 16327 |  Node  16328 / 16328 |  Node  16334 / 16334 |  Node  16335 / 16335 |  Node  16336 / 16336 |  Node  16337 / 16337 |  Node  16338 / 16338 |  Node  16339 / 16339 |  Node  16340 / 16340 |  Node  16341 / 16341 |  Node  16433 / 16433 |  Node  16434 / 16434 |  Node  16435 / 16435 |  Node  16436 / 16436 |  Node  16437 / 16437 |  Node  16438 / 16438 |  Node  16439 / 16439 |  Node  16440 / 16440 |  Node  16446 / 16446 |  Node  16447 / 16447 |  Node  16448 / 16448 |  Node  16449 / 16449 |  Node  16450 / 16450 |  Node  16451 / 16451 |  Node  16452 / 16452 |  Node  16458 / 16458 |  Node  16459 / 16459 |  Node  16460 / 16460 |  Node  16519 / 16519 |  Node  16520 / 16520 |  Node  16521 / 16521 |  Node  16522 / 16522 |  Node  16523 / 16523 |  Node  16524 / 16524 |  Node  16529 / 16529 |  Node  16530 / 16530 |  Node  16531 / 16531 |  Node  16532 / 16532 |  Node  16533 / 16533 |  Node  16534 / 16534 |  Node  16540 / 16540 |  Node  16541 / 16541 |  Node  16542 / 16542 |  Node  16577 / 16577 |  Node  16578 / 16578 |  Node  16579 / 16579 |  Node  16580 / 16580 |  Node  16581 / 16581 |  Node  16582 / 16582 |  Node  16587 / 16587 |  Node  16588 / 16588 |  Node  16589 / 16589 |  Node  16590 / 16590 |  Node  16591 / 16591 |  Node  16592 / 16592 |  Node  16593 / 16593 |  Node  16594 / 16594 |  Node  16611 / 16611 |  Node  16612 / 16612 |  Node  16613 / 16613 |  Node  16614 / 16614 |  Node  16615 / 16615 |  Node  16616 / 16616 |  Node  16621 / 16621 ___
+BC regions created
+p110.6464886069 12.8922058017 1.7646421241 
+p210.6464886069 12.8922058017 60 
+p311.6464886069 13.8922058017 2.7646421241 
+Direction set
+p117.0065236436 8.59869322068 1.96850716139 
+p217.0065236436 8.59869322068 60 
+p317.0065236436 0. 60 
+Direction set
+p122.9692033267 1.70875004912 1.66666666667 
+p222.9692033267 1.70875004912 60 
+p322.9692033267 0. 60 
+Direction set
+p19.65648736713 -3.03320334601 1.64943848564 
+p29.65648736713 -3.03320334601 60 
+p310.6564873671 -4.03320334601 2.64943848564 
+Direction set
+p11.3811221101 -3.48137140568 1.64947916563 
+p21.3811221101 -3.48137140568 60 
+p30. -3.48137140568 60 
+Direction set
+p1-6.76235274617 -3.67801588296 1.44744042635 
+p2-6.76235274617 -3.67801588296 60 
+p30. -3.67801588296 60 
+Direction set
+p1-14.5689039395 -2.33868245393 1.64933329216 
+p2-14.5689039395 -2.33868245393 60 
+p3-13.5689039395 -1.33868245393 2.64933329216 
+Direction set
+p1-21.6524086646 1.57423662095 2.01435745818e-11 
+p2-21.6524086646 1.57423662095 60 
+p3-21.6524086646 0. 60 
+Direction set
+p1-21.0399771176 2.56178899923 1.64947750053 
+p2-21.0399771176 2.56178899923 60 
+p3-21.0399771176 0. 60 
+Direction set
+p1-16.283108921 9.42085172181 1.65985991908 
+p2-16.283108921 9.42085172181 60 
+p3-15.283108921 8.42085172181 2.65985991908 
+Direction set
+p1-8.06229759693 13.6567105438 1.70092330426 
+p2-8.06229759693 13.6567105438 60 
+p30. 13.6567105438 60 
+Direction set
+p10.237498138663 13.7011174243 1.70092058543 
+p20.237498138663 13.7011174243 60 
+p30. 13.7011174243 60 
+Direction set
+K:
+[[  1.00000000e+00   8.35179409e+03   2.40885531e+04 ...,   8.91144944e-14
+    7.42699082e-01   1.90796327e+00]
+ [  2.00000000e+00   8.32368745e+03   2.44122715e+04 ...,   9.02016810e-14
+    7.42699082e-01   1.90796327e+00]
+ [  3.00000000e+00   8.32221542e+03   2.44298803e+04 ...,   9.02607970e-14
+    7.42699082e-01   1.90796327e+00]
+ ..., 
+ [  2.38000000e+02   9.07235814e+03   1.85920468e+04 ...,   6.60381939e-14
+    7.42699082e-01   1.90796327e+00]
+ [  2.39000000e+02   9.07001792e+03   1.86041293e+04 ...,   6.60991264e-14
+    7.42699082e-01   1.90796327e+00]
+ [  2.40000000e+02   9.07489025e+03   1.85789522e+04 ...,   6.59737588e-14
+    7.42699082e-01   1.90796327e+00]]
+reinforcement materials created
+Material and Part matched__1
+Material and Part matched__2
+Material and Part matched__3
+Material and Part matched__5
+Material and Part matched__6
+Material and Part matched__7
+Material and Part matched__8
+Material and Part matched__9
+Material and Part matched__10
+Material and Part matched__11
+Material and Part matched__12
+Material and Part matched__13
+Material and Part matched__14
+Material and Part matched__15
+Material and Part matched__17
+Material and Part matched__18
+Material and Part matched__19
+Material and Part matched__20
+Material and Part matched__21
+Material and Part matched__22
+Material and Part matched__23
+Material and Part matched__24
+Material and Part matched__25
+Material and Part matched__26
+Material and Part matched__27
+Material and Part matched__29
+Material and Part matched__30
+Material and Part matched__31
+Material and Part matched__32
+Material and Part matched__33
+Material and Part matched__34
+Material and Part matched__35
+Material and Part matched__36
+Material and Part matched__37
+Material and Part matched__38
+Material and Part matched__39
+Material and Part matched__41
+Material and Part matched__42
+Material and Part matched__43
+Material and Part matched__44
+Material and Part matched__45
+Material and Part matched__46
+Material and Part matched__47
+Material and Part matched__48
+Material and Part matched__49
+Material and Part matched__50
+Material and Part matched__51
+Material and Part matched__53
+Material and Part matched__54
+Material and Part matched__55
+Material and Part matched__56
+Material and Part matched__57
+Material and Part matched__58
+Material and Part matched__59
+Material and Part matched__60
+Material and Part matched__61
+Material and Part matched__62
+Material and Part matched__63
+Material and Part matched__65
+Material and Part matched__66
+Material and Part matched__67
+Material and Part matched__68
+Material and Part matched__69
+Material and Part matched__70
+Material and Part matched__71
+Material and Part matched__72
+Material and Part matched__73
+Material and Part matched__74
+Material and Part matched__75
+Material and Part matched__77
+Material and Part matched__78
+Material and Part matched__79
+Material and Part matched__80
+Material and Part matched__81
+Material and Part matched__82
+Material and Part matched__83
+Material and Part matched__84
+Material and Part matched__85
+Material and Part matched__86
+Material and Part matched__87
+Material and Part matched__89
+Material and Part matched__90
+Material and Part matched__91
+Material and Part matched__92
+Material and Part matched__93
+Material and Part matched__94
+Material and Part matched__95
+Material and Part matched__96
+Material and Part matched__97
+Material and Part matched__98
+Material and Part matched__99
+Material and Part matched__101
+Material and Part matched__102
+Material and Part matched__103
+Material and Part matched__104
+Material and Part matched__105
+Material and Part matched__106
+Material and Part matched__107
+Material and Part matched__108
+Material and Part matched__109
+Material and Part matched__110
+Material and Part matched__111
+Material and Part matched__113
+Material and Part matched__114
+Material and Part matched__115
+Material and Part matched__116
+Material and Part matched__117
+Material and Part matched__118
+Material and Part matched__119
+Material and Part matched__120
+Material and Part matched__121
+Material and Part matched__122
+Material and Part matched__123
+Material and Part matched__125
+Material and Part matched__126
+Material and Part matched__127
+Material and Part matched__128
+Material and Part matched__129
+Material and Part matched__130
+Material and Part matched__131
+Material and Part matched__132
+Material and Part matched__133
+Material and Part matched__134
+Material and Part matched__135
+Material and Part matched__137
+Material and Part matched__138
+Material and Part matched__139
+Material and Part matched__140
+Material and Part matched__141
+Material and Part matched__142
+Material and Part matched__143
+Material and Part matched__144
+Material and Part matched__145
+Material and Part matched__146
+Material and Part matched__147
+Material and Part matched__149
+Material and Part matched__150
+Material and Part matched__151
+Material and Part matched__152
+Material and Part matched__153
+Material and Part matched__154
+Material and Part matched__155
+Material and Part matched__156
+Material and Part matched__157
+Material and Part matched__158
+Material and Part matched__159
+Material and Part matched__161
+Material and Part matched__162
+Material and Part matched__163
+Material and Part matched__164
+Material and Part matched__165
+Material and Part matched__166
+Material and Part matched__167
+Material and Part matched__168
+Material and Part matched__169
+Material and Part matched__170
+Material and Part matched__171
+Material and Part matched__173
+Material and Part matched__174
+Material and Part matched__175
+Material and Part matched__176
+Material and Part matched__177
+Material and Part matched__178
+Material and Part matched__179
+Material and Part matched__180
+Material and Part matched__181
+Material and Part matched__182
+Material and Part matched__183
+Material and Part matched__185
+Material and Part matched__186
+Material and Part matched__187
+Material and Part matched__188
+Material and Part matched__189
+Material and Part matched__190
+Material and Part matched__191
+Material and Part matched__192
+Material and Part matched__193
+Material and Part matched__194
+Material and Part matched__195
+Material and Part matched__197
+Material and Part matched__198
+Material and Part matched__199
+Material and Part matched__200
+Material and Part matched__201
+Material and Part matched__202
+Material and Part matched__203
+Material and Part matched__204
+Material and Part matched__205
+Material and Part matched__206
+Material and Part matched__207
+Material and Part matched__209
+Material and Part matched__210
+Material and Part matched__211
+Material and Part matched__212
+Material and Part matched__213
+Material and Part matched__214
+Material and Part matched__215
+Material and Part matched__216
+Material and Part matched__217
+Material and Part matched__218
+Material and Part matched__219
+Material and Part matched__221
+Material and Part matched__222
+Material and Part matched__223
+Material and Part matched__224
+Material and Part matched__225
+Material and Part matched__226
+Material and Part matched__227
+Material and Part matched__228
+Material and Part matched__229
+Material and Part matched__230
+Material and Part matched__231
+Material and Part matched__233
+Material and Part matched__234
+Material and Part matched__235
+Material and Part matched__236
+Material and Part matched__237
+Material and Part matched__238
+Material and Part matched__239
+Material and Part matched__240
+all non-flow mewsh related layers done
+layup manager done
+test0
+test1
+test2
+test3
+test4
+test5
+test6
+test7
+test8
+test9
+test10
+test11
+test12
+test13
+test14
+test15
+test16
+test17
+test18
+test19
+test20
+test21
+test22
+test23
+test24
+test25
+test26
+test27
+test28
+test29
+test30
+test31
+test32
+test33
+test34
+test35
+test36
+test37
+test38
+test39
+test40
+test41
+test42
+test43
+test44
+test45
+test46
+test47
+test48
+test49
+test50
+test51
+test52
+test53
+test54
+test55
+test56
+test57
+test58
+test59
+test60
+test61
+test62
+test63
+test64
+test65
+test66
+test67
+test68
+test69
+test70
+test71
+test72
+test73
+test74
+test75
+test76
+test77
+test78
+test79
+test80
+test81
+test82
+test83
+test84
+test85
+test86
+test87
+test88
+test89
+test90
+test91
+test92
+test93
+test94
+test95
+test96
+test97
+test98
+test99
+test100
+test101
+test102
+test103
+test104
+test105
+test106
+test107
+test108
+test109
+test110
+test111
+test112
+test113
+test114
+test115
+test116
+test117
+test118
+test119
+test120
+test121
+test122
+test123
+test124
+test125
+test126
+test127
+test128
+test129
+test130
+test131
+test132
+test133
+test134
+test135
+test136
+test137
+test138
+test139
+test140
+test141
+test142
+test143
+test144
+test145
+test146
+test147
+test148
+test149
+test150
+test151
+test152
+test153
+test154
+test155
+test156
+test157
+test158
+test159
+test160
+test161
+test162
+test163
+test164
+test165
+test166
+test167
+test168
+test169
+test170
+test171
+test172
+test173
+test174
+test175
+test176
+test177
+test178
+test179
+test180
+test181
+test182
+test183
+test184
+test185
+test186
+test187
+test188
+test189
+test190
+test191
+test192
+test193
+test194
+test195
+test196
+test197
+test198
+test199
+test200
+test201
+test202
+test203
+test204
+test205
+test206
+test207
+test208
+test209
+test210
+test211
+test212
+test213
+test214
+test215
+test216
+test217
+test218
+test219
+test220
+test221
+test222
+test223
+test224
+test225
+test226
+test227
+test228
+test229
+test230
+test231
+test232
+test233
+test234
+test235
+test236
+test237
+test238
+test239
+ 10001/PART_10001  
+ 10002/PART_10002  
+ 10003/PART_10003  
+ 10004/PART_10004  
+ 10005/PART_10005  
+ 10006/PART_10006  
+ 10007/PART_10007  
+ 10008/PART_10008  
+ 10009/PART_10009  
+ 10010/PART_10010  
+ 10011/PART_10011  
+ 10012/PART_10012  
+ 10013/PART_10013  
+ 10014/PART_10014  
+ 10015/PART_10015  
+ 10016/PART_10016  
+ 10017/PART_10017  
+ 10018/PART_10018  
+ 10019/PART_10019  
+ 10020/PART_10020  
+ 10021/PART_10021  
+ 10022/PART_10022  
+ 10023/PART_10023  
+ 10024/PART_10024  
+ 10025/PART_10025  
+ 10026/PART_10026  
+ 10027/PART_10027  
+ 10028/PART_10028  
+ 10029/PART_10029  
+ 10030/PART_10030  
+ 10031/PART_10031  
+ 10032/PART_10032  
+ 10033/PART_10033  
+ 10034/PART_10034  
+ 10035/PART_10035  
+ 10036/PART_10036  
+ 10037/PART_10037  
+ 10038/PART_10038  
+ 10039/PART_10039  
+ 10040/PART_10040  
+ 10041/PART_10041  
+ 10042/PART_10042  
+ 10043/PART_10043  
+ 10044/PART_10044  
+ 10045/PART_10045  
+ 10046/PART_10046  
+ 10047/PART_10047  
+ 10048/PART_10048  
+ 10049/PART_10049  
+ 10050/PART_10050  
+ 10051/PART_10051  
+ 10052/PART_10052  
+ 10053/PART_10053  
+ 10054/PART_10054  
+ 10055/PART_10055  
+ 10056/PART_10056  
+ 10057/PART_10057  
+ 10058/PART_10058  
+ 10059/PART_10059  
+ 10060/PART_10060  
+ 10061/PART_10061  
+ 10062/PART_10062  
+ 10063/PART_10063  
+ 10064/PART_10064  
+ 10065/PART_10065  
+ 10066/PART_10066  
+ 10067/PART_10067  
+ 10068/PART_10068  
+ 10069/PART_10069  
+ 10070/PART_10070  
+ 10071/PART_10071  
+ 10072/PART_10072  
+ 10073/PART_10073  
+ 10074/PART_10074  
+ 10075/PART_10075  
+ 10076/PART_10076  
+ 10077/PART_10077  
+ 10078/PART_10078  
+ 10079/PART_10079  
+ 10080/PART_10080  
+ 10081/PART_10081  
+ 10082/PART_10082  
+ 10083/PART_10083  
+ 10084/PART_10084  
+ 10085/PART_10085  
+ 10086/PART_10086  
+ 10087/PART_10087  
+ 10088/PART_10088  
+ 10089/PART_10089  
+ 10090/PART_10090  
+ 10091/PART_10091  
+ 10092/PART_10092  
+ 10093/PART_10093  
+ 10094/PART_10094  
+ 10095/PART_10095  
+ 10096/PART_10096  
+ 10097/PART_10097  
+ 10098/PART_10098  
+ 10099/PART_10099  
+ 10100/PART_10100  
+ 10101/PART_10101  
+ 10102/PART_10102  
+ 10103/PART_10103  
+ 10104/PART_10104  
+ 10105/PART_10105  
+ 10106/PART_10106  
+ 10107/PART_10107  
+ 10108/PART_10108  
+ 10109/PART_10109  
+ 10110/PART_10110  
+ 10111/PART_10111  
+ 10112/PART_10112  
+ 10113/PART_10113  
+ 10114/PART_10114  
+ 10115/PART_10115  
+ 10116/PART_10116  
+ 10117/PART_10117  
+ 10118/PART_10118  
+ 10119/PART_10119  
+ 10120/PART_10120  
+ 10121/PART_10121  
+ 10122/PART_10122  
+ 10123/PART_10123  
+ 10124/PART_10124  
+ 10125/PART_10125  
+ 10126/PART_10126  
+ 10127/PART_10127  
+ 10128/PART_10128  
+ 10129/PART_10129  
+ 10130/PART_10130  
+ 10131/PART_10131  
+ 10132/PART_10132  
+ 10133/PART_10133  
+ 10134/PART_10134  
+ 10135/PART_10135  
+ 10136/PART_10136  
+ 10137/PART_10137  
+ 10138/PART_10138  
+ 10139/PART_10139  
+ 10140/PART_10140  
+ 10141/PART_10141  
+ 10142/PART_10142  
+ 10143/PART_10143  
+ 10144/PART_10144  
+ 10145/PART_10145  
+ 10146/PART_10146  
+ 10147/PART_10147  
+ 10148/PART_10148  
+ 10149/PART_10149  
+ 10150/PART_10150  
+ 10151/PART_10151  
+ 10152/PART_10152  
+ 10153/PART_10153  
+ 10154/PART_10154  
+ 10155/PART_10155  
+ 10156/PART_10156  
+ 10157/PART_10157  
+ 10158/PART_10158  
+ 10159/PART_10159  
+ 10160/PART_10160  
+ 10161/PART_10161  
+ 10162/PART_10162  
+ 10163/PART_10163  
+ 10164/PART_10164  
+ 10165/PART_10165  
+ 10166/PART_10166  
+ 10167/PART_10167  
+ 10168/PART_10168  
+ 10169/PART_10169  
+ 10170/PART_10170  
+ 10171/PART_10171  
+ 10172/PART_10172  
+ 10173/PART_10173  
+ 10174/PART_10174  
+ 10175/PART_10175  
+ 10176/PART_10176  
+ 10177/PART_10177  
+ 10178/PART_10178  
+ 10179/PART_10179  
+ 10180/PART_10180  
+ 10181/PART_10181  
+ 10182/PART_10182  
+ 10183/PART_10183  
+ 10184/PART_10184  
+ 10185/PART_10185  
+ 10186/PART_10186  
+ 10187/PART_10187  
+ 10188/PART_10188  
+ 10189/PART_10189  
+ 10190/PART_10190  
+ 10191/PART_10191  
+ 10192/PART_10192  
+ 10193/PART_10193  
+ 10194/PART_10194  
+ 10195/PART_10195  
+ 10196/PART_10196  
+ 10197/PART_10197  
+ 10198/PART_10198  
+ 10199/PART_10199  
+ 10200/PART_10200  
+ 10201/PART_10201  
+ 10202/PART_10202  
+ 10203/PART_10203  
+ 10204/PART_10204  
+ 10205/PART_10205  
+ 10206/PART_10206  
+ 10207/PART_10207  
+ 10208/PART_10208  
+ 10209/PART_10209  
+ 10210/PART_10210  
+ 10211/PART_10211  
+ 10212/PART_10212  
+ 10213/PART_10213  
+ 10214/PART_10214  
+ 10215/PART_10215  
+ 10216/PART_10216  
+ 10217/PART_10217  
+ 10218/PART_10218  
+ 10219/PART_10219  
+ 10220/PART_10220  
+ 10221/PART_10221  
+ 10222/PART_10222  
+ 10223/PART_10223  
+ 10224/PART_10224  
+ 10225/PART_10225  
+ 10226/PART_10226  
+ 10227/PART_10227  
+ 10228/PART_10228  
+ 10229/PART_10229  
+ 10230/PART_10230  
+ 10231/PART_10231  
+ 10232/PART_10232  
+ 10233/PART_10233  
+ 10234/PART_10234  
+ 10235/PART_10235  
+ 10236/PART_10236  
+ 10237/PART_10237  
+ 10238/PART_10238  
+ 10239/PART_10239  
+ 10240/PART_10240  
+orientations assigned
+flow rate assigned
+vent specifiedmodel saved, simulation ready
+The initial simulation starts here:__IDP_spar_A805_M002_JK.igs
+chopchop
+toolbox initiated
+______NewRun-_____IDP_spar_A805_M002_JK.igs_________
+initiated
+yupgogoyup
+yupyup
+eaiho
+ssssss  MFace  @0/@0 @0/@1 @0/@3 @0/@4 @0/@6 @0/@9 @0/@11 @0/@18 
+ssssss  MFace  @0/@2 @0/@5 @0/@10 @0/@17 
+ssssss  MFace  @0/@7 @0/@12 @0/@19 @0/@28 
+ssssss  MFace  @0/@14 @0/@21 @0/@30 @0/@41 
+ssssss  MFace  @0/@23 @0/@32 @0/@43 @0/@56 
+ssssss  MFace  @0/@34 @0/@45 @0/@47 @0/@58 @0/@60 @0/@73 @0/@75 @0/@91 
+ssssss  MFace  @0/@62 @0/@77 @0/@93 @0/@109 
+ssssss  MFace  @0/@79 @0/@95 @0/@111 @0/@127 
+ssssss  MFace  @0/@63 @0/@78 @0/@94 @0/@110 
+ssssss  MFace  @0/@35 @0/@46 @0/@48 @0/@59 @0/@61 @0/@74 @0/@76 @0/@92 
+ssssss  MFace  @0/@15 @0/@22 @0/@24 @0/@31 @0/@33 @0/@42 @0/@44 @0/@57 
+ssssss  MFace  @0/@8 @0/@13 @0/@20 @0/@29 
+ssssss  MFace  @0/@16 @0/@25 @0/@27 @0/@36 @0/@38 @0/@49 @0/@51 @0/@66 
+ssssss  MFace  @0/@26 @0/@37 @0/@50 @0/@65 
+ssssss  MFace  @0/@39 @0/@52 @0/@67 @0/@83 
+ssssss  MFace  @0/@54 @0/@69 @0/@85 @0/@101 
+ssssss  MFace  @0/@71 @0/@87 @0/@103 @0/@119 
+ssssss  MFace  @0/@89 @0/@105 @0/@107 @0/@121 @0/@123 @0/@137 @0/@139 @0/@155 
+ssssss  MFace  @0/@125 @0/@141 @0/@157 @0/@173 
+ssssss  MFace  @0/@143 @0/@159 @0/@175 @0/@191 
+ssssss  MFace  @0/@126 @0/@142 @0/@158 @0/@174 
+ssssss  MFace  @0/@90 @0/@106 @0/@108 @0/@122 @0/@124 @0/@138 @0/@140 @0/@156 
+ssssss  MFace  @0/@55 @0/@70 @0/@72 @0/@86 @0/@88 @0/@102 @0/@104 @0/@120 
+ssssss  MFace  @0/@40 @0/@53 @0/@68 @0/@84 
+ssssss  MFace  @0/@64 @0/@80 @0/@82 @0/@96 @0/@98 @0/@112 @0/@114 @0/@130 
+ssssss  MFace  @0/@81 @0/@97 @0/@113 @0/@129 
+ssssss  MFace  @0/@99 @0/@115 @0/@131 @0/@147 
+ssssss  MFace  @0/@117 @0/@133 @0/@149 @0/@165 
+ssssss  MFace  @0/@135 @0/@151 @0/@167 @0/@183 
+ssssss  MFace  @0/@153 @0/@169 @0/@171 @0/@185 @0/@187 @0/@201 @0/@203 @0/@219 
+ssssss  MFace  @0/@189 @0/@205 @0/@221 @0/@237 
+ssssss  MFace  @0/@207 @0/@223 @0/@239 @0/@255 
+ssssss  MFace  @0/@190 @0/@206 @0/@222 @0/@238 
+ssssss  MFace  @0/@154 @0/@170 @0/@172 @0/@186 @0/@188 @0/@202 @0/@204 @0/@220 
+ssssss  MFace  @0/@118 @0/@134 @0/@136 @0/@150 @0/@152 @0/@166 @0/@168 @0/@184 
+ssssss  MFace  @0/@100 @0/@116 @0/@132 @0/@148 
+ssssss  MFace  @0/@128 @0/@144 @0/@146 @0/@160 @0/@162 @0/@176 @0/@178 @0/@194 
+ssssss  MFace  @0/@145 @0/@161 @0/@177 @0/@193 
+ssssss  MFace  @0/@163 @0/@179 @0/@195 @0/@211 
+ssssss  MFace  @0/@181 @0/@197 @0/@213 @0/@229 
+ssssss  MFace  @0/@199 @0/@215 @0/@231 @0/@247 
+ssssss  MFace  @0/@217 @0/@233 @0/@235 @0/@249 @0/@251 @0/@265 @0/@267 @0/@283 
+ssssss  MFace  @0/@253 @0/@269 @0/@285 @0/@301 
+ssssss  MFace  @0/@271 @0/@287 @0/@303 @0/@319 
+ssssss  MFace  @0/@254 @0/@270 @0/@286 @0/@302 
+ssssss  MFace  @0/@218 @0/@234 @0/@236 @0/@250 @0/@252 @0/@266 @0/@268 @0/@284 
+ssssss  MFace  @0/@182 @0/@198 @0/@200 @0/@214 @0/@216 @0/@230 @0/@232 @0/@248 
+ssssss  MFace  @0/@164 @0/@180 @0/@196 @0/@212 
+ssssss  MFace  @0/@192 @0/@208 @0/@210 @0/@224 @0/@226 @0/@240 @0/@242 @0/@258 
+ssssss  MFace  @0/@209 @0/@225 @0/@241 @0/@257 
+ssssss  MFace  @0/@227 @0/@243 @0/@259 @0/@275 
+ssssss  MFace  @0/@245 @0/@261 @0/@277 @0/@293 
+ssssss  MFace  @0/@263 @0/@279 @0/@295 @0/@311 
+ssssss  MFace  @0/@281 @0/@297 @0/@299 @0/@313 @0/@315 @0/@329 @0/@331 @0/@347 
+ssssss  MFace  @0/@317 @0/@333 @0/@349 @0/@365 
+ssssss  MFace  @0/@335 @0/@351 @0/@367 @0/@383 
+ssssss  MFace  @0/@318 @0/@334 @0/@350 @0/@366 
+ssssss  MFace  @0/@282 @0/@298 @0/@300 @0/@314 @0/@316 @0/@330 @0/@332 @0/@348 
+ssssss  MFace  @0/@246 @0/@262 @0/@264 @0/@278 @0/@280 @0/@294 @0/@296 @0/@312 
+ssssss  MFace  @0/@228 @0/@244 @0/@260 @0/@276 
+ssssss  MFace  @0/@256 @0/@272 @0/@274 @0/@288 @0/@290 @0/@304 @0/@306 @0/@322 
+ssssss  MFace  @0/@273 @0/@289 @0/@305 @0/@321 
+ssssss  MFace  @0/@291 @0/@307 @0/@323 @0/@339 
+ssssss  MFace  @0/@309 @0/@325 @0/@341 @0/@357 
+ssssss  MFace  @0/@327 @0/@343 @0/@359 @0/@375 
+ssssss  MFace  @0/@345 @0/@361 @0/@363 @0/@377 @0/@379 @0/@393 @0/@395 @0/@411 
+ssssss  MFace  @0/@381 @0/@397 @0/@413 @0/@429 
+ssssss  MFace  @0/@399 @0/@415 @0/@431 @0/@447 
+ssssss  MFace  @0/@382 @0/@398 @0/@414 @0/@430 
+ssssss  MFace  @0/@346 @0/@362 @0/@364 @0/@378 @0/@380 @0/@394 @0/@396 @0/@412 
+ssssss  MFace  @0/@310 @0/@326 @0/@328 @0/@342 @0/@344 @0/@358 @0/@360 @0/@376 
+ssssss  MFace  @0/@292 @0/@308 @0/@324 @0/@340 
+ssssss  MFace  @0/@320 @0/@336 @0/@338 @0/@352 @0/@354 @0/@368 @0/@370 @0/@386 
+ssssss  MFace  @0/@337 @0/@353 @0/@369 @0/@385 
+ssssss  MFace  @0/@355 @0/@371 @0/@387 @0/@403 
+ssssss  MFace  @0/@373 @0/@389 @0/@405 @0/@421 
+ssssss  MFace  @0/@391 @0/@407 @0/@423 @0/@439 
+ssssss  MFace  @0/@409 @0/@425 @0/@427 @0/@441 @0/@443 @0/@457 @0/@459 @0/@475 
+ssssss  MFace  @0/@445 @0/@461 @0/@477 @0/@493 
+ssssss  MFace  @0/@463 @0/@479 @0/@495 @0/@511 
+ssssss  MFace  @0/@446 @0/@462 @0/@478 @0/@494 
+ssssss  MFace  @0/@410 @0/@426 @0/@428 @0/@442 @0/@444 @0/@458 @0/@460 @0/@476 
+ssssss  MFace  @0/@374 @0/@390 @0/@392 @0/@406 @0/@408 @0/@422 @0/@424 @0/@440 
+ssssss  MFace  @0/@356 @0/@372 @0/@388 @0/@404 
+ssssss  MFace  @0/@384 @0/@400 @0/@402 @0/@416 @0/@418 @0/@432 @0/@434 @0/@450 
+ssssss  MFace  @0/@401 @0/@417 @0/@433 @0/@449 
+ssssss  MFace  @0/@419 @0/@435 @0/@451 @0/@467 
+ssssss  MFace  @0/@437 @0/@453 @0/@469 @0/@485 
+ssssss  MFace  @0/@455 @0/@471 @0/@487 @0/@503 
+ssssss  MFace  @0/@473 @0/@489 @0/@491 @0/@505 @0/@507 @0/@521 @0/@523 @0/@539 
+ssssss  MFace  @0/@509 @0/@525 @0/@541 @0/@557 
+ssssss  MFace  @0/@527 @0/@543 @0/@559 @0/@575 
+ssssss  MFace  @0/@510 @0/@526 @0/@542 @0/@558 
+ssssss  MFace  @0/@474 @0/@490 @0/@492 @0/@506 @0/@508 @0/@522 @0/@524 @0/@540 
+ssssss  MFace  @0/@438 @0/@454 @0/@456 @0/@470 @0/@472 @0/@486 @0/@488 @0/@504 
+ssssss  MFace  @0/@420 @0/@436 @0/@452 @0/@468 
+ssssss  MFace  @0/@448 @0/@464 @0/@466 @0/@480 @0/@482 @0/@496 @0/@498 @0/@514 
+ssssss  MFace  @0/@465 @0/@481 @0/@497 @0/@513 
+ssssss  MFace  @0/@483 @0/@499 @0/@515 @0/@531 
+ssssss  MFace  @0/@501 @0/@517 @0/@533 @0/@549 
+ssssss  MFace  @0/@519 @0/@535 @0/@551 @0/@567 
+ssssss  MFace  @0/@537 @0/@553 @0/@555 @0/@569 @0/@571 @0/@585 @0/@587 @0/@603 
+ssssss  MFace  @0/@573 @0/@589 @0/@605 @0/@621 
+ssssss  MFace  @0/@591 @0/@607 @0/@623 @0/@639 
+ssssss  MFace  @0/@574 @0/@590 @0/@606 @0/@622 
+ssssss  MFace  @0/@538 @0/@554 @0/@556 @0/@570 @0/@572 @0/@586 @0/@588 @0/@604 
+ssssss  MFace  @0/@502 @0/@518 @0/@520 @0/@534 @0/@536 @0/@550 @0/@552 @0/@568 
+ssssss  MFace  @0/@484 @0/@500 @0/@516 @0/@532 
+ssssss  MFace  @0/@512 @0/@528 @0/@530 @0/@544 @0/@546 @0/@560 @0/@562 @0/@578 
+ssssss  MFace  @0/@529 @0/@545 @0/@561 @0/@577 
+ssssss  MFace  @0/@547 @0/@563 @0/@579 @0/@595 
+ssssss  MFace  @0/@565 @0/@581 @0/@597 @0/@613 
+ssssss  MFace  @0/@583 @0/@599 @0/@615 @0/@631 
+ssssss  MFace  @0/@601 @0/@617 @0/@619 @0/@633 @0/@635 @0/@649 @0/@651 @0/@667 
+ssssss  MFace  @0/@637 @0/@653 @0/@669 @0/@685 
+ssssss  MFace  @0/@655 @0/@671 @0/@687 @0/@703 
+ssssss  MFace  @0/@638 @0/@654 @0/@670 @0/@686 
+ssssss  MFace  @0/@602 @0/@618 @0/@620 @0/@634 @0/@636 @0/@650 @0/@652 @0/@668 
+ssssss  MFace  @0/@566 @0/@582 @0/@584 @0/@598 @0/@600 @0/@614 @0/@616 @0/@632 
+ssssss  MFace  @0/@548 @0/@564 @0/@580 @0/@596 
+ssssss  MFace  @0/@576 @0/@592 @0/@594 @0/@608 @0/@610 @0/@624 @0/@626 @0/@642 
+ssssss  MFace  @0/@593 @0/@609 @0/@625 @0/@641 
+ssssss  MFace  @0/@611 @0/@627 @0/@643 @0/@659 
+ssssss  MFace  @0/@629 @0/@645 @0/@661 @0/@677 
+ssssss  MFace  @0/@647 @0/@663 @0/@679 @0/@695 
+ssssss  MFace  @0/@665 @0/@681 @0/@683 @0/@697 @0/@699 @0/@713 @0/@715 @0/@731 
+ssssss  MFace  @0/@701 @0/@717 @0/@733 @0/@749 
+ssssss  MFace  @0/@719 @0/@735 @0/@751 @0/@767 
+ssssss  MFace  @0/@702 @0/@718 @0/@734 @0/@750 
+ssssss  MFace  @0/@666 @0/@682 @0/@684 @0/@698 @0/@700 @0/@714 @0/@716 @0/@732 
+ssssss  MFace  @0/@630 @0/@646 @0/@648 @0/@662 @0/@664 @0/@678 @0/@680 @0/@696 
+ssssss  MFace  @0/@612 @0/@628 @0/@644 @0/@660 
+ssssss  MFace  @0/@640 @0/@656 @0/@658 @0/@672 @0/@674 @0/@688 @0/@690 @0/@706 
+ssssss  MFace  @0/@657 @0/@673 @0/@689 @0/@705 
+ssssss  MFace  @0/@675 @0/@691 @0/@707 @0/@723 
+ssssss  MFace  @0/@693 @0/@709 @0/@725 @0/@741 
+ssssss  MFace  @0/@711 @0/@727 @0/@743 @0/@759 
+ssssss  MFace  @0/@729 @0/@745 @0/@747 @0/@761 @0/@763 @0/@777 @0/@779 @0/@795 
+ssssss  MFace  @0/@765 @0/@781 @0/@797 @0/@813 
+ssssss  MFace  @0/@783 @0/@799 @0/@815 @0/@831 
+ssssss  MFace  @0/@766 @0/@782 @0/@798 @0/@814 
+ssssss  MFace  @0/@730 @0/@746 @0/@748 @0/@762 @0/@764 @0/@778 @0/@780 @0/@796 
+ssssss  MFace  @0/@694 @0/@710 @0/@712 @0/@726 @0/@728 @0/@742 @0/@744 @0/@760 
+ssssss  MFace  @0/@676 @0/@692 @0/@708 @0/@724 
+ssssss  MFace  @0/@704 @0/@720 @0/@722 @0/@736 @0/@738 @0/@752 @0/@754 @0/@770 
+ssssss  MFace  @0/@721 @0/@737 @0/@753 @0/@769 
+ssssss  MFace  @0/@739 @0/@755 @0/@771 @0/@787 
+ssssss  MFace  @0/@757 @0/@773 @0/@789 @0/@805 
+ssssss  MFace  @0/@775 @0/@791 @0/@807 @0/@823 
+ssssss  MFace  @0/@793 @0/@809 @0/@811 @0/@825 @0/@827 @0/@841 @0/@843 @0/@859 
+ssssss  MFace  @0/@829 @0/@845 @0/@861 @0/@877 
+ssssss  MFace  @0/@847 @0/@863 @0/@879 @0/@895 
+ssssss  MFace  @0/@830 @0/@846 @0/@862 @0/@878 
+ssssss  MFace  @0/@794 @0/@810 @0/@812 @0/@826 @0/@828 @0/@842 @0/@844 @0/@860 
+ssssss  MFace  @0/@758 @0/@774 @0/@776 @0/@790 @0/@792 @0/@806 @0/@808 @0/@824 
+ssssss  MFace  @0/@740 @0/@756 @0/@772 @0/@788 
+ssssss  MFace  @0/@768 @0/@784 @0/@786 @0/@800 @0/@802 @0/@816 @0/@818 @0/@834 
+ssssss  MFace  @0/@785 @0/@801 @0/@817 @0/@833 
+ssssss  MFace  @0/@803 @0/@819 @0/@835 @0/@851 
+ssssss  MFace  @0/@821 @0/@837 @0/@853 @0/@869 
+ssssss  MFace  @0/@839 @0/@855 @0/@871 @0/@887 
+ssssss  MFace  @0/@857 @0/@873 @0/@875 @0/@889 @0/@891 @0/@905 @0/@907 @0/@923 
+ssssss  MFace  @0/@893 @0/@909 @0/@925 @0/@941 
+ssssss  MFace  @0/@911 @0/@927 @0/@943 @0/@959 
+ssssss  MFace  @0/@894 @0/@910 @0/@926 @0/@942 
+ssssss  MFace  @0/@858 @0/@874 @0/@876 @0/@890 @0/@892 @0/@906 @0/@908 @0/@924 
+ssssss  MFace  @0/@822 @0/@838 @0/@840 @0/@854 @0/@856 @0/@870 @0/@872 @0/@888 
+ssssss  MFace  @0/@804 @0/@820 @0/@836 @0/@852 
+ssssss  MFace  @0/@832 @0/@848 @0/@850 @0/@864 @0/@866 @0/@880 @0/@882 @0/@898 
+ssssss  MFace  @0/@849 @0/@865 @0/@881 @0/@897 
+ssssss  MFace  @0/@867 @0/@883 @0/@899 @0/@915 
+ssssss  MFace  @0/@885 @0/@901 @0/@917 @0/@933 
+ssssss  MFace  @0/@903 @0/@919 @0/@935 @0/@951 
+ssssss  MFace  @0/@921 @0/@937 @0/@939 @0/@953 @0/@955 @0/@969 @0/@971 @0/@987 
+ssssss  MFace  @0/@957 @0/@973 @0/@989 @0/@1005 
+ssssss  MFace  @0/@975 @0/@991 @0/@1007 @0/@1023 
+ssssss  MFace  @0/@958 @0/@974 @0/@990 @0/@1006 
+ssssss  MFace  @0/@922 @0/@938 @0/@940 @0/@954 @0/@956 @0/@970 @0/@972 @0/@988 
+ssssss  MFace  @0/@886 @0/@902 @0/@904 @0/@918 @0/@920 @0/@934 @0/@936 @0/@952 
+ssssss  MFace  @0/@868 @0/@884 @0/@900 @0/@916 
+ssssss  MFace  @0/@896 @0/@912 @0/@914 @0/@928 @0/@930 @0/@944 @0/@946 @0/@962 
+ssssss  MFace  @0/@913 @0/@929 @0/@945 @0/@961 
+ssssss  MFace  @0/@931 @0/@947 @0/@963 @0/@979 
+ssssss  MFace  @0/@949 @0/@965 @0/@981 @0/@997 
+ssssss  MFace  @0/@967 @0/@983 @0/@999 @0/@1015 
+ssssss  MFace  @0/@985 @0/@1001 @0/@1003 @0/@1017 @0/@1019 @0/@1033 @0/@1035 @0/@1051 
+ssssss  MFace  @0/@1021 @0/@1037 @0/@1053 @0/@1069 
+ssssss  MFace  @0/@1039 @0/@1055 @0/@1071 @0/@1087 
+ssssss  MFace  @0/@1022 @0/@1038 @0/@1054 @0/@1070 
+ssssss  MFace  @0/@986 @0/@1002 @0/@1004 @0/@1018 @0/@1020 @0/@1034 @0/@1036 @0/@1052 
+ssssss  MFace  @0/@950 @0/@966 @0/@968 @0/@982 @0/@984 @0/@998 @0/@1000 @0/@1016 
+ssssss  MFace  @0/@932 @0/@948 @0/@964 @0/@980 
+ssssss  MFace  @0/@960 @0/@976 @0/@978 @0/@992 @0/@994 @0/@1008 @0/@1010 @0/@1026 
+ssssss  MFace  @0/@977 @0/@993 @0/@1009 @0/@1025 
+ssssss  MFace  @0/@995 @0/@1011 @0/@1027 @0/@1043 
+ssssss  MFace  @0/@1013 @0/@1029 @0/@1045 @0/@1061 
+ssssss  MFace  @0/@1031 @0/@1047 @0/@1063 @0/@1079 
+ssssss  MFace  @0/@1049 @0/@1065 @0/@1067 @0/@1081 @0/@1083 @0/@1097 @0/@1099 @0/@1115 
+ssssss  MFace  @0/@1085 @0/@1101 @0/@1117 @0/@1133 
+ssssss  MFace  @0/@1103 @0/@1119 @0/@1135 @0/@1151 
+ssssss  MFace  @0/@1086 @0/@1102 @0/@1118 @0/@1134 
+ssssss  MFace  @0/@1050 @0/@1066 @0/@1068 @0/@1082 @0/@1084 @0/@1098 @0/@1100 @0/@1116 
+ssssss  MFace  @0/@1014 @0/@1030 @0/@1032 @0/@1046 @0/@1048 @0/@1062 @0/@1064 @0/@1080 
+ssssss  MFace  @0/@996 @0/@1012 @0/@1028 @0/@1044 
+ssssss  MFace  @0/@1024 @0/@1040 @0/@1042 @0/@1056 @0/@1058 @0/@1072 @0/@1074 @0/@1090 
+ssssss  MFace  @0/@1041 @0/@1057 @0/@1073 @0/@1089 
+ssssss  MFace  @0/@1059 @0/@1075 @0/@1091 @0/@1107 
+ssssss  MFace  @0/@1077 @0/@1093 @0/@1109 @0/@1125 
+ssssss  MFace  @0/@1095 @0/@1111 @0/@1127 @0/@1143 
+ssssss  MFace  @0/@1113 @0/@1129 @0/@1131 @0/@1145 @0/@1147 @0/@1161 @0/@1163 @0/@1179 
+ssssss  MFace  @0/@1149 @0/@1165 @0/@1181 @0/@1197 
+ssssss  MFace  @0/@1167 @0/@1183 @0/@1199 @0/@1215 
+ssssss  MFace  @0/@1150 @0/@1166 @0/@1182 @0/@1198 
+ssssss  MFace  @0/@1114 @0/@1130 @0/@1132 @0/@1146 @0/@1148 @0/@1162 @0/@1164 @0/@1180 
+ssssss  MFace  @0/@1078 @0/@1094 @0/@1096 @0/@1110 @0/@1112 @0/@1126 @0/@1128 @0/@1144 
+ssssss  MFace  @0/@1060 @0/@1076 @0/@1092 @0/@1108 
+ssssss  MFace  @0/@1088 @0/@1104 @0/@1106 @0/@1120 @0/@1122 @0/@1136 @0/@1138 @0/@1154 
+ssssss  MFace  @0/@1105 @0/@1121 @0/@1137 @0/@1153 
+ssssss  MFace  @0/@1123 @0/@1139 @0/@1155 @0/@1171 
+ssssss  MFace  @0/@1141 @0/@1157 @0/@1173 @0/@1189 
+ssssss  MFace  @0/@1159 @0/@1175 @0/@1191 @0/@1207 
+ssssss  MFace  @0/@1177 @0/@1193 @0/@1195 @0/@1209 @0/@1211 @0/@1224 @0/@1226 @0/@1239 
+ssssss  MFace  @0/@1213 @0/@1228 @0/@1241 @0/@1252 
+ssssss  MFace  @0/@1230 @0/@1243 @0/@1254 @0/@1263 
+ssssss  MFace  @0/@1214 @0/@1229 @0/@1242 @0/@1253 
+ssssss  MFace  @0/@1178 @0/@1194 @0/@1196 @0/@1210 @0/@1212 @0/@1225 @0/@1227 @0/@1240 
+ssssss  MFace  @0/@1142 @0/@1158 @0/@1160 @0/@1174 @0/@1176 @0/@1190 @0/@1192 @0/@1208 
+ssssss  MFace  @0/@1124 @0/@1140 @0/@1156 @0/@1172 
+ssssss  MFace  @0/@1152 @0/@1168 @0/@1170 @0/@1184 @0/@1186 @0/@1200 @0/@1202 @0/@1217 
+ssssss  MFace  @0/@1169 @0/@1185 @0/@1201 @0/@1216 
+ssssss  MFace  @0/@1187 @0/@1203 @0/@1218 @0/@1231 
+ssssss  MFace  @0/@1205 @0/@1220 @0/@1233 @0/@1244 
+ssssss  MFace  @0/@1222 @0/@1235 @0/@1246 @0/@1255 
+ssssss  MFace  @0/@1237 @0/@1248 @0/@1250 @0/@1257 @0/@1259 @0/@1264 @0/@1266 @0/@1271 
+ssssss  MFace  @0/@1261 @0/@1268 @0/@1273 @0/@1276 
+ssssss  MFace  @0/@1270 @0/@1275 @0/@1278 @0/@1279 
+ssssss  MFace  @0/@1262 @0/@1269 @0/@1274 @0/@1277 
+ssssss  MFace  @0/@1238 @0/@1249 @0/@1251 @0/@1258 @0/@1260 @0/@1265 @0/@1267 @0/@1272 
+ssssss  MFace  @0/@1206 @0/@1221 @0/@1223 @0/@1234 @0/@1236 @0/@1245 @0/@1247 @0/@1256 
+ssssss  MFace  @0/@1188 @0/@1204 @0/@1219 @0/@1232 
+surfaces assigned
+meshed
+simulation parameters selected
+yupyup2
+eaiho2
+crash-checkc0_____ Node  11 / 11 | Node  12 / 12 | Node  13 / 13 | Node  14 / 14 | Node  15 / 15 | Node  16 / 16 | Node  17 / 17 | Node  50 / 50 | Node  51 / 51 | Node  52 / 52 | Node  53 / 53 ___
+crash-checkc1_____ Node  9 / 9 | Node  10 / 10 | Node  37 / 37 | Node  38 / 38 | Node  39 / 39 | Node  40 / 40 | Node  41 / 41 | Node  42 / 42 | Node  43 / 43 ___
+crash-checkc2_____ Node  98 / 98 | Node  99 / 99 | Node  100 / 100 | Node  101 / 101 | Node  102 / 102 ___
+crash-checkc3_____ Node  96 / 96 | Node  97 / 97 | Node  179 / 179 | Node  180 / 180 | Node  181 / 181 ___
+crash-checkc4_____ Node  175 / 175 | Node  176 / 176 | Node  177 / 177 | Node  178 / 178 | Node  274 / 274 | Node  276 / 276 | Node  277 / 277 | Node  278 / 278 | Node  279 / 279 | Node  280 / 280 | Node  399 / 399 ___
+crash-checkc5_____ Node  393 / 393 | Node  395 / 395 | Node  398 / 398 | Node  532 / 532 | Node  533 / 533 | Node  534 / 534 | Node  535 / 535 | Node  536 / 536 | Node  537 / 537 | Node  538 / 538 ___
+crash-checkc6_____ Node  691 / 691 | Node  692 / 692 | Node  693 / 693 | Node  694 / 694 | Node  695 / 695 | Node  696 / 696 | Node  697 / 697 | Node  872 / 872 ___
+crash-checkc7_____ Node  708 / 708 | Node  710 / 710 | Node  868 / 868 | Node  869 / 869 | Node  870 / 870 | Node  871 / 871 ___
+crash-checkc8_____ Node  549 / 549 | Node  550 / 550 | Node  551 / 551 | Node  704 / 704 | Node  705 / 705 | Node  706 / 706 | Node  707 / 707 | Node  709 / 709 ___
+crash-checkc9_____ Node  406 / 406 | Node  407 / 407 | Node  408 / 408 | Node  409 / 409 | Node  410 / 410 | Node  411 / 411 | Node  412 / 412 | Node  545 / 545 | Node  546 / 546 | Node  547 / 547 | Node  548 / 548 ___
+crash-checkc10_____ Node  190 / 190 | Node  191 / 191 | Node  192 / 192 | Node  193 / 193 | Node  194 / 194 | Node  287 / 287 | Node  288 / 288 | Node  289 / 289 | Node  290 / 290 | Node  291 / 291 | Node  292 / 292 | Node  293 / 293 ___
+crash-checkc11_____ Node  54 / 54 | Node  55 / 55 | Node  56 / 56 | Node  109 / 109 | Node  110 / 110 | Node  111 / 111 | Node  112 / 112 | Node  113 / 113 | Node  114 / 114 | Node  115 / 115 | Node  188 / 188 | Node  189 / 189 ___
+check the working one_____ Node  12073 / 12073 |  Node  12074 / 12074 |  Node  12075 / 12075 |  Node  12076 / 12076 |  Node  12077 / 12077 |  Node  12078 / 12078 |  Node  12079 / 12079 |  Node  12080 / 12080 |  Node  12233 / 12233 |  Node  12234 / 12234 |  Node  12235 / 12235 |  Node  12236 / 12236 |  Node  12237 / 12237 |  Node  12238 / 12238 |  Node  12243 / 12243 |  Node  12244 / 12244 |  Node  12245 / 12245 |  Node  12246 / 12246 |  Node  12247 / 12247 |  Node  12248 / 12248 |  Node  12380 / 12380 |  Node  12381 / 12381 |  Node  12382 / 12382 |  Node  12383 / 12383 |  Node  12384 / 12384 |  Node  12385 / 12385 |  Node  12390 / 12390 |  Node  12391 / 12391 |  Node  12392 / 12392 |  Node  12393 / 12393 |  Node  12394 / 12394 |  Node  12395 / 12395 |  Node  12507 / 12507 |  Node  12508 / 12508 |  Node  12509 / 12509 |  Node  12510 / 12510 |  Node  12511 / 12511 |  Node  12512 / 12512 |  Node  12517 / 12517 |  Node  12518 / 12518 |  Node  12519 / 12519 |  Node  12520 / 12520 |  Node  12521 / 12521 |  Node  12522 / 12522 |  Node  12614 / 12614 |  Node  12615 / 12615 |  Node  12616 / 12616 |  Node  12617 / 12617 |  Node  12618 / 12618 |  Node  12619 / 12619 |  Node  12624 / 12624 |  Node  12625 / 12625 |  Node  12626 / 12626 |  Node  12627 / 12627 |  Node  12628 / 12628 |  Node  12629 / 12629 |  Node  12701 / 12701 |  Node  12702 / 12702 |  Node  12703 / 12703 |  Node  12704 / 12704 |  Node  12705 / 12705 |  Node  12706 / 12706 |  Node  12711 / 12711 |  Node  12712 / 12712 |  Node  12713 / 12713 |  Node  12714 / 12714 |  Node  12715 / 12715 |  Node  12716 / 12716 |  Node  12768 / 12768 |  Node  12769 / 12769 |  Node  12770 / 12770 |  Node  12771 / 12771 |  Node  12772 / 12772 |  Node  12773 / 12773 |  Node  12778 / 12778 |  Node  12779 / 12779 |  Node  12780 / 12780 |  Node  12781 / 12781 |  Node  12782 / 12782 |  Node  12783 / 12783 |  Node  12815 / 12815 |  Node  12816 / 12816 |  Node  12817 / 12817 |  Node  12818 / 12818 |  Node  12819 / 12819 |  Node  12820 / 12820 |  Node  12825 / 12825 |  Node  12826 / 12826 |  Node  12827 / 12827 |  Node  12828 / 12828 |  Node  12829 / 12829 |  Node  12830 / 12830 |  Node  12842 / 12842 |  Node  12843 / 12843 |  Node  12844 / 12844 |  Node  12845 / 12845 ___
+BC regions created
+p110.9371805568 13.099258966 1.67064906759 
+p210.9371805568 13.099258966 60 
+p311.9371805568 14.099258966 2.67064906759 
+Direction set
+p116.8833275295 7.43304061499 1.70504248386 
+p216.8833275295 7.43304061499 60 
+p316.8833275295 0. 60 
+Direction set
+p115.1424954684 2.11892411565 1.70473653777 
+p215.1424954684 2.11892411565 60 
+p315.1424954684 0. 60 
+Direction set
+p111.810055704 -2.0155957168 1.70379957846 
+p211.810055704 -2.0155957168 60 
+p312.810055704 -3.0155957168 2.70379957846 
+Direction set
+p10.818078934728 -3.50249870143 1.70522942697 
+p20.818078934728 -3.50249870143 60 
+p30. -3.50249870143 60 
+Direction set
+p1-4.83890283272 -3.71411541106 1.70523103217 
+p2-4.83890283272 -3.71411541106 60 
+p30. -3.71411541106 60 
+Direction set
+p1-15.1463207057 -1.77575259845 1.7037692814 
+p2-15.1463207057 -1.77575259845 60 
+p3-14.1463207057 -0.775752598452 2.7037692814 
+Direction set
+p1-15.9125101514 -0.273733297754 1.66997078316 
+p2-15.9125101514 -0.273733297754 60 
+p3-15.9125101514 0. 60 
+Direction set
+p1-17.09652056 3.27089332533 1.70523066337 
+p2-17.09652056 3.27089332533 60 
+p3-17.09652056 0. 60 
+Direction set
+p1-15.6517004773 10.1792189818 1.6699138731 
+p2-15.6517004773 10.1792189818 60 
+p3-14.6517004773 9.17921898177 2.6699138731 
+Direction set
+p1-8.94626655087 13.6626906623 1.66666666694 
+p2-8.94626655087 13.6626906623 60 
+p30. 13.6626906623 60 
+Direction set
+p10.487830609375 13.7167848854 1.42340880571e-15 
+p20.487830609375 13.7167848854 60 
+p30. 13.7167848854 60 
+Direction set
+K:
+[[  1.00000000e+00   8.46337233e+03   2.29039689e+04 ...,   8.49329219e-14
+    7.42699082e-01   1.90796327e+00]
+ [  2.00000000e+00   8.42132026e+03   2.33285559e+04 ...,   8.64802617e-14
+    7.42699082e-01   1.90796327e+00]
+ [  3.00000000e+00   8.42599391e+03   2.32827523e+04 ...,   8.63215578e-14
+    7.42699082e-01   1.90796327e+00]
+ ..., 
+ [  2.38000000e+02   1.42851102e+04   1.04030250e+04 ...,   1.40943815e-14
+    7.42699082e-01   1.90796327e+00]
+ [  2.39000000e+02   1.42836149e+04   1.04037835e+04 ...,   1.40991738e-14
+    7.42699082e-01   1.90796327e+00]
+ [  2.40000000e+02   1.42705912e+04   1.04102409e+04 ...,   1.41450436e-14
+    7.42699082e-01   1.90796327e+00]]
+reinforcement materials created
+Material and Part matched__1
+Material and Part matched__2
+Material and Part matched__3
+Material and Part matched__4
+Material and Part matched__5
+Material and Part matched__6
+Material and Part matched__7
+Material and Part matched__8
+Material and Part matched__9
+Material and Part matched__10
+Material and Part matched__11
+Material and Part matched__12
+Material and Part matched__13
+Material and Part matched__14
+Material and Part matched__15
+Material and Part matched__16
+Material and Part matched__17
+Material and Part matched__18
+Material and Part matched__19
+Material and Part matched__20
+Material and Part matched__21
+Material and Part matched__22
+Material and Part matched__23
+Material and Part matched__24
+Material and Part matched__25
+Material and Part matched__26
+Material and Part matched__27
+Material and Part matched__28
+Material and Part matched__29
+Material and Part matched__30
+Material and Part matched__31
+Material and Part matched__32
+Material and Part matched__33
+Material and Part matched__34
+Material and Part matched__35
+Material and Part matched__36
+Material and Part matched__37
+Material and Part matched__38
+Material and Part matched__39
+Material and Part matched__40
+Material and Part matched__41
+Material and Part matched__42
+Material and Part matched__43
+Material and Part matched__44
+Material and Part matched__45
+Material and Part matched__46
+Material and Part matched__47
+Material and Part matched__48
+Material and Part matched__49
+Material and Part matched__50
+Material and Part matched__51
+Material and Part matched__52
+Material and Part matched__53
+Material and Part matched__54
+Material and Part matched__55
+Material and Part matched__56
+Material and Part matched__57
+Material and Part matched__58
+Material and Part matched__59
+Material and Part matched__60
+Material and Part matched__61
+Material and Part matched__62
+Material and Part matched__63
+Material and Part matched__64
+Material and Part matched__65
+Material and Part matched__66
+Material and Part matched__67
+Material and Part matched__68
+Material and Part matched__69
+Material and Part matched__70
+Material and Part matched__71
+Material and Part matched__72
+Material and Part matched__73
+Material and Part matched__74
+Material and Part matched__75
+Material and Part matched__76
+Material and Part matched__77
+Material and Part matched__78
+Material and Part matched__79
+Material and Part matched__80
+Material and Part matched__81
+Material and Part matched__82
+Material and Part matched__83
+Material and Part matched__84
+Material and Part matched__85
+Material and Part matched__86
+Material and Part matched__87
+Material and Part matched__88
+Material and Part matched__89
+Material and Part matched__90
+Material and Part matched__91
+Material and Part matched__92
+Material and Part matched__93
+Material and Part matched__94
+Material and Part matched__95
+Material and Part matched__96
+Material and Part matched__97
+Material and Part matched__98
+Material and Part matched__99
+Material and Part matched__100
+Material and Part matched__101
+Material and Part matched__102
+Material and Part matched__103
+Material and Part matched__104
+Material and Part matched__105
+Material and Part matched__106
+Material and Part matched__107
+Material and Part matched__108
+Material and Part matched__109
+Material and Part matched__110
+Material and Part matched__111
+Material and Part matched__112
+Material and Part matched__113
+Material and Part matched__114
+Material and Part matched__115
+Material and Part matched__116
+Material and Part matched__117
+Material and Part matched__118
+Material and Part matched__119
+Material and Part matched__120
+Material and Part matched__121
+Material and Part matched__122
+Material and Part matched__123
+Material and Part matched__124
+Material and Part matched__125
+Material and Part matched__126
+Material and Part matched__127
+Material and Part matched__128
+Material and Part matched__129
+Material and Part matched__130
+Material and Part matched__131
+Material and Part matched__132
+Material and Part matched__133
+Material and Part matched__134
+Material and Part matched__135
+Material and Part matched__136
+Material and Part matched__137
+Material and Part matched__138
+Material and Part matched__139
+Material and Part matched__140
+Material and Part matched__141
+Material and Part matched__142
+Material and Part matched__143
+Material and Part matched__144
+Material and Part matched__145
+Material and Part matched__146
+Material and Part matched__147
+Material and Part matched__148
+Material and Part matched__149
+Material and Part matched__150
+Material and Part matched__151
+Material and Part matched__152
+Material and Part matched__153
+Material and Part matched__154
+Material and Part matched__155
+Material and Part matched__156
+Material and Part matched__157
+Material and Part matched__158
+Material and Part matched__159
+Material and Part matched__160
+Material and Part matched__161
+Material and Part matched__162
+Material and Part matched__163
+Material and Part matched__164
+Material and Part matched__165
+Material and Part matched__166
+Material and Part matched__167
+Material and Part matched__168
+Material and Part matched__169
+Material and Part matched__170
+Material and Part matched__171
+Material and Part matched__172
+Material and Part matched__173
+Material and Part matched__174
+Material and Part matched__175
+Material and Part matched__176
+Material and Part matched__177
+Material and Part matched__178
+Material and Part matched__179
+Material and Part matched__180
+Material and Part matched__181
+Material and Part matched__182
+Material and Part matched__183
+Material and Part matched__184
+Material and Part matched__185
+Material and Part matched__186
+Material and Part matched__187
+Material and Part matched__188
+Material and Part matched__189
+Material and Part matched__190
+Material and Part matched__191
+Material and Part matched__192
+Material and Part matched__193
+Material and Part matched__194
+Material and Part matched__195
+Material and Part matched__196
+Material and Part matched__197
+Material and Part matched__198
+Material and Part matched__199
+Material and Part matched__200
+Material and Part matched__201
+Material and Part matched__202
+Material and Part matched__203
+Material and Part matched__204
+Material and Part matched__205
+Material and Part matched__206
+Material and Part matched__207
+Material and Part matched__208
+Material and Part matched__209
+Material and Part matched__210
+Material and Part matched__211
+Material and Part matched__212
+Material and Part matched__213
+Material and Part matched__214
+Material and Part matched__215
+Material and Part matched__216
+Material and Part matched__217
+Material and Part matched__218
+Material and Part matched__219
+Material and Part matched__220
+Material and Part matched__221
+Material and Part matched__222
+Material and Part matched__223
+Material and Part matched__224
+Material and Part matched__225
+Material and Part matched__226
+Material and Part matched__227
+Material and Part matched__228
+Material and Part matched__229
+Material and Part matched__230
+Material and Part matched__231
+Material and Part matched__232
+Material and Part matched__233
+Material and Part matched__234
+Material and Part matched__235
+Material and Part matched__236
+Material and Part matched__237
+Material and Part matched__238
+Material and Part matched__239
+Material and Part matched__240
+all non-flow mewsh related layers done
+layup manager done
+test0
+test1
+test2
+test3
+test4
+test5
+test6
+test7
+test8
+test9
+test10
+test11
+test12
+test13
+test14
+test15
+test16
+test17
+test18
+test19
+test20
+test21
+test22
+test23
+test24
+test25
+test26
+test27
+test28
+test29
+test30
+test31
+test32
+test33
+test34
+test35
+test36
+test37
+test38
+test39
+test40
+test41
+test42
+test43
+test44
+test45
+test46
+test47
+test48
+test49
+test50
+test51
+test52
+test53
+test54
+test55
+test56
+test57
+test58
+test59
+test60
+test61
+test62
+test63
+test64
+test65
+test66
+test67
+test68
+test69
+test70
+test71
+test72
+test73
+test74
+test75
+test76
+test77
+test78
+test79
+test80
+test81
+test82
+test83
+test84
+test85
+test86
+test87
+test88
+test89
+test90
+test91
+test92
+test93
+test94
+test95
+test96
+test97
+test98
+test99
+test100
+test101
+test102
+test103
+test104
+test105
+test106
+test107
+test108
+test109
+test110
+test111
+test112
+test113
+test114
+test115
+test116
+test117
+test118
+test119
+test120
+test121
+test122
+test123
+test124
+test125
+test126
+test127
+test128
+test129
+test130
+test131
+test132
+test133
+test134
+test135
+test136
+test137
+test138
+test139
+test140
+test141
+test142
+test143
+test144
+test145
+test146
+test147
+test148
+test149
+test150
+test151
+test152
+test153
+test154
+test155
+test156
+test157
+test158
+test159
+test160
+test161
+test162
+test163
+test164
+test165
+test166
+test167
+test168
+test169
+test170
+test171
+test172
+test173
+test174
+test175
+test176
+test177
+test178
+test179
+test180
+test181
+test182
+test183
+test184
+test185
+test186
+test187
+test188
+test189
+test190
+test191
+test192
+test193
+test194
+test195
+test196
+test197
+test198
+test199
+test200
+test201
+test202
+test203
+test204
+test205
+test206
+test207
+test208

@@ -9,7 +9,7 @@ Created on Thu Dec  5 14:18:23 2019
 from default_var_dict import getBase
 import PySimpleGUI as sg    
 import numpy as np
-from IDP_agents import AgentSutler, AgentKurnik
+from IDP_agents import AgentSutler, AgentKurnik, AgentPytlik
 from MySQL_utils import dropDownInfo
 from pathing import adj
 
@@ -71,11 +71,17 @@ exec(tb2l)
 
 
 seznam = dropDownInfo()
+algos = ["ACO","GA"]
 
 #The tab layout for the execution of selected optimisation.
 tab4_layout = [[sg.T('Specie: ',size=(8, 1)),sg.In(key='specie',size=(26, 1))],
-                  [sg.Multiline( size=(35, 5),key='-INPUT0-')],[sg.T('Continue run:',size=(12,1))],[sg.Combo(seznam,size=(35,1),key='klic')],
-                  [sg.Button('RUN'),sg.Button('continue RUN')]
+                  [sg.Multiline( size=(35, 5),key='-INPUT0-')],
+                  [sg.T('Continue run:',size=(12,1))],
+                  [sg.Combo(seznam,size=(35,1),key='klic')],
+                  [sg.Button('RUN'),sg.Button('continue RUN')],
+                  [sg.T('Continuation algorithm:',size=(12,1))],
+                  [sg.Combo(algos,size=(35,1),key='klic2')],
+                  [sg.Button('Run continuous optimisation')]
                  ]
 
 #The overall layout of the GUI
@@ -139,4 +145,37 @@ while True:
         #if doesnt exist run Unity
         
         #Option for a solo run? if all in tab 1 are 0 
-        
+    
+    if event in "Run continuous optimisation":
+        alg = str(values['klic2'])
+        tbl = str(values['klic'])
+        if tbl == "":
+            print("please select sample table to continue on")
+        else:
+                        #initiate list of iterated variables
+            varVar = []
+            i = 0
+            while i < len(fixedVars):
+                if values['fv_'+str(i)] is not '':
+                    
+                    if varMin[fixedVars[i]] < float(values['fv_'+str(i)])  < varMax[fixedVars[i]]:
+                    
+                        buildVar = """varVal['"""+fixedVars[i]+"""'] = str(values['fv_"""+str(i)+"""'])"""
+                        #print(buildVar)
+                        exec(buildVar)
+                    
+                    else:
+                        "The selected value for "+fixedVars[i]+" is out of allowable limits, default value was used."
+                
+                if values['vv_'+str(i)] == True:
+                    varVar.append(fixedVars[i])
+                
+                #print(varVal)
+                #print(varVar)
+                i = i + 1
+            
+            
+            if alg == "ACO":
+                
+                AgentPytlik(tbl,varVal,varMin,varMax)
+            

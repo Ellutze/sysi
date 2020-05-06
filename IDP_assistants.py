@@ -102,14 +102,15 @@ def Toby(generation,specie,GENtable):
     
 def Fifi(TOP,mat1,pheroNo):
     #fishes top results from the matrix and outputs corresponding new matrix 
-    switch = np.zeros([1,6])
-    TOPmat = np.zeros([TOP,6])
+    switch = np.zeros([1,np.size(mat1,1)])
+    TOPmat = np.zeros([TOP,np.size(mat1,1)])
     i = 0
     while i < mat1.shape[0]:
         tempVALs = mat1[i,:]
         ii = 0
         while ii < TOP:
-            if TOPmat[ii,pheroNo] < tempVALs[pheroNo]:
+
+            if TOPmat[ii,pheroNo-1] < tempVALs[pheroNo-1]:
                 #swich the temporary for the one replaced in top values
                 switch = np.copy(TOPmat[ii,:])               
                 TOPmat[ii,:] = tempVALs
