@@ -106,7 +106,7 @@ def AgentSutler(varVar,varVal,fixedVars,varMin,varMax,specie):
     #obtain data based on Latin Hypercube sampling method
     
 
-    s = 100
+    s = 200
     varN = len(varVar)
     sampleM = lhsmdu.sample(varN, s)
     sampleMAT = np.ndarray.transpose(sampleM)    
