@@ -5,14 +5,15 @@ rng = np.random.RandomState(0)
 from IDP_databases import cnt_X,dc_X
 from python_mysql_dbconfig import read_db_config
 from data_proc_utils import shuffle
+from sklearn import linear_model
 
 #y = rng.randn(n_samples)
 #X = rng.randn(n_samples, n_features)
 
-GENtable = "[DIGIProps].[dbo].[_iters_37]"
+GENtable = "[DIGIProps].[dbo].[_iters_36]"
 cnnT,crrT = cnt_X('NCC')
 #print(GENtable)
-query = """SELECT no_layers, mandrel_speed, fitness,arunID FROM """+GENtable+""" where fitness > 0;"""
+query = """SELECT spools, mandrel_speed, fitness,arunID FROM """+GENtable+""" where fitness > 0;"""
 #print(query)
 crrT.execute(query)
 rows = crrT.fetchall()
@@ -45,7 +46,6 @@ M = np.delete(M,0,axis=0)
 multi = 100
 print(M)
 
-dc_X('NCC',cnnT,crrT)
 M = shuffle(M)
 
 print("checkpoint")
@@ -56,18 +56,6 @@ while i < np.size(M,0):
     i = i + 1
     
     
-
-#cleaning up outliers:
-i = 0
-while i < np.size(M,0):
-    if M[i,2] > 0.6:
-        M = np.delete(M,i,axis=0)
-    #if M[i,2] < 0.45:
-    #    M = np.delete(M,i,axis=0)
-    i = i + 1
-    
-    
-
 #M[:3]
 MX = np.zeros([np.size(M,0),np.size(M,1)])
 #makes the variables the same scale
@@ -76,11 +64,9 @@ while i < np.size(M,1):
    rng = max(M[:,i])-min(M[:,i])
    ii = 0
    while ii < np.size(M,0):
-       MX[ii,i] = (M[ii,i]-min(M[:,i]))/rng
+       MX[ii,i] = M[ii,i]-(min(M[:,i]))/rng
        ii = ii + 1
    i = i + 1
-   
-#MX = M
 #i = 0
 #while i < np.size(M,0):
 #    
@@ -105,41 +91,24 @@ X = np.copy(M1[:,0:2])
 y = np.copy(M1[:,2])
 #X3 = np.copy(M3[:,0:4])
 
-#print("checkpoint2")
+print("checkpoint2")
 #gamma=0.001 ==> deleted
-clf = SVR(kernel='rbf', C=7, gamma='auto', epsilon=0.000001,coef0=1)
+clf = SVR(kernel='rbf', C=1, gamma='auto', epsilon=0.00001,coef0=1)
+#rege = linear_model.BayesianRidge()
+rege = linear_model.Lasso(alpha=0.1)
+rege.fit(X,y)
 clf.fit(X, y) 
 #x = clf.predict(X3[:,0:3])
 
 #for prediction curve
-#print("checkpoint3")
+print("checkpoint3")
 
-ver_pred = clf.predict(X3[:,0:2])
-#print("predicted:")
-#print(ver_pred)
-#print("actual:")
-#print(X3[:,2])
-
-i = 0
-errm = np.zeros([np.size(X3,0),1])
-T = 0
-while i < np.size(X3,0):
-    errm[i,0] = abs(ver_pred[i]-X3[i,2])
-    print(errm)
-    T = T + errm[i,0]
-    i = i + 1
-    
-print("total error is:",T,"for",np.size(errm,0),"results")
-print("average error is:",T/np.size(errm,0))
-    
-#normalize errors:
-i=0
-rng = max(errm[:,0])-min(errm[:,0])
-errn = np.zeros([np.size(errm,0),1])
-while i < np.size(errn,0):
-    errn[i,0] = ((((errm[i,0]-min(errm[:,0]))/rng)**1/2)*100)+15
-    print(errn)
-    i=i+1
+#ver_pred = clf.predict(X3[:,0:2])
+ver_pred = rege.predict(X3[:,0:2])
+print("predicted:")
+print(ver_pred)
+print("actual:")
+print(X3[:,2])
 
 from bokeh.io import output_file, show
 from bokeh.layouts import row
@@ -152,7 +121,7 @@ output_file("layout.html")
 #Create first plot
 s1 = figure(title="1",plot_width=500, plot_height=500)
 s1.circle( X3[:,1], ver_pred, size=10, color="firebrick", alpha=0.5,legend="predictions")
-s1.triangle(X3[:,1],X3[:,2], size=10, color="navy", alpha=0.5,legend="validation data")
+s1.triangle(X3[:,1],X3[:,2], size=10, color="navy", alpha=0.5,legend="source data")
 s1.circle(X[:,1],y, color="orange", alpha =0.5,legend="teaching data")
 s1.xaxis.axis_label = 'mandrel_speed'
 s1.yaxis.axis_label = 'fitness'
@@ -162,26 +131,25 @@ s2 = figure(title="2",plot_width=500, plot_height=500)
 #s2.x_range=Range1d(250, 500)
 #s2.y_range=Range1d(80, 105)
 #Triangles stand for fully infused datapoints.
-s2.circle(X3[:,0], ver_pred, size=10, color="firebrick", alpha=0.5,legend="predictions")
+s2.triangle(X3[:,0], ver_pred, size=10, color="firebrick", alpha=0.5,legend="predictions")
 #Circles stand for failed infusions.
-s2.triangle(X3[:,0],X3[:,2],size=10, color="navy", alpha =0.5,legend="validation data")
+s2.circle(X3[:,0],X3[:,2], color="green", alpha =0.5,legend="source data")
 
 s2.circle(X[:,0],y, color="orange", alpha =0.5,legend="teaching data")
-s2.xaxis.axis_label = 'no_layers'
+s2.xaxis.axis_label = 'spools'
 s2.yaxis.axis_label = 'fitness'
 s2.legend.location = "top_right"
 #Create third plot
-s3 = figure(plot_width=500, plot_height=500)
+s3 = figure(title="spools and agains mandrel_speed",plot_width=500, plot_height=500)
 #s2.x_range=Range1d(250, 500)
 #s2.y_range=Range1d(80, 105)
 #Triangles stand for fully infused datapoints.
 s3.triangle(X3[:,1], X3[:,0], size=10, color="firebrick", alpha=0.5)
-s3.circle(X3[:,1], X3[:,0], size=errn[:,0], color="navy", alpha=0.5,fill_color="white", line_width=3)
 
 #Circles stand for failed infusions.
 #s3.circle(X3[:,2],X3[:,4], color="green", alpha =0.5,legend="source data")
 s3.xaxis.axis_label = 'mandrel_speed'
-s3.yaxis.axis_label = 'no_layers'
+s3.yaxis.axis_label = 'spools'
 #s3.legend.location = "top_right"
 
 #s4 = figure(title="mandrel_speed",plot_width=500, plot_height=500)

@@ -81,13 +81,13 @@ def AgentSutler(varVar,varVal,fixedVars,varMin,varMax,specie):
     
     
     #insert fixed variables into iteration table
-    query = "INSERT INTO UserDefIterations(IterateVar,"
+    query = "INSERT INTO UserDefIterations(IterateVar,ref_no"
     i = 0
     while i < len(fixedVars):
         query +=fixedVars[i]+","
         i = i + 1
     query = query[:-1]
-    query += ") VALUES("+"""'"""+varVarS+"""',"""
+    query += ") VALUES("+"""'"""+varVarS+"""',"""+str(cc)+""","""
 
     i = 0 
     while i < len(fixedVars):
