@@ -1,4 +1,3 @@
-from vecEX2_C import wrmmm
 import win32com.client.dynamic
 import sys, os 
 import numpy as np

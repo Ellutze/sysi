@@ -7,11 +7,15 @@ Created on Tue May 12 11:16:17 2020
 import numpy as np
 
 def shuffle(matrix):
-    sf =matrix[0,:]
+    sf = np.zeros([1,np.size(matrix,1)])
+    #print(sf)
+    sf[0,:] = matrix[0,:]
+    #sf =matrix[0,:]
     i = 1
     while i < np.size(matrix,0):
         ii = np.random.randint(i+1)
         sf = np.insert(sf, ii, matrix[i,:], 0)  
+        #print(sf)
         i = i + 1
     return(sf)
     
@@ -44,7 +48,7 @@ def collector(tlist):
     colis.remove('Generation')
     colis.remove('arunID')
     colis.remove('id')
-    print(colis)
+    #print(colis)
 
     #make zeros line for the required number of vars + fitness + def + weight
     sz = len(colis) + 3
@@ -54,7 +58,7 @@ def collector(tlist):
     for number in tlist:
         colisy = []
         colisx = colis.copy()
-        print(colisx)
+        #print(colisx)
         cnnT,crrT = cnt_X('NCC')
         query = """SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '_iters_"""+str(number)+"""' ORDER BY ORDINAL_POSITION"""
         crrT.execute(query)
@@ -122,10 +126,10 @@ def collector(tlist):
             for mu in FEfile:    
                 mu1 = str(mu[0])
             query = """SELECT max_deflection, mass FROM fe_inst where FEfile = '"""+mu1+"""';"""
-            print(query)
+            #print(query)
             crrT.execute(query)
             fitComp = crrT.fetchall()  
-            print(fitComp)
+            #print(fitComp)
             for nu in fitComp:
                 #max_deflectoin
                 dtt[0,np.size(dtt,1)-1] = nu[0]
@@ -138,7 +142,41 @@ def collector(tlist):
         dc_X('NCC',cnnT,crrT)
     
     dt = np.delete(dt,0,axis=0)
-            
+    
     return(len(colis), dt, colis)
     
-collector([36,37])
+#collector([36,37])
+    
+def fit2(dt):
+    #second fitness function
+    i = 0
+    while i < np.size(dt,0):
+        #weight 
+        w = dt[i,(np.size(dt,1)-2)]
+        #deflection
+        d = dt[i,(np.size(dt,1)-1)]
+        
+        #deflection has to be below 5, while additional weight costs exponentially
+        if d > 5:
+            dt[i,(np.size(dt,1)-3)] = 0
+        else:
+            dt[i,(np.size(dt,1)-3)] = (1 - 0.5*(d/10))*0.9**(w*10000)
+        i = i + 1
+    np.savetxt("Temporary\\testFIT2.csv", dt, delimiter=",")
+    return(dt)
+    
+def fit3(dt):
+    i = 0
+    while i < np.size(dt,0):
+        #weight 
+        w = dt[i,(np.size(dt,1)-2)]
+        #deflection
+        d = dt[i,(np.size(dt,1)-1)]
+        
+        #deflection has to be below 5, while additional weight costs exponentially
+        dt[i,(np.size(dt,1)-3)] = 0.5*(0.5**(w*20000))+0.5*(0.5**(d/10))#
+
+        i = i + 1
+    np.savetxt("Temporary\\testFIT3.csv", dt, delimiter=",")
+    return(dt)    
+        

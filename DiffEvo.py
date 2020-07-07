@@ -4,8 +4,9 @@ n_samples, n_features = 10, 3
 rng = np.random.RandomState(0)
 from IDP_databases import cnt_X,dc_X
 from python_mysql_dbconfig import read_db_config
-from data_proc_utils import shuffle
-from data_proc_utils import collector
+#from data_proc_utils import shuffle
+#from data_proc_utils import collector
+from data_proc_utils import fit2,fit3,collector,shuffle
 
 #y = rng.randn(n_samples)
 #X = rng.randn(n_samples, n_features)
@@ -50,8 +51,14 @@ print(M)
 dc_X('NCC',cnnT,crrT)
 '''
 
-nom, dt, colis = collector([39,40,41])
+nom, dt, colis = collector([36,37,38,39,40,41])
 #print(dt)
+
+
+#optional translation of fitness
+dt = fit3(dt)
+
+
 M = shuffle(dt)
 
 pofi = np.size(dt,1)-3
@@ -83,6 +90,10 @@ MX = np.zeros([np.size(M,0),np.size(M,1)])
 i = 0
 while i < np.size(M,1):
    rng = max(M[:,i])-min(M[:,i])
+   print(i)
+   print(max(M[:,i]))
+   print(min(M[:,i]))
+   
    ii = 0
    while ii < np.size(M,0):
        MX[ii,i] = (M[ii,i]-min(M[:,i]))/rng
@@ -118,7 +129,7 @@ y = np.copy(M1[:,pofi])
 
 #print("checkpoint2")
 #gamma=0.001 ==> deleted
-clf = SVR(kernel='poly',degree =18, C=20, gamma='auto', epsilon=0.0000001,coef0=1)
+clf = SVR(kernel='poly',degree =7, C=20, gamma='auto', epsilon=0.0000001,coef0=1)
 clf.fit(X, y) 
 #x = clf.predict(X3[:,0:3])
 
@@ -126,6 +137,70 @@ clf.fit(X, y)
 #print("checkpoint3")
 
 ver_pred = clf.predict(X3[:,0:pofi])
+
+
+
+#use prediction for differential evolution
+import scipy
+
+from default_var_dict import getBase
+
+varVal,varMin,varMax = getBase()
+
+print(colis)
+
+#bounds = np.zeros([len(colis),2])
+#i = 0
+#while i < len(colis):
+#    bounds[i,0] = 0#varMin[colis[i]]
+#    bounds[i,1] = 1#varMax[colis[i]]
+#    i = i + 1
+#print("bounds",bounds)
+bounds = [(0,1),(0,1),(0,1)]
+
+#x =np.zeros([3,1])
+#print("x",x)
+#i = 0
+#while i < len(colis):
+#    x[i,0] = 0.5#varVal[colis[i]]
+#    i = i + 1
+#print("x",x)
+DE = np.zeros([1,4])
+np.save("temporary\\DE.npy",DE)
+
+
+#vp2 = clf.predict(x)
+#print(vp2)
+def ff(x):
+    DE = np.load("temporary\\DE.npy")
+    y = np.zeros([1,3])
+    y[0,0] =x[0]
+    y[0,1] =x[1]
+    y[0,2] =x[2]
+    fit = clf.predict(y)
+    fitMin = 1 - fit
+    DEt = np.matrix([x[0],x[1],x[2],fit[0]])
+    DE = np.concatenate((DE,DEt),axis = 0)
+    np.save("temporary\\DE.npy",DE)
+    return(fitMin)
+
+
+result = scipy.optimize.differential_evolution( ff, bounds)
+
+#, strategy='best1bin', maxiter=1000,\
+                                               #popsize=15, tol=0.01, mutation=(0.5, 1), recombination=0.7, \
+                                               #seed=None, callback=None, disp=False, polish=True, init='latinhypercube', \
+                                               #atol=0, updating='immediate', workers=1)
+print(result.x, result.fun)
+
+
+
+
+
+
+
+#breakhere
+
 #print("predicted:")
 #print(ver_pred)
 #print("actual:")
@@ -151,6 +226,9 @@ while i < np.size(errn,0):
     errn[i,0] = ((((errm[i,0]-min(errm[:,0]))/rng)**1/2)*100)+15
     i=i+1
 #print(terr)
+
+
+
 
 from bokeh.io import output_file, show
 from bokeh.layouts import row

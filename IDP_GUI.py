@@ -74,12 +74,12 @@ seznam = dropDownInfo()
 algos = ["ACO","GA"]
 
 #The tab layout for the execution of selected optimisation.
-tab4_layout = [[sg.T('Specie: ',size=(8, 1)),sg.In(key='specie',size=(26, 1))],
+tab4_layout = [[sg.T('Component: ',size=(8, 1)),sg.In(key='specie',size=(26, 1))],
                   [sg.Multiline( size=(35, 5),key='-INPUT0-')],
                   [sg.T('Continue run:',size=(12,1))],
                   [sg.Combo(seznam,size=(35,1),key='klic')],
                   [sg.Button('RUN'),sg.Button('continue RUN')],
-                  [sg.T('Continuation algorithm:',size=(12,1))],
+                  [sg.T('Continuation algorithm:',size=(35,1))],
                   [sg.Combo(algos,size=(35,1),key='klic2')],
                   [sg.Button('Run continuous optimisation')]
                  ]

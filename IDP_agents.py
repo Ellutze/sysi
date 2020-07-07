@@ -81,7 +81,7 @@ def AgentSutler(varVar,varVal,fixedVars,varMin,varMax,specie):
     
     
     #insert fixed variables into iteration table
-    query = "INSERT INTO UserDefIterations(IterateVar,ref_no"
+    query = "INSERT INTO UserDefIterations(IterateVar,ref_no,"
     i = 0
     while i < len(fixedVars):
         query +=fixedVars[i]+","
@@ -129,6 +129,24 @@ def AgentSutler(varVar,varVal,fixedVars,varMin,varMax,specie):
             temp[0,1] = AFLS
             BCs = np.concatenate((BCs,temp),axis = 0)
             #AFLe = 1
+        elif "reinforcement" in varVar[i]:
+            query = "SELECT COUNT(*) FROM dbo.fibre_properties;"
+            crrW.execute(query)
+            rows = crrW.fetchall()
+            for row in rows:
+                r = int(row[0])
+            temp[0,0] = 0
+            temp[0,1] = r
+            BCs = np.concatenate((BCs,temp),axis = 0)
+        elif "matrix" in varVar[i]:
+            query = "SELECT COUNT(*) FROM dbo.matrix_properties;"
+            crrW.execute(query)
+            rows = crrW.fetchall()
+            for row in rows:
+                r = int(row[0])
+            temp[0,0] = 0
+            temp[0,1] = r
+            BCs = np.concatenate((BCs,temp),axis = 0)            
         else:
             #0-10 now arbitrarily selected for string values (eg. material)
             #this needs to be replaced by a lookup function that checks the 
@@ -196,6 +214,31 @@ def AgentSutler(varVar,varVal,fixedVars,varMin,varMax,specie):
                 file1000 = next(itertools.islice(os.scandir(lPath+'\\aerofoilcollection\\'), fileNO, None)).path
                 file1000 = file1000.split(lPath+"\\aerofoilcollection\\")[1]
                 query += """'"""+str(file1000)+"""',"""
+            elif "matrix" in varVar[ii]:
+                qr = "SELECT Material_name FROM dbo.matrix_properties;"
+                crrW.execute(qr)
+                rows = crrW.fetchall()
+                fileNO = int(sampleMAT[i,ii])
+                iii = 0
+                for row in rows:
+                    if iii == fileNO:
+                        mt = (row[0])
+                    iii = iii + 1
+                query += """'"""+str(mt)+"""',"""
+                
+                
+            elif "reinforcement" in varVar[ii]:
+                qr = "SELECT Material_name FROM dbo.fibre_properties;"
+                crrW.execute(qr)
+                rows = crrW.fetchall()
+                fileNO = int(sampleMAT[i,ii])
+                iii = 0
+                for row in rows:
+                    if iii == fileNO:
+                        mt = (row[0])
+                    iii = iii + 1
+                query += """'"""+str(mt)+"""',"""
+                
             else:
                 query += str(sampleMAT[i,ii])+","
             ii = ii + 1
