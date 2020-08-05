@@ -96,7 +96,10 @@ while i < np.size(M,1):
    
    ii = 0
    while ii < np.size(M,0):
-       MX[ii,i] = (M[ii,i]-min(M[:,i]))/rng
+       if i != pofi:
+           MX[ii,i] = (M[ii,i]-min(M[:,i]))/rng
+       else:
+           MX[ii,i] = M[ii,i]
        ii = ii + 1
    i = i + 1
    

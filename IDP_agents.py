@@ -172,7 +172,15 @@ def AgentSutler(varVar,varVal,fixedVars,varMin,varMax,specie):
         IntPos3 = varVar.index('c_max')
     if 'c_min' in varVar:
         IntPos4 = varVar.index('c_min')
-    
+    if 'chord_1' in varVar:
+        IntPos5 = varVar.index('chord_1')
+    if 'chord_2' in varVar:
+        IntPos6 = varVar.index('chord_2')
+    if 'chord_3' in varVar:
+        IntPos7 = varVar.index('chord_3')
+    if 'chord_0' in varVar:
+        IntPos8 = varVar.index('chord_0')
+
     #transofrm the ratio values to actual variables and populate new entries to SQL
     i = 0
     while i < s:
@@ -190,6 +198,15 @@ def AgentSutler(varVar,varVal,fixedVars,varMin,varMax,specie):
                     c_min = np.copy(sampleMAT[i,IntPos3])
                     sampleMAT[i,IntPos4] = c_min
                     sampleMAT[i,IntPos3] = c_max
+            #prevents negative taper, if subsequent chord size is larger it is
+            #decreassed to the value of previous chord
+            if ii == max(IntPos5,IntPos6,IntPos7,IntPos8):
+                if sampleMAT[i,IntPos8] < sampleMAT[i,IntPos5]:
+                    sampleMAT[i,IntPos5] = sampleMAT[i,IntPos8]
+                if sampleMAT[i,IntPos5] < sampleMAT[i,IntPos6]:
+                    sampleMAT[i,IntPos6] = sampleMAT[i,IntPos5]        
+                if sampleMAT[i,IntPos6] < sampleMAT[i,IntPos7]:
+                    sampleMAT[i,IntPos7] = sampleMAT[i,IntPos6] 
             ii = ii + 1
         i = i + 1
         
