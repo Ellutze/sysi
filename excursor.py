@@ -7,11 +7,11 @@ def excursor():
     #driver= '{SQL Server Native Client 11.0}'
     cnxn = pyodbc.connect(
             Trusted_Connection='No',
-            UID = 'DIGIProps',
-            PWD = 'QNv8@AYq',
+            UID = '',
+            PWD = '',
             Driver='{ODBC Driver 17 for SQL Server}',
-            Server='NCC-sql-02',
-            Database='DIGIProps'
+            Server='',
+            Database=''
             )
     cursor = cnxn.cursor()
     return(cursor, cnxn)
