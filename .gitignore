@@ -15,6 +15,6 @@ layout.html
 /pamrtm
 *currentProgress.txt
 abaqus1.rec
-excursor.py
+*sql_config.txt
 abaqus_acis.log
 /pamrtm/mainSimFiles
