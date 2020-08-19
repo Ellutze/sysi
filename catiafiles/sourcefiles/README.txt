@@ -1,0 +1,1 @@
+This folder is required to store iteration data.
