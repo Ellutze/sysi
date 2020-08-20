@@ -26,8 +26,7 @@ from sketch import *
 from visualization import *
 from connectorBehavior import *
     
-with open(lPath_auto+"\\temporary\\CAP.txt", "a") as text_file:
-    text_file.write("Initiated abaqus model generation.\n")
+
         
 #input file - instead function arguments - which are not possible due to the command line passing
 fl = open(lPath_auto+"\\temporary\\fe_in.txt","rt")

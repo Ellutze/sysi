@@ -164,6 +164,10 @@ def AgentSutler(varVar,varVal,fixedVars,varMin,varMax,specie):
     IntPos2 = 979
     IntPos3 = 979
     IntPos4 = 979
+    IntPos5 = 979
+    IntPos6 = 979
+    IntPos7 = 979
+    IntPos8 = 979
     if 'no_layers' in varVar :
         IntPos = varVar.index('no_layers')
     if 'spools' in varVar:

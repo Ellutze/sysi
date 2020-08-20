@@ -21,7 +21,7 @@ def adj():
         fw=open(lPath+"\\"+script+".py", 'w')
         for line in text:   
             if 'lPath_auto=' in line:
-                line = line.replace(line, """lPath_auto='"""+lPath+"""'\n""")
+                line = line.replace(line, """lPath_auto=r'"""+lPath+"""'\n""")
         
             fw.write(line)
         fw.close()
