@@ -1,9 +1,9 @@
 import win32com.client.dynamic
 import sys, os 
 import numpy as np
-import win32gui
-from mysql.connector import MySQLConnection, Error
-from python_mysql_dbconfig import read_db_config
+#import win32gui
+#from mysql.connector import MySQLConnection, Error
+#from python_mysql_dbconfig import read_db_config
 import time
 from math_utils import GlobalToLocal
 from IDP_databases import cnt_X, dc_X
@@ -11,8 +11,8 @@ from IDP_databases import cnt_X, dc_X
 #from python_mysql_dbconfig import read_db_config
 import math
 #import sys 
-from IDP_cheats import togglePulse
-import os
+#from IDP_cheats import togglePulse
+#import os
 
 def centPTS_C(BraidFile, span, secs):   
     lPath = os.path.dirname(os.path.abspath(__file__))

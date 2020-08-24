@@ -24,7 +24,7 @@ import os
 #required inputs
 
 #automatically adjusted path
-lPath_auto='D:\sysi'
+lPath_auto=r'D:\sysi'
 
 fl = open(lPath_auto+"\\Temporary\\RTM_in.txt","rt")
 flstr = fl.read() 

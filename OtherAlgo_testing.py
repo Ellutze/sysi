@@ -2,8 +2,8 @@ from sklearn.svm import SVR
 import numpy as np
 n_samples, n_features = 10, 3
 rng = np.random.RandomState(0)
-from IDP_databases import cnt_X,dc_X
-from python_mysql_dbconfig import read_db_config
+#from IDP_databases import cnt_X,dc_X
+#from python_mysql_dbconfig import read_db_config
 from data_proc_utils import shuffle
 from sklearn import linear_model
 

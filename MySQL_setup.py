@@ -2,7 +2,7 @@
 
 from mysql.connector import MySQLConnection, Error
 from python_mysql_dbconfig import read_db_config
-from IDP_cheats import togglePulse
+#from IDP_cheats import togglePulse
 import time
 
 #connection to the database
@@ -19,7 +19,7 @@ cnnI.commit()
 
 crrI.close()
 cnnI.close()
-togglePulse()
+#togglePulse()
 
 time.sleep(30)
 #connection to the database
@@ -132,4 +132,4 @@ cnnI.commit()
 
 crrI.close()
 cnnI.close()
-togglePulse()
+#togglePulse()

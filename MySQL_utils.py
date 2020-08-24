@@ -1,10 +1,13 @@
 import numpy as np
 from IDP_databases import cnt_X,dc_X
-from mysql.connector import MySQLConnection, Error
-from python_mysql_dbconfig import read_db_config
+#from mysql.connector import MySQLConnection, Error
+#from python_mysql_dbconfig import read_db_config
 import time
 import os
-from IDP_cheats import togglePulse
+#from IDP_cheats import togglePulse
+
+
+#Includes utilities for SQL_server as well  <----
 
 def storeCADinstance(varVal,name,chord_min,chord_max,dihedral):
     #add error handling? (use the error imported, and try function)

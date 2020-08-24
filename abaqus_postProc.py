@@ -4,7 +4,7 @@ from odbMaterial import *
 from odbSection import *
 
 #automatically adjusted path
-lPath_auto='D:\sysi'
+lPath_auto=r'D:\sysi'
 
 # Open the odb
 myOdb = session.openOdb(name=lPath_auto+'\\Temporary\\Task-1.odb')

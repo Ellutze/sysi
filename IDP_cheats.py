@@ -2,6 +2,7 @@ import pyautogui as pg
 import time
 
 def togglePulse():
+    #This is a specific connection requiremnt for a specific pc, due to VPN connection
     pg.FAILSAFE = False
 
     pg.move(-1000000,100000)

@@ -1,13 +1,13 @@
 import win32com.client.dynamic
 import numpy as np
-import shutil
+#import shutil
 from general_utils import foil_to_spar
 import numpy as np
 import os
 import math
 from math_utils import GlobalToLocal
 
-lPath_auto='D:\sysi'
+lPath_auto=r'D:\sysi'
 
 def mean(numbers):
     return float(sum(numbers)) / max(len(numbers), 1)

@@ -1,13 +1,13 @@
 #do not rename!
 from configparser import ConfigParser
-from IDP_cheats import togglePulse
+#from IDP_cheats import togglePulse
 # 'configUoB.ini' or 'config64.ini'
 def read_db_config(filename='configUoB.ini', section = 'mysql'):
     #filename = 'configUoB.ini' #for UoB MySQL
     #filename = 'config64.ini' #for laptop based MySQl
     
-    if filename == 'configUoB.ini':
-        togglePulse()
+    #if filename == 'configUoB.ini':
+    #    togglePulse()
     
     parser = ConfigParser()
     parser.read(filename)

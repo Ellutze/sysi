@@ -9,8 +9,8 @@ import numpy as np
 
 import win32com.client.dynamic
 from IDP_databases import cnt_X,dc_X
-from mysql.connector import MySQLConnection, Error
-from python_mysql_dbconfig import read_db_config
+#from mysql.connector import MySQLConnection, Error
+#from python_mysql_dbconfig import read_db_config
 
 
 

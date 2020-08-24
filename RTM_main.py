@@ -1,17 +1,17 @@
 import time
 import os
-import shutil
+#import shutil
 import numpy as np
 
 #ACTIVATE FOR SQL USAGE:
-from mysql.connector import MySQLConnection, Error
-from python_mysql_dbconfig import read_db_config
+#from mysql.connector import MySQLConnection, Error
+#from python_mysql_dbconfig import read_db_config
 from IDP_databases import cnt_X, dc_X
 
 from RTM_cmd import cmd
 from RTM_cmd_2 import cmd2
 import RTM_postProc
-import time
+#import time
 
 def is_empty(any_structure):
     #this functions checks if a list (or suchlike) is empty, used below in abaMain

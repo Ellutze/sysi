@@ -1,8 +1,8 @@
 
 
-from mysql.connector import MySQLConnection, Error
-from python_mysql_dbconfig import read_db_config
-from IDP_cheats import togglePulse
+#from mysql.connector import MySQLConnection, Error
+#from python_mysql_dbconfig import read_db_config
+#from IDP_cheats import togglePulse
 from IDP_databases import cnt_X, dc_X
 
 #connection to the database

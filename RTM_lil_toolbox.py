@@ -22,7 +22,7 @@ import VE
 import numpy as np
 
 #automatically adjusted path
-lPath_auto='D:\sysi'
+lPath_auto=r'D:\sysi'
 
 with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
     text_file.write("toolbox initiated\n")

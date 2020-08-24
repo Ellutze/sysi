@@ -5,7 +5,7 @@ Created on Thu Apr  9 10:17:22 2020
 @author: jakub.kucera
 """
 
-#This script adjusts paths in scripts that are tun from Abaqus and PAM-RTM
+#This script adjusts paths in scripts that are run from Abaqus and PAM-RTM
 import os
 
 def adj():

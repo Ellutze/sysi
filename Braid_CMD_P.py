@@ -7,8 +7,8 @@ Created on Wed Mar 11 13:22:34 2020
 
 import numpy as np
 from IDP_databases import cnt_X, dc_X
-from mysql.connector import MySQLConnection, Error
-from python_mysql_dbconfig import read_db_config
+#from mysql.connector import MySQLConnection, Error
+#from python_mysql_dbconfig import read_db_config
 from Braid_main_P import poc
 from default_var_dict import getBase
 import time

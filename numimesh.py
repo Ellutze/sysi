@@ -8,7 +8,7 @@ Created on Fri Feb  7 09:28:11 2020
 import time
 import numpy as np
 from general_utils import foil_to_spar
-from default_var_dict import getBase
+#from default_var_dict import getBase
 from math_utils import orderByColumn
 import math
 import IDP_inpGen

@@ -1,5 +1,5 @@
 from mysql.connector import MySQLConnection
-from IDP_cheats import togglePulse
+from IDP_cheats import togglePulse #only required due to VPN connection 
 from python_mysql_dbconfig import read_db_config
 
 from excursor import excursor
