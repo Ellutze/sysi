@@ -23,6 +23,10 @@ import numpy as np
 import os
 #required inputs
 
+#This python file uses functions from PAM-RTM internal python library. This 
+#library is installed with PAM-RTM, but scripts inside cannot be accessed or 
+#edited.
+
 #automatically adjusted path
 lPath_auto=r'D:\sysi'
 

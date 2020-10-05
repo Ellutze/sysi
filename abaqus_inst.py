@@ -1,3 +1,6 @@
+#This script uses functions from Abaqus internal python library. This library
+#comes with Abaqus installation but cannot be accessed and edited.
+
 import win32com.client.dynamic
 import numpy as np
 #import shutil

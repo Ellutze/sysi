@@ -8,6 +8,8 @@ from datetime import date
 from MySQL_utils import storeCADinstance
 from general_utils import foil_to_spar
 
+#The functions below use the internal functions of CATIA. VBA recording function
+#within CATIA was used to develope these scripts.
 
 def test():
     CATIA = win32com.client.Dispatch("CATIA.Application")

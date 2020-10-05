@@ -35,6 +35,10 @@ import VE
 import numpy as np
 import math
 
+#This python file uses functions from PAM-RTM internal python library. This 
+#library is installed with PAM-RTM, but scripts inside cannot be accessed or 
+#edited.
+
 #required inputs
 meshsize = 2
 #mesh_info = np.load(r"C:\IDPcode\pamrtm\testfiles\mesh_info.npy")
