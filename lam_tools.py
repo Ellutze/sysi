@@ -26,8 +26,10 @@ def VolumesF(pitch1,pitch2,fR):
     
     
     #introducing eliptical yarn
+    #b is the new width radius
     b = fR*2
     Area = math.pi*fR**2
+    #new thickness is the height of the elipse, which keeps same area
     newThick = Area/(math.pi*b)
     
     
@@ -257,8 +259,9 @@ def ps(pitch1, pitch2,angle1,angle2,varVal):
     density2 = Df*Vf2 + Dm*(1-Vf2)
     #assuming both layers are the same thickness ~~~~~~~~
     dens = (density1 + density2) /2
-
-    E1,E2,v12,G = RoM(Vf1,Ef1,Ef2,Em,Gf,Gm,vf,vm)
+    Vf = (Vf1+Vf2)/2
+    #print("temporary check, Vf1:",Vf1,"average Vf:",Vf)
+    E1,E2,v12,G = RoM(Vf,Ef1,Ef2,Em,Gf,Gm,vf,vm)
     
     #thickness is not too relevant for classical laminate analysis, doubling stacking with same symetry is going to result in same output values
     #t = 2*fR
