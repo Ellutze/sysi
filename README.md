@@ -9,7 +9,7 @@ This section of the documentation walks user through the minimal steps required 
 | 3 | SQL Server Database | After SQL server is installed, database has to be configured. User needs to create “sql_config.txt” file in the main script directory. The information that should be stored in each line is as follows: user ID, password, SQL driver, server, database name. Example of how the file should look is shown on figure below. After the “sql_config.txt” file is ready, user can run “sql_setup.py” which creates all tables required. Default resin and fibre materials are also saved to relevant tables. |
 | 4 | Abaqus installation | This includes built-in python libraries (2018 version tested) |
 
-(picture to be inserted here)
+![](images/server%20info.JPG)
 ##### Figure 1 – configuration file for SQL server 
 
 Running IDP_GUI.py displays various iteration options. It is recommended that for the first run user selects “mandrel_speed”, “no_layers”, and “spools” as the “altered variables”. In the “MAIN” tab user then needs to press run only. This combination of parameters has been well tested and should run smoothly. The progress can be checked by reviewing newly generated tables in the SQL database. 
