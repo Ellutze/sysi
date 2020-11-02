@@ -23,12 +23,12 @@ The scripts available here are part of an EngD project. The project aims to use 
 
 The difference between the proposed design strategy and standard design approach is outlined by figure 1. In short, more time is spent developing automatically generated models, which minimizes the amount of work required for design iterations. The scripts in the form presented here are demonstrator of this approach.  
 
-(picture to be inserted here)
+![](images/suggested_process_flow_chart%20(1).png)
 ##### Figure 2 – Suggested alternative design approach 
 
 The demonstrator was developed for a braided composite part suitable for resin infusion. The part should represent a generic small UAV spar. 
 
-(picture to be inserted here)
+![](images/I_O_chart.PNG)
 ##### Figure 3 – example variable flow map 
 
 It is assumed that different users will find different aspects of the complete system of simulations useful. For that reason, the documentation is structured by modules of the system, which allows user to either pick only the module that is of interest or replace a module by their own set of scripts. 
@@ -73,7 +73,7 @@ Repository from GitHub can be cloned into pretty much any folder. It should be t
 
 SQL sever needs to be installed for the scripts to work. User is expected to set up an empty database. The details of the database should than be saved in main project folder (where the scripts are) with the file name “sql_config.txt”. The information that should be stored in each line is as follows: user ID, password, SQL driver, server, database name. Example of how the file should look is shown on figure 3 below. 
 
-(picture to be inserted here)
+![](images/MASTER_CATIA_OUT.JPG)
 ##### Figure 4 –  SQL-server configuration file 
 
 After the “sql_config.txt” file is ready, user can run “sql_setup.py” which creates all tables required for global optimisation runs. Default resin and fibre materials are also saved to relevant tables. 
