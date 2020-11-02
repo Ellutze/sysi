@@ -1,4 +1,4 @@
-# sysi
+# SySi
 System of simulation for holistic composite design
 ## User: Quick start guide 
 This section of the documentation walks user through the minimal steps required to run one trial run of the System of Simulations. 
