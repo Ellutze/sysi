@@ -17,7 +17,72 @@ def RoM(Vff,Ef1,Ef2,Em,Gf,Gm,vf,vm):
     return(E1,E2,v12,G)
     
 #print(E1,E2)
-def VolumesF(pitch1,pitch2,fR):
+    
+def Vf_opt2(alpha,p,Fr):
+    #takes Angle in radians, Pitch in mm, and Fibre radius in mm
+    
+    #for volume fraction calculations 35deg and 65 are the same, the diagram
+    #has been created for above 45 degrees, hence lower angles than 45 are 
+    #translated to their above 90 equivalents.
+    if alpha < (math.pi/4):
+        u = math.pi/4-alpha
+        alpha = u + math.pi/4
+    
+    #total rectangel size 
+    
+    beta = math.pi/2 - alpha
+    #side of rectangle S
+    S = p/math.cos(beta)
+    #rectangle diagonal H
+    H = S/math.sin(beta)
+    #Top side of rectangel T
+    T = H*math.cos(beta)
+    #top view area of rectangle
+    Atot = T*S
+    
+    #the unit cell is split into 3 area types, yarns crossing (1),single yarn(2), no-yarn (3)
+    zeta = math.pi-2*alpha
+    omega = math.pi/2-zeta
+    #x,m,L,K,K2,N,V are calculation lines on diagram
+    x = Fr*2/math.cos(omega)
+    m = Fr*2*math.tan(omega)
+    A11 = m*Fr*2
+    L = x*math.sin(beta)
+    N = math.sqrt((L*2)**2-(Fr*2)**2)
+    A12 = N*Fr*2
+    A1 = A12 + A11
+    A1t = A1*2
+    #above corresponds to segment type 1
+    
+    #segment type 2
+    V = 2*Fr/math.tan(zeta)
+    K2 = (p-(2*Fr))/math.cos(omega)
+    K = K2-V
+    A21 = V*Fr*2
+    A22 = K*Fr*2
+    A2 = A21+A22
+    A2t = A2*4
+    
+    #segment type 3
+    A3t = Atot - A2t -A1t
+
+
+    #introducing eliptical yarn
+    #b is the new width radius
+    b = Fr*2
+    Area = math.pi*((Fr)**2)
+    #new thickness is the height of the elipse, which keeps same area
+    newThick = Area/(math.pi*b)
+    
+    #area of fibre maintained just encompasing rectangle is created in place of square
+    Vf1 = Area/(2*b*newThick*2)
+    Vf2 = Vf1*0.66 #an estimate of the volume fraction with angled yarn going through thickness
+    #this should eventually be improved if this method is to be used
+    Vf3 = 0
+    Vf = (A3t/Atot)*Vf3+(A2t/Atot)*Vf2+(A1t/Atot)*Vf1
+    return(Vf)
+
+def VolumesF(pitch1,pitch2,fR,angle1,angle2):
     #print("pitch1", pitch1, "pitch2",pitch2)
     #for now assume fibre to be circle
     
@@ -58,6 +123,15 @@ def VolumesF(pitch1,pitch2,fR):
         print("volume fraction capped")
         
     t = t1+t2
+    
+    #testing out method 2 for Vf
+    aav = (angle1+angle2)/2
+    pav = (pitch1+pitch2)/2
+    Vf_comp = Vf_opt2(aav,pav,fR)
+    Vf = (Vf1+Vf2)/2
+    print("comparison of Vf methods, Vf1:",Vf,"Vf2:",Vf_comp)
+    
+    
     return (Vf1,Vf2,t)
 
 def ABD(seq,sym,lamina1,lamina2,angle1,angle2):
@@ -253,7 +327,7 @@ def ps(pitch1, pitch2,angle1,angle2,varVal):
     seq = np.matrix([angle1,angle2])
     sym = "yes"
     #eliptical thickness now outputted 
-    Vf1,Vf2,t = VolumesF(pitch1,pitch2,fR)
+    Vf1,Vf2,t = VolumesF(pitch1,pitch2,fR,angle1,angle2)
     #density calculation
     density1 = Df*Vf1 + Dm*(1-Vf1)
     density2 = Df*Vf2 + Dm*(1-Vf2)

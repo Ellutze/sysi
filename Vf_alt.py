@@ -27,9 +27,6 @@ def Vf_opt2(alpha,p,Fr):
     T = H*math.cos(beta)
     #top view area of rectangle
     Atot = T*S
-    print(T)
-    print(S)
-    
     
     #the unit cell is split into 3 area types, yarns crossing (1),single yarn(2), no-yarn (3)
     zeta = math.pi-2*alpha
@@ -60,8 +57,26 @@ def Vf_opt2(alpha,p,Fr):
     print(A2t)
     print(A3t)
 
+    #introducing eliptical yarn
+    #b is the new width radius
+    b = Fr*2
+    Area = math.pi*((Fr)**2)
+    #new thickness is the height of the elipse, which keeps same area
+    newThick = Area/(math.pi*b)
+    
+    #area of fibre maintained just encompasing rectangle is created in place of square
+    Vf1 = Area/(2*b*newThick*2)
+    print("VF1",Vf1)
+    Vf2 = Vf1*0.66 #an estimate of the volume fraction with angled yarn going through thickness
+    #this should eventually be improved if this method is to be used
+    Vf3 = 0
+    Vf = (A3t/Atot)*Vf3+(A2t/Atot)*Vf2+(A1t/Atot)*Vf1
+    return(Vf)
+
+
 angle = 35*math.pi/180
-Vf_opt2(angle,4,0.1)
+Vf = Vf_opt2(angle,4,1)
+print(Vf)
     
     
     
