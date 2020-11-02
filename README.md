@@ -10,7 +10,7 @@ This section of the documentation walks user through the minimal steps required 
 | 4 | Abaqus installation | This includes built-in python libraries (2018 version tested) |
 
 (picture to be inserted here)
-### Figure X – configuration file for SQL server 
+##### Figure 1 – configuration file for SQL server 
 
 Running IDP_GUI.py displays various iteration options. It is recommended that for the first run user selects “mandrel_speed”, “no_layers”, and “spools” as the “altered variables”. In the “MAIN” tab user then needs to press run only. This combination of parameters has been well tested and should run smoothly. The progress can be checked by reviewing newly generated tables in the SQL database. 
 
@@ -24,12 +24,12 @@ The scripts available here are part of an EngD project. The project aims to use 
 The difference between the proposed design strategy and standard design approach is outlined by figure 1. In short, more time is spent developing automatically generated models, which minimizes the amount of work required for design iterations. The scripts in the form presented here are demonstrator of this approach.  
 
 (picture to be inserted here)
-### Figure 1 – Suggested alternative design approach 
+##### Figure 2 – Suggested alternative design approach 
 
 The demonstrator was developed for a braided composite part suitable for resin infusion. The part should represent a generic small UAV spar. 
 
 (picture to be inserted here)
-Figure 2 – example variable flow map 
+##### Figure 3 – example variable flow map 
 
 It is assumed that different users will find different aspects of the complete system of simulations useful. For that reason, the documentation is structured by modules of the system, which allows user to either pick only the module that is of interest or replace a module by their own set of scripts. 
 
@@ -74,13 +74,13 @@ Repository from GitHub can be cloned into pretty much any folder. It should be t
 SQL sever needs to be installed for the scripts to work. User is expected to set up an empty database. The details of the database should than be saved in main project folder (where the scripts are) with the file name “sql_config.txt”. The information that should be stored in each line is as follows: user ID, password, SQL driver, server, database name. Example of how the file should look is shown on figure 3 below. 
 
 (picture to be inserted here)
-Figure 3 –  SQL-server configuration file 
+##### Figure 4 –  SQL-server configuration file 
 
 After the “sql_config.txt” file is ready, user can run “sql_setup.py” which creates all tables required for global optimisation runs. Default resin and fibre materials are also saved to relevant tables. 
 
 Similar process can be done for MySQL option, using “mysql_setup.py”. However, this is currently not tested and it is possible that some of the code in other files will need amending for the different syntax. 
 
-##Test run 
+## Test run 
 
 Running IDP_GUI.py displays various iteration options. It is recommended that for the first run user selects “mandrel_speed”, “no_layers”, and “spools” as the “altered variables”. In the “MAIN” tab user then needs to press run only. This combination ofparameters has been well tested and should run smoothly. The progress can be checked by reviewing newly generated tables in the SQL database. 
 
@@ -99,7 +99,7 @@ Full description of modules might be provided later. At the moment, this section
 Catia module can be removed in current default setup without any downside but the lack of the model, as both FE and braiding are done with a point cloud input rather than a 3D surface. If CATIA is not available the CAD module can be removed by simply commenting out the CATIA section in “MASTER.py”, see figure 4. 
 
 (picture to be inserted here)
-####Figure 4 – Optional removal of CATIA module 
+##### Figure 4 – Optional removal of CATIA module 
 
 Abaqus has option for taking a CATIA mesh, this might be useful if PAM-RTM simulation is required. It is configured for this type ofmesh, therefore user might want to use that mesh for other simulations as well. By editing few options in MASTER scrip it is possible to go back to meshing in CATIA option. However, complete guide is currently not provided as numerical meshing is recommended with current setup. 
 
