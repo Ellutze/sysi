@@ -114,38 +114,25 @@ def SingleLoop(varVal):
 
     with open(lPath+"\\temporary\\underground.txt", "a") as text_file:
         text_file.write("Generating CAD shape.\n")
-
+        
+        
+    CATbin = True #key12345
     #MAIN BODY OF THE SCRIPT
-    if CADfile == "new":
-        #Assign the chord limits of the spar, these are expressed as ratio 
-        #of full chord lenght, and remain in the same proportion through 
-        #the span.
-        
-        #aerofoil_S = "clarkYdata.dat"
-        
-        
-        #aerofoil_S = "AerofoilCollection\\clarkYdata.dat"
-        #Each section defined by: span position, aerofoil, 
-        #size multiplier (taper...), twist,sweep,dihedral
-        #sectioned = np.matrix([[0,varVal['airfoil_0'],varVal['chord_0'],varVal['twist_0'],varVal['sweep_0'],0]
-        #                     ,[(200),varVal['airfoil_1'],varVal['chord_1'],varVal['twist_1'],varVal['sweep_1'],0]
-        #                     ,[300,varVal['airfoil_2'],varVal['chord_2'],varVal['twist_2'],varVal['sweep_2'],0]
-        #                     ,[400,varVal['airfoil_3'],varVal['chord_3'],varVal['twist_3'],varVal['sweep_3'],0]
-        #                      ])    
-        #start CATIA and run the script
-        os.startfile(r"C:\Program Files\Dassault Systemes\B27\win_b64\code\bin\CNEXT.exe")  
-        CADfile = SingleCAD(project,part,varVal)  
-        os.system("TASKKILL /F /IM Cnext.exe")
-    #update SQL after CAD creation
-    cnnC,crrC = cnt_X('NCC')    
-    query = """UPDATE arun SET CADfile = '"""+str(CADfile)+"""'"""\
-            """WHERE (part = '"""+part+"""') and (project = '"""+project+"""')"""\
-            """and (iteration_count = """+str(Iteration_count)+""");"""
-    crrC.execute(query)
-    cnnC.commit()
-
-    #close SQL handles 
-    dc_X('NCC',cnnC,crrC)
+    if CATbin == True:
+        if CADfile == "new":   
+            #start CATIA and run the script
+            os.startfile(r"C:\Program Files\Dassault Systemes\B27\win_b64\code\bin\CNEXT.exe")  
+            CADfile = SingleCAD(project,part,varVal)  
+            os.system("TASKKILL /F /IM Cnext.exe")
+        #update SQL after CAD creation
+        cnnC,crrC = cnt_X('NCC')    
+        query = """UPDATE arun SET CADfile = '"""+str(CADfile)+"""'"""\
+                """WHERE (part = '"""+part+"""') and (project = '"""+project+"""')"""\
+                """and (iteration_count = """+str(Iteration_count)+""");"""
+        crrC.execute(query)
+        cnnC.commit()
+        #close SQL handles 
+        dc_X('NCC',cnnC,crrC)
     
     with open(lPath+"\\temporary\\underground.txt", "a") as text_file:
         text_file.write("Running braiding simulation.\n")
