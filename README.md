@@ -1,5 +1,5 @@
 # SySi
-System of simulation for holistic composite design
+System of simulation for holistic composite design.The purpose of this collection of scripts is to demonstrate an alternative approach to design of aerospace composite components. Script generated models and simulation setups are used to allow for multi-simulation optimisation.
 ## User: Quick start guide 
 This section of the documentation walks user through the minimal steps required to run one trial run of the System of Simulations. 
 | | Pre-requisite | |
@@ -71,10 +71,7 @@ Repository from GitHub can be cloned into pretty much any folder. It should be t
 
 ## SQL server installation 
 
-SQL sever needs to be installed for the scripts to work. User is expected to set up an empty database. The details of the database should than be saved in main project folder (where the scripts are) with the file name “sql_config.txt”. The information that should be stored in each line is as follows: user ID, password, SQL driver, server, database name. Example of how the file should look is shown on figure 3 below. 
-
-![](images/MASTER_CATIA_OUT.JPG)
-##### Figure 4 –  SQL-server configuration file 
+SQL sever needs to be installed for the scripts to work. User is expected to set up an empty database. The details of the database should than be saved in main project folder (where the scripts are) with the file name “sql_config.txt”. The information that should be stored in each line is as follows: user ID, password, SQL driver, server, database name. Example of how the file should look is shown on figure 1. 
 
 After the “sql_config.txt” file is ready, user can run “sql_setup.py” which creates all tables required for global optimisation runs. Default resin and fibre materials are also saved to relevant tables. 
 
@@ -96,12 +93,9 @@ Full description of modules might be provided later. At the moment, this section
 
 ### CAD 
 
-Catia module can be removed in current default setup without any downside but the lack of the model, as both FE and braiding are done with a point cloud input rather than a 3D surface. If CATIA is not available the CAD module can be removed by simply commenting out the CATIA section in “MASTER.py”, see figure 4. 
+Catia module can be removed in current default setup without any downside but the lack of the model, as both FE and braiding are done with a point cloud input rather than a 3D surface. To remove from or add CATIA to the chain user can run settings_GUI.py.
 
-(picture to be inserted here)
-##### Figure 4 – Optional removal of CATIA module 
-
-Abaqus has option for taking a CATIA mesh, this might be useful if PAM-RTM simulation is required. It is configured for this type ofmesh, therefore user might want to use that mesh for other simulations as well. By editing few options in MASTER scrip it is possible to go back to meshing in CATIA option. However, complete guide is currently not provided as numerical meshing is recommended with current setup. 
+Abaqus has option for taking a CATIA mesh, this might be useful if PAM-RTM simulation is required. It is configured for this type of mesh, therefore user might want to use that mesh for other simulations as well. By editing few options in MASTER scrip it is possible to go back to meshing in CATIA option. However, complete guide is currently not provided as numerical meshing is recommended with current setup. 
 
 ### SQL 
 
