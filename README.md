@@ -128,6 +128,8 @@ GUI will include options for different propagation methods. Currently this optio
  
 ### Changelog 
 
+#Citing this repository
+To cite, please use the repository DOI: https://zenodo.org/badge/latestdoi/252481617
 
 ### References 
 
