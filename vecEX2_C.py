@@ -6,7 +6,8 @@ def wrmmm():
     #creates temporary file to export vector and point:
     #C:\Users\jk17757\Local Documents\python\TheProject\CatiaFiles\wrmmm
     #IDP_scriptsource_1902_A001_JK.wrl
-    fl = open("D:\\IDPcode\\Temporary\\xxx.wrl", "rt")
+    lPath = os.path.dirname(os.path.abspath(__file__))
+    fl = open(lPath+"\\Temporary\\xxx.wrl", "rt")
     flstr1 = fl.read() 
     vec = np.zeros([1,3])
     #interogates the .wrl file and creates vector data:
@@ -42,7 +43,8 @@ def wrmmm():
     #closes the .wrl file
     fl.close()
     #~~~~~the remove should have "finally" clause, needs to always remove the file or next sim will fail~~~~
-    os.remove("D:\\IDPcode\\Temporary\\xxx.wrl")
+    #breakhere
+    os.remove(lPath+"\\Temporary\\xxx.wrl")
     #print(f_point,"f_point")
     return(vec, f_point)
     

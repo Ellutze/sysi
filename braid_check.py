@@ -21,8 +21,8 @@ st42 = time.time()
 CATIA = win32com.client.Dispatch("CATIA.Application")
 CATIA.RefreshDisplay = False
 #documents1 = CATIA.Documents # this line is not currently in use
-cadFile = "IDP_spar_A758_JK"
-braidFile = "IDP_spar_A758_B001"
+cadFile = "IDP_UAV2_A192_JK"
+braidFile = "IDP_UAV2_A192_B001"
 
 #location of CATIA file to be meshed
 #delete after testing:
@@ -66,7 +66,7 @@ hss1.SetSupport(ref1)
 count = 0
 for row in rows:
     
-    if count < 2:
+    if count < 9:
         BP.append(row)
         yr = int(row[0])
         if yarn < yr:
@@ -97,6 +97,7 @@ import os
 
 lPath = os.path.dirname(os.path.abspath(__file__))
 
+'''
 #np import spheres
 II = np.load(lPath+'\\catiafiles\\meshfiles\\IDP_spar_A758_N001_nodes.npy')
 print(II)
@@ -113,6 +114,7 @@ while i < np.size(II,0):
         hb91.AppendHybridShape(hybridShapePointCoord1)
         ii = ii + 1
     i = i + 1
+'''
 
 
 '''
