@@ -103,7 +103,9 @@ It is possible to make the whole system of simulation to work with MySQL, which 
 
 ### Braiding 
 
-This module is essential for the chain, it cannot be left out. It currently only works for shapes that are defined by airfoils and radii sizes. Some scripting would be required to allow for braiding of other shapes. 
+This module is essential for the chain, it cannot be left out. It currently only works for shapes that are defined by airfoils and radii sizes. 
+
+Version of this module is available for use on other projects. After installation running "braid_CATIA" allows for braiding other shapes created in CATIA, furhter information is available in the annotations of that script.
 
 ### RTM 
 
