@@ -105,7 +105,7 @@ It is possible to make the whole system of simulation to work with MySQL, which 
 
 This module is essential for the chain, it cannot be left out. It currently only works for shapes that are defined by airfoils and radii sizes. 
 
-Version of this module is available for use on other projects. After installation running "braid_CATIA" allows for braiding other shapes created in CATIA, furhter information is available in the annotations of that script.
+A separate project is available for running this module on it's own: https://github.com/Ellutze/kiBraid. This separate project allows user to use their CATIA model and run the kinematic braiding simulation for those. This might not be using exactly the same version as sysi.
 
 ### RTM 
 
