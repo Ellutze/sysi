@@ -51,40 +51,46 @@ def b_master(part,varVal):
     hss1 = ""
     BP = []
     yarn = 0
-    hss1 = HSF.AddNewSpline()
-    hss1.SetSplineType(0)
-    hss1.SetClosing(0)
-    ref1 = part1.CreateReferenceFromObject(hsl1)
-    hss1.SetSupport(ref1)
+    ww = 0
+    #hss1 = HSF.AddNewSpline()
+    #hss1.SetSplineType(0)
+    #hss1.SetClosing(0)
+    #ref1 = part1.CreateReferenceFromObject(hsl1)
+    #hss1.SetSupport(ref1)
     count = 0
-    #hb2 = hbs.Add()
-    #hb2.Name="yarn"+str(yarn)
+    hb2 = hbs.Add()
+    hb2.Name="yarn"+str(yarn)
     #hb2 = hbs.Add()
     x = 0
     y = 0
     z = 0
     for row in noSQL:
         
-        if count < 2:
+        if count < 50:
             BP.append(row)
             yr = int(row[0,0])
+            if ww < row[0,11]:
+                yr = 0
+                hb2 = hbs.Add()
+                hb2.Name="yarn_"+str(yarn)+"_direction_"+str(row[0,11])                
+            ww = str(row[0,11])
             if yarn < yr:
                 if yarn > 0:
                     #hb2 = hbs.Add()
                     #hb2.Name="yarn"+yarn
                     #hb2 = hbs.Add()
-                    hb1.AppendHybridShape(hss1)
+                    #hb1.AppendHybridShape(hss1)
                     count = count + 1
                     print(count)
                 yarn = yr
-                #hb2 = hbs.Add()
-                #hb2.Name="yarn"+str(yarn)
-                #hb2 = hbs.Add()
-                hss1 = HSF.AddNewSpline()
-                hss1.SetSplineType(0)
-                hss1.SetClosing(0)
-                ref1 = part1.CreateReferenceFromObject(hsl1)
-                hss1.SetSupport(ref1)
+                hb2 = hbs.Add()
+                hb2.Name="yarn_"+str(yarn)+"_direction_"+str(ww)
+                
+                #hss1 = HSF.AddNewSpline()
+                #hss1.SetSplineType(0)
+                #hss1.SetClosing(0)
+                #ref1 = part1.CreateReferenceFromObject(hsl1)
+                #hss1.SetSupport(ref1)
             diff = ((row[0,1]-x)**2+(row[0,2]-y)**2+(row[0,3]-z)**2)**(1/2)
             if diff > 0.1:
                 x = row[0,1]
@@ -92,13 +98,13 @@ def b_master(part,varVal):
                 z = row[0,3]
                 cord1 = HSF.AddNewPointCoord(x, y, z)
                 hb2.AppendHybridShape(cord1)
-                ref2 = part1.CreateReferenceFromObject(cord1)
-                hss1.AddPointWithConstraintExplicit(ref2,None,-1,1,None,0)
+                #ref2 = part1.CreateReferenceFromObject(cord1)
+                #hss1.AddPointWithConstraintExplicit(ref2,None,-1,1,None,0)
             else:
                 print("point double")
 
     
-    hb2.AppendHybridShape(hss1)
+    #hb2.AppendHybridShape(hss1)
     
     
     import os

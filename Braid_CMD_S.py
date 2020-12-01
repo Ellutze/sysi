@@ -140,7 +140,7 @@ def baseBraid(varVal,CADfile,MD):
     cnnB.commit()
     dc_X('NCC',cnnB,crrB)  
     '''
-    
+    np.savetxt('braid_data.csv', noSQL, delimiter=',', fmt='%d')
     return(noSQL)
 
 #varVal, varMin,varMax = getBase()
