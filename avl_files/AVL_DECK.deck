@@ -1,7 +1,7 @@
-case D:\pythonic\testing AVL\notSupergee_2.Run
+case avlfiles\default.Run
 OPER
 X
 FS
-D:\pythonic\testing AVL\output3.txt
+temporary\output3.txt
 
 QUIT

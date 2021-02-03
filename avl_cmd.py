@@ -11,10 +11,12 @@ import numpy as np
 #import os
 ### GOBO #### this runs command line to run python (3.6==> 3.6)
 
-def avl_main(varVal):
+from default_var_dict import getBase
 
+def avl_main(varVal,name):
 
-    np.save("D:\\pythonic\\testing avl\\temporary\\varVal.npy", varVal)
+    varVal["name"] = name
+    np.save("temporary\\varVal.npy", varVal)
     t_cmd = "conda run python AVL_inputs.py"
     cmd(t_cmd)
     
@@ -28,3 +30,7 @@ def cmd(command):
     print(command)
     print(proc_stdout)
 
+varVal, xxx,yyy = getBase()
+name = "testX2"
+Cl = avl_main(varVal,name)
+print(Cl)

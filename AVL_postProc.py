@@ -11,7 +11,7 @@ def forceDist():
 
     Cl = np.zeros([1,2])
     o = 0
-    with open('D:\\pythonic\\testing AVL\\output3.txt', 'r') as AVLtxt:
+    with open('temporary\\output3.txt', 'r') as AVLtxt:
     
         for line in AVLtxt:
             if " Strip Forces referred to Strip Area, Chord" in line or "  Surface # 2     Wing (YDUP)" in line:

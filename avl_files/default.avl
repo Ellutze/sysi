@@ -1,0 +1,137 @@
+notSupergee           ! name
+0.0                   !   Mach
+0     0     0.0       !   iYsym  iZsym  Zsym
+0.239 0.159  1.5      !   Sref   Cref   Bref   reference area, chord, span
+0.0  0.0   0          !   Xref   Yref   Zref   moment reference location (arb.)
+#0.020                !   CDp
+#
+#==============================================================
+#
+SURFACE
+Wing
+10  1.0  20  1.0   ! Nchord   Cspace   Nspan  Sspace
+#
+# reflect image wing about y=0 plane
+YDUPLICATE
+     0.00000
+#
+# twist angle bias for whole surface
+ANGLE
+     2.00000
+#
+SCALE
+  1.0   1.0   1.0
+#
+# x,y,z bias for whole surface
+TRANSLATE
+    0.3     0.00000     0.0
+#
+#--------------------------------------------------------------
+#    Xle         Yle         Zle         chord       angle
+SECTION
+    0        0.0        0.0         0.180        0.000       !_section_1
+
+AFIL
+D:\pythonic\testing AVL\clarkYdata.dat  !_afil_1
+
+#Cname   Cgain  Xhinge  HingeVec       SgnDup
+CONTROL
+flap   1.0    0.72    0.0 1.0 0    1.0
+
+#----------section 2-------------------
+SECTION
+    0.0       0.450        0        0.180        0.000          !_section_2
+
+AFIL
+D:\pythonic\testing AVL\clarkYdata.dat   !_afil_2
+
+CONTROL
+flap   1.0    0.72    0.0 1.0 0.0    1.0
+
+CONTROL
+aileron  1.0   0.72    0.0 1.0 0   -1.0
+#--------section 3---------------------
+SECTION
+    0.06       0.650        0       0.120        0.000 !_section_3
+
+AFIL
+D:\pythonic\testing AVL\clarkYdata.dat !_afil_3
+
+CONTROL
+aileron  1.0   0.72    0.0 1.0 0.0   -1.0
+#---------sectio 4 - end --------------------
+SECTION
+    0.130       0.750        0       0.05        0.000 !_section_4
+
+AFIL
+D:\pythonic\testing AVL\clarkYdata.dat !_afil_4
+
+SURFACE
+H-STAB
+
+8 1.0 5  1.0
+
+YDUPLICATE
+      0.0
+
+ANGLE
+      -2.0
+TRANSLATE
+  1.0   0.0   0.175
+
+SECTION
+  0   0.0   0.0   0.1   0
+
+AFIL
+airfoilcollection\naca64a010.dat
+
+CONTROL
+elevator 1.0 0.7 0.0 1.0 0.0 1.0
+
+#section 2
+SECTION
+  0   0.220   0.0   0.1   0
+
+  AFIL
+  airfoilcollection\naca64a010.dat
+
+CONTROL
+elevator 1.0 0.7 0.0 1.0 0.0 1.0
+
+#section 3
+SECTION
+  0.07   0.3   0.0   0.03   0
+
+  AFIL
+  airfoilcollection\naca64a010.dat
+
+CONTROL
+elevator 1.0 0.0 0.0 1.0 0.0 1.0
+
+
+SURFACE
+V-STAB
+8 1.0 10 0.75
+
+TRANSLATE
+0.950 0.0 0.0
+
+#LOWER section
+SECTION
+ 0.0 0.0 0.0 0.150 0.0
+
+AFIL
+airfoilcollection\naca64a010.dat
+
+CONTROL
+rudder 1.0 0.67 0.0 0.0 1.0 1.0
+
+#UPPER SECTION
+SECTION
+ 0.07 0.0 0.3 0.080 0.0
+
+AFIL
+airfoilcollection\naca64a010.dat
+
+CONTROL
+rudder 1.0 0.67 0.0 0.0 1.0 1.0
