@@ -12,7 +12,11 @@ import os
 #Assembly of geometric tools used for the Integrated Simulations project
 
 
-def findNormal(MD,point):
+def findNormal(MD,point,mesh_size):
+    
+    #This function is currently not used 07/12/2020 
+    
+    
     #this function finds normal vector to a surface
     #the surface is provided as a cloud of points (node_mat)
     #the location of the normal is defined by point 
