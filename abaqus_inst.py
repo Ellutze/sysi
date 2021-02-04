@@ -412,6 +412,13 @@ del mdb.models['Model-1'].rootAssembly.sets['Set-2']
 with open(lPath_auto+"\\abaqusfiles\\cp.txt", "a") as text_file:
     text_file.write("Deletion of unused settings.\n")
     
+    
+    
+### under construction --- replace force by aero input    
+    
+    
+    
+    
 #the all node matrix is filtered for nodes at the tip of the spar
 node_mat = np.delete(node_mat, (0), axis=1)
 span = max(node_mat[:,2])
@@ -455,6 +462,13 @@ with open("Temporary\\mass_out.txt", "w") as text_file:
 #applies force on the set created above
 mdb.models['Model-1'].ConcentratedForce(cf2=fN, createStepName='Step-1', distributionType=UNIFORM, field='', localCsys=None, name='Load-5', region=\
 mdb.models['Model-1'].rootAssembly.sets['Set-22'])
+
+
+
+
+#### end of construction region
+
+
    
 #the actual job is run, with correct BC and force
 
