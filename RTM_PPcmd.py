@@ -26,7 +26,7 @@ import numpy as np
 #functions available in the GUI exists. 
 
 #automatically adjusted path
-lPath_auto=r'D:\sysi'
+lPath_auto=r'D:\sysiAVL\sysi'
 
 def getInit(RTMfile):
     #This is typically run before all the other functions in here to initiate

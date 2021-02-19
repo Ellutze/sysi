@@ -10,7 +10,7 @@ import os
 import math
 from math_utils import GlobalToLocal
 
-lPath_auto=r'D:\sysi'
+lPath_auto=r'D:\sysiAVL\sysi'
 
 def mean(numbers):
     return float(sum(numbers)) / max(len(numbers), 1)
@@ -41,6 +41,9 @@ fN = float(flstr.split("---")[3])
 meshType = flstr.split("---")[4]
 mesh_size= float(flstr.split("---")[5])
 XSS = int(flstr.split("---")[6])
+AeroName = flstr.split("---")[7]
+ffile = lPath_auto+"""\\avl_files\\"""+str(AeroName)+""".csv"""
+forces = np.loadtxt(open(ffile), delimiter=",")
 
 #open the iges file required for analysis
 if meshType == "CATIA":
@@ -255,6 +258,7 @@ for row in ele_mat:
     elPOS = np.concatenate((elPOS,elPOSloc),0)
 #gives positions of elements in x,y,z (average of the corner coordinates)
 elPOS = np.delete(elPOS, (0), axis=0)
+elPOS_o = elPOS
 
 #command is build to apply boundary condition on all nodes at z=0
 
@@ -410,65 +414,77 @@ del mdb.models['Model-1'].loads['Load-1']
 del mdb.models['Model-1'].rootAssembly.sets['Set-2']
     
 with open(lPath_auto+"\\abaqusfiles\\cp.txt", "a") as text_file:
-    text_file.write("Deletion of unused settings.\n")
+    text_file.write("Deletion of unused settings.\n")  
     
+#Using the AVL data to apply forces along span.
+#Forces are applied at the 2 bottom flat seciton of spar.
     
+ii = 0
+#20 Spanwise sections - coult be turned into variable
+while ii < 20:
     
-### under construction --- replace force by aero input    
+    #Reference coordinate system - centreline
+    v = math.floor(ii/12)
+    secVECx = np.cross(secVECy[v,:],secVECz[v,:])
+    cSYS2 = np.array(([secVECx[0],secVECx[1],secVECx[2]],[secVECy[v,0],secVECy[v,1],secVECy[v,2]],[secVECz[v,0],secVECz[v,1],secVECz[v,2]]))
+    point1 = np.array([0,0,0])
+    point2 = np.array([secPTS[v,0],secPTS[v,1],secPTS[v,2]])
+    cSYS1 = np.array(([1,0,0],[0,1,0],[0,0,1]))
     
+    count = 0
+    i = 0
+    #this loop goes throug all elements and assigns the correct ones to the segment
+    lnm = np.size(node_mat,0)
+    while i < lnm-1:
+        #the point to be translated to local coordinate system, which corresponds to provided segments
+        GCP = np.array([float(node_mat[i,1]),float(node_mat[i,2]),float(node_mat[i,3])])
+        elPOSlocal = GlobalToLocal(point1,point2, cSYS1,cSYS2,GCP)
+        elPOSlocal[0] = elPOSlocal[0]*ErrRat
+        elPOSlocal[1] = elPOSlocal[1]*ErrRat
+                
+        #picking the 2 bottom segments and merging their boundaries
+        it = 5 + ii*12
+        xmax = max([seg_mat[it,1],seg_mat[it+1,1]])
+        xmin = min([seg_mat[it,2],seg_mat[it+1,2]])
+        ymin = min([seg_mat[it,4],seg_mat[it+1,4]])
+        ymax = max([seg_mat[it,3],seg_mat[it+1,3]])
+        zmax = max([seg_mat[it,5],seg_mat[it+1,5]])
+        zmin = min([seg_mat[it,6],seg_mat[it+1,6]])
+         
+        #either assign element and delete row, or go to next element
+        if (xmin <= elPOSlocal[0] < xmax) and (ymin <= elPOSlocal[1] < ymax) and (zmin < node_mat[i,3] <= zmax):
+            with open(lPath_auto+"\\abaqusfiles\\cp.txt", "a") as text_file: 
+                text_file.write("hello"+str(i)+"\n") 
+            #find the size of shphere at local span location
+            if count == 0:
+                vrc = mdb.models['Model-1'].rootAssembly.instances['n2'].nodes.getByBoundingSphere(center = ((node_mat[i,1]),(node_mat[i,2]),(node_mat[i,3])), radius=0.05)
+                count = count + 1
+            #all but the first node
+            else:
+                vrc = vrc + mdb.models['Model-1'].rootAssembly.instances['n2'].nodes.getByBoundingSphere(center = ((node_mat[i,1]),(node_mat[i,2]),(node_mat[i,3])), radius=0.05)
+                count = count + 1        
+        i = i + 1
     
-    
-    
-#the all node matrix is filtered for nodes at the tip of the spar
-node_mat = np.delete(node_mat, (0), axis=1)
-span = max(node_mat[:,2])
-rows = node_mat.shape[0]
-f_mat = np.array([[0,0,0]])
-i = 0
-while i < rows:
-    if (span-20) <node_mat[i,2] < (span+5):
-        local_mat = np.array([[node_mat[i,0],node_mat[i,1],node_mat[i,2]]])
-        f_mat = np.concatenate((f_mat,local_mat),axis=0)
-    i = i + 1
+    #define the set of nodes to assign force onto
+    mdb.models['Model-1'].rootAssembly.Set(name='Set-9000'+str(ii), nodes=vrc)
+    mass = mdb.models['Model-1'].parts['X'].getMassProperties()['mass']
 
-#force is applied on all nodes at the end of the spar
-rows = f_mat.shape[0]
-i = 0 
-while i < rows:
-    if i == 0:
-        vrc = mdb.models['Model-1'].rootAssembly.instances['n2'].nodes.getByBoundingSphere(center = ((f_mat[i,0]),(f_mat[i,1]),(f_mat[i,2])), radius=0.05)
-    #all but the first face
-    else:
-        vrc = vrc + mdb.models['Model-1'].rootAssembly.instances['n2'].nodes.getByBoundingSphere(center = ((f_mat[i,0]),(f_mat[i,1]),(f_mat[i,2])), radius=0.05)
-        count = count + 1
-    i = i + 1
-            
-mdb.models['Model-1'].rootAssembly.Set(name='Set-22', nodes=vrc)
+    #select force from the AVL input
+    ld = "Load-"+str(ii)
+    frc = forces[ii,1]
+    #applies force on the set created above
+    mdb.models['Model-1'].ConcentratedForce(cf2=frc, createStepName='Step-1', distributionType=UNIFORM, field='', localCsys=None, name=ld, region=\
+    mdb.models['Model-1'].rootAssembly.sets['Set-9000'+str(ii)])
+    ii = ii + 1
+ 
+with open(lPath_auto+"\\abaqusfiles\\cp.txt", "a") as text_file: 
+    text_file.write("Forces applied\n") 
 
-with open(lPath_auto+"\\abaqusfiles\\cp.txt", "a") as text_file:
-    text_file.write("Set for force application created.\n")
-#troubleshooting broken section 22
-#STRx = BuildCommand
-#with open("Temporary\\22command.txt", "w") as text_file:
-#    text_file.write(STRx)
-
-
-mass = mdb.models['Model-1'].parts['X'].getMassProperties()['mass']
+mass = mdb.models['Model-1'].parts['X'].getMassProperties()['mass'] 
 with open("Temporary\\mass_out.txt", "w") as text_file:
-    text_file.write(str(mass))
-    #text_file.write("%20s%20.6f" % ("Mass :", mass))
+    text_file.write(str(mass)) 
 
-#exec(BuildCommand)
-#applies force on the set created above
-mdb.models['Model-1'].ConcentratedForce(cf2=fN, createStepName='Step-1', distributionType=UNIFORM, field='', localCsys=None, name='Load-5', region=\
-mdb.models['Model-1'].rootAssembly.sets['Set-22'])
-
-
-
-
-#### end of construction region
-
-
+    #text_file.write("%20s%20.6f" % ("Mass :", mass)) 
    
 #the actual job is run, with correct BC and force
 

@@ -26,3 +26,6 @@ abaqus1.rec
 abaqus_acis.log
 *braid_data.csv
 avl.exe
+*.npy*
+*.csv*
+*JK.avl*

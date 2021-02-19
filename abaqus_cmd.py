@@ -7,6 +7,5 @@ def cmd(command):
     proc_stdout = process.communicate()#[0].strip()
     print(command)
     print(proc_stdout)
-    
 
 #cmd("abaqus cae noGUI=abaqus_inst.py")

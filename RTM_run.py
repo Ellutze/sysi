@@ -28,7 +28,7 @@ import VHostManager
 import VE
 
 #automatically adjusted path
-lPath_auto=r'D:\sysi'
+lPath_auto=r'D:\sysiAVL\sysi'
 
 with open(lPath_auto+"\\pamrtm\\mainsimfiles\\currentProgress.txt","a") as text_file:
     text_file.write("The initial simulation starts here:")

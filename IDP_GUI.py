@@ -138,13 +138,6 @@ while True:
         #elif ('c_min' in varVar and 'c_max' not in varVar) :
         else:
             AgentSutler(varVar,varVal,fixedVars,varMin,varMax,specie)
-        #check specie 
-        
-        #if exists run ferda
-        
-        #if doesnt exist run Unity
-        
-        #Option for a solo run? if all in tab 1 are 0 
     
     if event in "Run continuous optimisation":
         alg = str(values['klic2'])

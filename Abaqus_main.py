@@ -15,7 +15,7 @@ def is_empty(any_structure):
     else:
         return True
 
-def abaMain(BraidFile,MeshFile,CADfile,varVal,meshType,XSS):
+def abaMain(AeroName,BraidFile,MeshFile,CADfile,varVal,meshType,XSS):
     lPath = os.path.dirname(os.path.abspath(__file__))
     st986 = time.time()
     #runs from python, it is used to run other abaqus related scripts through command line
@@ -68,6 +68,9 @@ def abaMain(BraidFile,MeshFile,CADfile,varVal,meshType,XSS):
     BraidSection = BraidFile.split("_")[3]
     FeFile = MeshFile+"_"+BraidSection+"_F"+ vn
     
+    
+    #recreation of table required to allow for saving AeroName in place of fN
+    
     #input information into SQL
     query = "INSERT INTO fe_inst(MeshFile,BraidFile,material,FeFile,version,no_layers,force_N) VALUES("
     query += """'"""+MeshFile+"""','"""+BraidFile+"""','"""+Material+"""','"""+FeFile+"""',"""+str(version)+""","""+str(NL)+""","""+str(fN)+""")"""
@@ -77,7 +80,7 @@ def abaMain(BraidFile,MeshFile,CADfile,varVal,meshType,XSS):
     dc_X('NCC',cnnA,crrA)
     
     #all input information for pre-processing passed through this text file
-    STRx = MeshFile +"---"+FeFile+"---"+str(NL)+"---"+str(fN)+"---"+meshType+"---"+str(varVal["mesh_size"])+"---"+str(XSS)
+    STRx = MeshFile +"---"+FeFile+"---"+str(NL)+"---"+str(fN)+"---"+meshType+"---"+str(varVal["mesh_size"])+"---"+str(XSS)+"---"+str(AeroName)
     with open("Temporary\\fe_in.txt", "w") as text_file:
         text_file.write(STRx)
     

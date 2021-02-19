@@ -43,7 +43,7 @@ import math
 meshsize = 2
 #mesh_info = np.load(r"C:\IDPcode\pamrtm\testfiles\mesh_info.npy")
 
-lPath_auto=r'D:\sysi'
+lPath_auto=r'D:\sysiAVL\sysi'
 
 with open(lPath_auto+"\\pamrtm\\mainSimFiles\\currentProgress.txt", "a") as text_file:
     text_file.write("toolbox initiated\n")

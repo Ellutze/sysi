@@ -21,6 +21,7 @@ import datetime
 import time
 import numimesh
 from default_var_dict import getBase
+from avl_cmd import avl_main
 
 def AgentTyrael(deflection, mass):
     #Fitness functoin - Tyrael judges the worthiness of a member.
@@ -115,7 +116,6 @@ def SingleLoop(varVal):
     with open(lPath+"\\temporary\\underground.txt", "a") as text_file:
         text_file.write("Generating CAD shape.\n")
         
-        
     CATbin = True #key12345
     #MAIN BODY OF THE SCRIPT
     if CATbin == True:
@@ -140,6 +140,10 @@ def SingleLoop(varVal):
     #Braiding and meshing could be run in parallel - if separate catia 
     #machine is available.
     print("CAD module finished "+CADfile+", commencing Meshing module")
+    
+    #AVL aero analysis
+    AeroName = CADfile.replace("_A","_E")
+    avl_main(varVal,AeroName)
     
     #meshType should be selected in the GUI eventually...
     #also the sizes available with meshTypes differ
@@ -205,8 +209,6 @@ def SingleLoop(varVal):
     
     print("Meshing module finished "+MeshFile+", commencing Braiding module")
     
-    
-    
     if BraidFile =="new":
         #Success check, if braiding below allowed braid angle the 
         #braid sim has to be re-run.
@@ -264,7 +266,7 @@ def SingleLoop(varVal):
     print("Braiding module finished "+BraidFile+", commencing FE module")
     
 
-    maxDeflection,mass, FeFile = abaMain(BraidFile,MeshFile,CADfile,varVal,meshType,xs_seed)
+    maxDeflection,mass, FeFile = abaMain(AeroName,BraidFile,MeshFile,CADfile,varVal,meshType,xs_seed)
     print("Maximum deflection with current setup is "+str(maxDeflection))
     
     pher = AgentTyrael(maxDeflection,mass)

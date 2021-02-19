@@ -17,7 +17,7 @@ from default_var_dict import getBase
 def avl_main(varVal,name):
     #values that are set, but might became iterated variables in future
     #velocity of key manoeuvre m/s
-    v = 40♫
+    v = 40
     #density of air kg/m3
     ro = 1.225
     #key manoeuvre load factor
@@ -66,6 +66,10 @@ def avl_main(varVal,name):
         F[i,1] = L
         
         i = i + 1
+        
+    #output CL and F to a SQL table
+    np.save("avl_files\\"+name+".npy", F, allow_pickle=True, fix_imports=True)
+    np.savetxt("avl_files\\"+name+".csv", F, delimiter=",")
     return(Cl,F)
     
 def cmd(command):
@@ -74,9 +78,9 @@ def cmd(command):
     print(command)
     print(proc_stdout)
 
-varVal, xxx,yyy = getBase()
-name = "testX2"
-Cl,F = avl_main(varVal,name)
+#varVal, xxx,yyy = getBase()
+#name = "testX2"
+#Cl,F = avl_main(varVal,name)
 
-plt.plot(Cl[:,0],Cl[:,1])
-plt.plot(F[:,0],F[:,1])
+#plt.plot(Cl[:,0],Cl[:,1])
+#plt.plot(F[:,0],F[:,1])

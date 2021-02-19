@@ -48,7 +48,7 @@ def Vf_opt2(alpha,p,Fr):
     m = Fr*2*math.tan(omega)
     A11 = m*Fr*2
     L = x*math.sin(beta)
-    N = math.sqrt((L*2)**2-(Fr*2)**2)
+    N = math.sqrt(abs((L*2)**2-(Fr*2)**2))
     A12 = N*Fr*2
     A1 = A12 + A11
     A1t = A1*2
