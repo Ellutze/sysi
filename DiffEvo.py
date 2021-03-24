@@ -4,9 +4,9 @@ n_samples, n_features = 10, 3
 rng = np.random.RandomState(0)
 #from IDP_databases import cnt_X,dc_X
 #from python_mysql_dbconfig import read_db_config
-#from data_proc_utils import shuffle
-#from data_proc_utils import collector
-#from data_proc_utils import fit2,fit3,collector,shuffle
+from data_proc_utils import shuffle
+from data_proc_utils import collector
+from data_proc_utils import fit2,fit3,collector,shuffle
 
 #y = rng.randn(n_samples)
 #X = rng.randn(n_samples, n_features)
@@ -51,15 +51,18 @@ print(M)
 dc_X('NCC',cnnT,crrT)
 '''
 
-nom, dt, colis = collector([36,37,38,39,40,41])
+nom, dt, colis = collector([71])
 #print(dt)
 
 
 #optional translation of fitness
 dt = fit3(dt)
 
-
+#shuffle 
 M = shuffle(dt)
+
+#unshuffled , used when the collection is done with 2 separate LHS sets
+#M = dt
 
 pofi = np.size(dt,1)-3
 print("number of vars is:",nom)
@@ -132,7 +135,12 @@ y = np.copy(M1[:,pofi])
 
 #print("checkpoint2")
 #gamma=0.001 ==> deleted
-clf = SVR(kernel='poly',degree =7, C=20, gamma='auto', epsilon=0.0000001,coef0=1)
+#clf = SVR(kernel='poly',degree =7, C=20, gamma='auto', epsilon=0.0000001,coef0=1)
+
+clf = SVR(kernel='rbf',degree =7, C=20, gamma='auto', epsilon=0.000001,coef0=1)
+
+#clf = SVR(kernel='poly',degree =7, C=20, gamma='auto', epsilon=0.000001,coef0=1)
+
 clf.fit(X, y) 
 #x = clf.predict(X3[:,0:3])
 
@@ -187,6 +195,7 @@ def ff(x):
     np.save("temporary\\DE.npy",DE)
     return(fitMin)
 
+'''
 
 result = scipy.optimize.differential_evolution( ff, bounds)
 
@@ -198,7 +207,7 @@ print(result.x, result.fun)
 
 
 
-
+'''
 
 
 
@@ -239,6 +248,7 @@ from bokeh.plotting import figure
 from bokeh.models import Range1d
 import numpy as np
 
+'''
 #Select output format.
 output_file("layout.html")
 #Create first plot
@@ -249,19 +259,27 @@ s1.circle(X[:,1],y, color="orange", alpha =0.5,legend="teaching data")
 s1.xaxis.axis_label = colis[1]
 s1.yaxis.axis_label = 'fitness'
 #s1.triangle(X3[:,3], x, size=10, color="firebrick", alpha=0.5,legend="predictions")
+
+'''
+
 #Create second plot
 s2 = figure(title="2",plot_width=500, plot_height=500)
 #s2.x_range=Range1d(250, 500)
 #s2.y_range=Range1d(80, 105)
 #Triangles stand for fully infused datapoints.
-s2.circle(X3[:,0], ver_pred, size=10, color="firebrick", alpha=0.5,legend="predictions")
-#Circles stand for failed infusions.
-s2.triangle(X3[:,0],X3[:,pofi],size=10, color="navy", alpha =0.5,legend="validation data")
 
-s2.circle(X[:,0],y, color="orange", alpha =0.5,legend="teaching data")
+
+#s2.circle(X3[:,0], ver_pred, size=10, color="navy", alpha=0.5,legend="predictions")
+
+#Circles stand for failed infusions.
+s2.circle(X3[:,0],X3[:,pofi],size=10, color="navy", alpha =0.5)#,legend="validation data")
+
+s2.circle(X[:,0],y, color="navy", alpha =0.5)#,legend="teaching data")
 s2.xaxis.axis_label = colis[0]
 s2.yaxis.axis_label = 'fitness'
 s2.legend.location = "top_right"
+
+'''
 #Create third plot
 s3 = figure(plot_width=500, plot_height=500)
 #s2.x_range=Range1d(250, 500)
@@ -277,6 +295,7 @@ s3.yaxis.axis_label = colis[0]
 #s3.legend.location = "top_right"
 
 
+
 #Triangles stand for fully infused datapoints.
 s4 = figure(title="1",plot_width=500, plot_height=500)
 s4.circle( X3[:,2], ver_pred, size=10, color="firebrick", alpha=0.5,legend="predictions")
@@ -285,6 +304,7 @@ s4.circle(X[:,1],y, color="orange", alpha =0.5,legend="teaching data")
 s4.xaxis.axis_label = colis[2]
 s4.yaxis.axis_label = 'fitness'
 #show(row(s1, s2))
+
 
 
 s5 = figure(plot_width=500, plot_height=500)
@@ -313,4 +333,39 @@ s6.circle(X3[:,0], X3[:,2], size=errn[:,0], color="navy", alpha=0.5,fill_color="
 s6.xaxis.axis_label = colis[0]
 s6.yaxis.axis_label = colis[2]
 #s3.legend.location = "top_righ
-show(row(s1,s2,s4,s3,s5,s6))
+
+
+s7 = figure(title="1",plot_width=500, plot_height=500)
+
+s7.circle(X3[:,1],X3[:,pofi], size = 7, color="orange", alpha=0.5)
+s7.circle(X[:,1],y,size = 7,color="orange", alpha =0.5)
+s7.xaxis.axis_label = colis[1]
+s7.yaxis.axis_label = 'fitness'
+#s1.triangle(X3[:,3], x, size=10, color="firebrick", alpha=0.5,legend="predictions")
+#Create second plot
+s8 = figure(title="2",plot_width=500, plot_height=500)
+#s2.x_range=Range1d(250, 500)
+#s2.y_range=Range1d(80, 105)
+#Triangles stand for fully infused datapoints.
+
+#Circles stand for failed infusions.
+s8.circle(X3[:,0],X3[:,pofi],size = 7, color="navy", alpha =0.5)
+
+s8.circle(X[:,0],y,size = 7, color="navy", alpha =0.5)
+s8.xaxis.axis_label = colis[0]
+s8.yaxis.axis_label = 'fitness'
+s8.legend.location = "top_right"
+
+
+#Triangles stand for fully infused datapoints.
+s9 = figure(title="1",plot_width=500, plot_height=500)
+
+s9.circle(X3[:,2],X3[:,pofi],size = 7, color="green", alpha=0.5)
+s9.circle(X[:,1],y,size = 7, color="green", alpha =0.5)
+s9.xaxis.axis_label = colis[2]
+s9.yaxis.axis_label = 'fitness'
+#show(row(s1, s2))
+
+'''
+show(row(s2))
+#show(row(s1,s2,s4,s3,s5,s6,s7,s8,s9))

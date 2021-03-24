@@ -236,6 +236,9 @@ def poc(MD,varVal,YARN,WW,spoolsWa,spoolsPhy,datum,cdArr,CADfile,rota):
         l1 = p4 - p3
         l2 = p4 - p2 
         normal = np.cross(l1,l2)
+        #print(normal)
+        normal[2] = 0 # testing this for high dihedral scenarios...
+        #print(normal)
         #turn into unit vector
         n_mag = np.sqrt((normal[0])**2+(normal[1])**2+(normal[2])**2)
         if n_mag == 0:

@@ -21,13 +21,13 @@ st42 = time.time()
 CATIA = win32com.client.Dispatch("CATIA.Application")
 CATIA.RefreshDisplay = False
 #documents1 = CATIA.Documents # this line is not currently in use
-cadFile = "IDP_UAV2_A192_JK"
-braidFile = "IDP_UAV2_A192_B001"
+cadFile = "IDP_UAV4_A382_JK"
+braidFile = "IDP_UAV4_A382_B001"
 
 #location of CATIA file to be meshed
 #delete after testing:
 #BraidFile = CADfile.replace("_A0", "_B0") 
-str15 = "D:\\sysi\\catiafiles\\sourcefiles\\"+cadFile+".CatPart"
+str15 = "D:\\sysiAVL\\sysi\\catiafiles\\sourcefiles\\"+cadFile+".CatPart"
 partDocument1 = CATIA.Documents.Open(str15)
 part1 = partDocument1.Part
 HSF = part1.HybridShapeFactory
@@ -66,7 +66,7 @@ hss1.SetSupport(ref1)
 count = 0
 for row in rows:
     
-    if count < 9:
+    if count < 5:
         BP.append(row)
         yr = int(row[0])
         if yarn < yr:
@@ -143,7 +143,7 @@ part1.Update
 
 
 SplineFile = braidFile.replace("_A", "_S")     
-silo = "D:\\sysi\\CatiaFiles\\BraidFiles\\"+SplineFile+"_JK.CatPart"
+silo = "D:\\sysiAVL\\sysi\\CatiaFiles\\BraidFiles\\"+SplineFile+"_JK.CatPart"
 partDocument1.SaveAs(silo)
 
 CATIA.RefreshDisplay = True

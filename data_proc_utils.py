@@ -39,7 +39,8 @@ def collector(tlist):
         rows = crrT.fetchall()
         #for each column that was not listed (and does not correspond to default column), add to list
         for row in rows:
-            if row[0] not in colis:
+            #marix and reinforcement cannot be plotted so extract
+            if row[0] not in colis and row[0] != "matrix" and row[0] != "reinforcement":
                 colis.append(row[0])
         dc_X('NCC',cnnT,crrT)
 
@@ -58,6 +59,8 @@ def collector(tlist):
     for number in tlist:
         colisy = []
         colisx = colis.copy()
+        #marix and reinforcement cannot be plotted so extract
+        
         #print(colisx)
         cnnT,crrT = cnt_X('NCC')
         query = """SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '_iters_"""+str(number)+"""' ORDER BY ORDINAL_POSITION"""
@@ -67,7 +70,9 @@ def collector(tlist):
         #for each column that was not listed (and does not correspond to default column), add to list
         query = "SELECT "
         for row in rows:
-            if row[0] in colisx:
+            #print(row[0], colisx)
+            
+            if row[0] in colisx :
                 #colisx will be the remaining entries that will be added from fixed variables table
                 #colisy is the list of variables obtained here from the main table
                 query += row[0]+","
@@ -78,7 +83,7 @@ def collector(tlist):
         crrT.execute(query)
         mt = crrT.fetchall()
         #mt is later used for construction of the overall table
-
+        #print(mt)
         #obtain variables from fixed variables table
         if len(colisx) > 0:
             query = "SELECT "
@@ -106,6 +111,8 @@ def collector(tlist):
                 #from main table
                 while ii < len(colisy):
                     if colis[i] == colisy[ii]:
+                        #print(m[ii])
+
                         dtt[0,i] = m[ii]
                     ii = ii + 1
                 i = i + 1

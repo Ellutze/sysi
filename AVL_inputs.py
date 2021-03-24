@@ -85,7 +85,7 @@ def sysiAVL():
             else:
                 newFile = newFile + line
     
-    print(newFile)
+    #print(newFile)
     # add line "#created by xxx at xxx on xxx "
     
     

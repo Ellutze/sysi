@@ -58,7 +58,7 @@ def SingleLoop(varVal):
     
     #The project and part should be the same for all parts subject to same 
     #optimisation loop.
-    part = "UAV4"
+    part = "UAV5"
     project = "IDP"
     
     #If "new" is set, the corresponding simulation is run.
@@ -306,6 +306,8 @@ def SingleLoop(varVal):
     #Abaqus analysis finished, commencing infusion simulation.
     #______insert RTM_main here .... (number of layers, name of part)
     #toggle if I want to run RTM simulation (maybe set a fitness treshold?)
+    #currently has issues, due to recent PAM-RTM patch, needs to be sorted
+    '''
     if pher > 0.9:
         RTMsim = True
     else:
@@ -334,6 +336,7 @@ def SingleLoop(varVal):
         cnnC.commit()
         #close SQL handles 
         dc_X('NCC',cnnC,crrC)
+    '''
     
     simulation_time = time.time()-st999         
     cnnC,crrC = cnt_X('NCC') 

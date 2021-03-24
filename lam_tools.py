@@ -131,8 +131,9 @@ def VolumesF(pitch1,pitch2,fR,angle1,angle2):
     Vf = (Vf1+Vf2)/2
     print("comparison of Vf methods, Vf1:",Vf,"Vf2:",Vf_comp)
     
-    
-    return (Vf1,Vf2,t)
+    #swap the Vf options here
+    #return (Vf_comp,Vf_comp,t) # New method
+    return (Vf1,Vf2,t) #Old method
 
 def ABD(seq,sym,lamina1,lamina2,angle1,angle2):
 

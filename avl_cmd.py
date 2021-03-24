@@ -40,15 +40,15 @@ def avl_main(varVal,name):
                       [span/3,varVal["chord_1"]*(varVal["c_max"]-varVal["c_min"])],
                       [2*span/3,varVal["chord_2"]*(varVal["c_max"]-varVal["c_min"])],
                       [span,varVal["chord_3"]*(varVal["c_max"]-varVal["c_min"])]])
-    print(chord)
+    #print(chord)
     
     F = np.zeros([20,2])
-    print(F)
+    #print(F)
     i = 0 
     while i < 20:
         ii= 0
         spd = (sg/2 + i*sg)/1000
-        print(spd)
+        #print(spd)
         while ii < Cl.shape[0]-1:
             if Cl[ii,0] <= spd < Cl[ii+1,0]:
                 loc_cl = Cl[ii,1] + (spd-Cl[ii,0])/(Cl[ii+1,0]-Cl[ii,0])*(Cl[ii+1,1]-Cl[ii,1])
