@@ -132,8 +132,8 @@ def VolumesF(pitch1,pitch2,fR,angle1,angle2):
     print("comparison of Vf methods, Vf1:",Vf,"Vf2:",Vf_comp)
     
     #swap the Vf options here
-    #return (Vf_comp,Vf_comp,t) # New method
-    return (Vf1,Vf2,t) #Old method
+    return (Vf_comp,Vf_comp,t) # New method
+    #return (Vf1,Vf2,t) #Old method
 
 def ABD(seq,sym,lamina1,lamina2,angle1,angle2):
 
@@ -256,8 +256,8 @@ def ABD(seq,sym,lamina1,lamina2,angle1,angle2):
     Eym = 1/(ttot*a[1,1])
     Gxym = 1/(ttot*a[2,2])
     vxym = -a[0,1]/a[0,0]
-    vyxm = -a[0,1]/a[1,1]
-    mxm = -a[0,2]/a[0,0]
+    vyxm = -a[0,1]/a[1,1] 
+    mxm = -a[0,2]/a[0,0] 
     mym = -a[1,2]/a[1,1]
     membrane = [Exm,Eym,Gxym,vxym,vyxm,mxm,mym]
     #print(membrane)

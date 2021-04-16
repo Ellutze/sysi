@@ -506,6 +506,10 @@ def braidAV(secPTS,secVECy,secVECz, BraidFile,secs,varVal):
     #loop through all braid data rows
     iv = 0 
     count = 0
+    
+    #tshoot
+    print(output)
+    
     while iv < output.shape[0]:
         #loop through all potential 0 values
         iiv = 1

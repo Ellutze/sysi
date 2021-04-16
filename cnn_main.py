@@ -58,7 +58,16 @@ def aba_inputProp(BraidFile,CADfile,varVal):
         #mat properties 239.5Gpa E1f, 13.5Gpa E2f, 3.3Gpa Em, 6.81Gpa G12f, shear str matrix 41.03 Mpa, and some poisson ratios...
         #,239500,13400,3300,6810,41.03,0.2,0.35)
         memProps, dens, TL, K1, K2, Vf, t = lam_tools.ps(row[3],row[4],row[1],row[2],varVal)
-        Exm,Eym,Gxym,vxym,vyxm,mxm,mym = memProps            
+        Exm,Eym,Gxym,vxym,vyxm,mxm,mym = memProps       
+        if Exm < 0:
+            Exm = Exm*-1
+            print("elastic modulus was negative, tshoot?")
+        if Eym < 0:
+            Eym = Eym*-1
+            print("elastic modulus Eym was negative, tshoot?")
+        if Gxym < 0:
+            Gxym = Gxym*-1
+            print("shear modulus was negative, tshoot?")
         matYY = np.matrix([row[0],Exm,Eym,Gxym,vxym,vyxm,mxm,mym,dens,TL,K1,K2,Vf,t])
         matXX = np.concatenate((matXX,matYY),axis=0)
     matXX = np.delete(matXX, (0), axis=0)

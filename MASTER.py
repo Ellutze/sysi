@@ -58,7 +58,7 @@ def SingleLoop(varVal):
     
     #The project and part should be the same for all parts subject to same 
     #optimisation loop.
-    part = "UAV5"
+    part = "UAV6"
     project = "IDP"
     
     #If "new" is set, the corresponding simulation is run.

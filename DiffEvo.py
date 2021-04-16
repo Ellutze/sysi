@@ -38,7 +38,7 @@ for i in rows:
     crrT.execute(query)
     fitComp = crrT.fetchall()  
     print(fitComp)
-    for nu in fitComp:
+    for nu in fitComp:☼
         #max_deflectoin
         Mtamp[0,3] = nu[0]
         #mass
@@ -51,7 +51,7 @@ print(M)
 dc_X('NCC',cnnT,crrT)
 '''
 
-nom, dt, colis = collector([71])
+nom, dt, colis = collector([69])
 #print(dt)
 
 
@@ -195,7 +195,7 @@ def ff(x):
     np.save("temporary\\DE.npy",DE)
     return(fitMin)
 
-'''
+
 
 result = scipy.optimize.differential_evolution( ff, bounds)
 
@@ -207,7 +207,7 @@ print(result.x, result.fun)
 
 
 
-'''
+
 
 
 
@@ -232,10 +232,17 @@ print("average error is:",T/np.size(errm,0))
 #normalize errors:
 i=0
 
-rng = max(errm[:,0])-min(errm[:,0])
+#rng = max(errm[:,0])-min(errm[:,0])
+#print("max", max(errm[:,0]),"min:",min(errm[:,0]))
+#above lines used to standardise (from runs 39,40,41)
+mmin = 0
+mmax = 0.195
+rng = mmax-mmin
+
+
 errn = np.zeros([np.size(errm,0),1])
 while i < np.size(errn,0):
-    errn[i,0] = ((((errm[i,0]-min(errm[:,0]))/rng)**1/2)*100)+15
+    errn[i,0] = ((((errm[i,0]-mmin)/rng)**1/2)*100)+15
     i=i+1
 #print(terr)
 
@@ -248,7 +255,7 @@ from bokeh.plotting import figure
 from bokeh.models import Range1d
 import numpy as np
 
-'''
+
 #Select output format.
 output_file("layout.html")
 #Create first plot
@@ -258,9 +265,10 @@ s1.triangle(X3[:,1],X3[:,pofi], size=10, color="navy", alpha=0.5,legend="validat
 s1.circle(X[:,1],y, color="orange", alpha =0.5,legend="teaching data")
 s1.xaxis.axis_label = colis[1]
 s1.yaxis.axis_label = 'fitness'
+s1.legend.location = "bottom_right"
 #s1.triangle(X3[:,3], x, size=10, color="firebrick", alpha=0.5,legend="predictions")
 
-'''
+
 
 #Create second plot
 s2 = figure(title="2",plot_width=500, plot_height=500)
@@ -269,17 +277,18 @@ s2 = figure(title="2",plot_width=500, plot_height=500)
 #Triangles stand for fully infused datapoints.
 
 
-#s2.circle(X3[:,0], ver_pred, size=10, color="navy", alpha=0.5,legend="predictions")
+s2.circle(X3[:,0], ver_pred, size=10, color="firebrick", alpha=0.5,legend="predictions")
 
 #Circles stand for failed infusions.
-s2.circle(X3[:,0],X3[:,pofi],size=10, color="navy", alpha =0.5)#,legend="validation data")
+s2.triangle(X3[:,0],X3[:,pofi],size=10, color="navy", alpha =0.5,legend="validation data")
 
-s2.circle(X[:,0],y, color="navy", alpha =0.5)#,legend="teaching data")
+s2.circle(X[:,0],y, color="orange", alpha =0.5,legend="teaching data")
 s2.xaxis.axis_label = colis[0]
 s2.yaxis.axis_label = 'fitness'
-s2.legend.location = "top_right"
+#s2.legend.location = "top_right"
+s2.legend.location = "bottom_right"
 
-'''
+
 #Create third plot
 s3 = figure(plot_width=500, plot_height=500)
 #s2.x_range=Range1d(250, 500)
@@ -292,7 +301,7 @@ s3.circle(X3[:,1], X3[:,0], size=errn[:,0], color="navy", alpha=0.5,fill_color="
 #s3.circle(X3[:,2],X3[:,4], color="green", alpha =0.5,legend="source data")
 s3.xaxis.axis_label = colis[1]
 s3.yaxis.axis_label = colis[0]
-#s3.legend.location = "top_right"
+#s3.legend.location = "bottom_right"
 
 
 
@@ -303,6 +312,7 @@ s4.triangle(X3[:,2],X3[:,pofi], size=10, color="navy", alpha=0.5,legend="validat
 s4.circle(X[:,1],y, color="orange", alpha =0.5,legend="teaching data")
 s4.xaxis.axis_label = colis[2]
 s4.yaxis.axis_label = 'fitness'
+s4.legend.location = "bottom_right"
 #show(row(s1, s2))
 
 
@@ -366,6 +376,5 @@ s9.xaxis.axis_label = colis[2]
 s9.yaxis.axis_label = 'fitness'
 #show(row(s1, s2))
 
-'''
-show(row(s2))
-#show(row(s1,s2,s4,s3,s5,s6,s7,s8,s9))
+#show(row(s2))
+show(row(s1,s2,s4,s3,s5,s6,s7,s8,s9))

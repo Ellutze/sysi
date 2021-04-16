@@ -21,8 +21,8 @@ st42 = time.time()
 CATIA = win32com.client.Dispatch("CATIA.Application")
 CATIA.RefreshDisplay = False
 #documents1 = CATIA.Documents # this line is not currently in use
-cadFile = "IDP_UAV4_A382_JK"
-braidFile = "IDP_UAV4_A382_B001"
+cadFile = "IDP_UAV6_A035_JK"
+braidFile = "IDP_UAV6_A035_B001"
 
 #location of CATIA file to be meshed
 #delete after testing:
