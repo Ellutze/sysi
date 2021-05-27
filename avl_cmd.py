@@ -43,10 +43,11 @@ def avl_main(varVal,name):
     #print(chord)
     
     F = np.zeros([20,2])
-    #print(F)
+    #Translate lift coefficients to Lift
     i = 0 
     while i < 20:
         ii= 0
+        #spd = location along the span
         spd = (sg/2 + i*sg)/1000
         #print(spd)
         while ii < Cl.shape[0]-1:

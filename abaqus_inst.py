@@ -443,9 +443,9 @@ while ii < 20:
         elPOSlocal[1] = elPOSlocal[1]*ErrRat
                 
         #picking the 2 bottom segments and merging their boundaries
-        it = 5 + ii*12
-        xmax = max([seg_mat[it,1],seg_mat[it+1,1]])
-        xmin = min([seg_mat[it,2],seg_mat[it+1,2]])
+        it = 4 + ii*12
+        xmax = max([seg_mat[it,1],seg_mat[it+1,1],seg_mat[it,2],seg_mat[it+1,2]])    #tshoot nonesense
+        xmin = min([seg_mat[it,2],seg_mat[it+1,2],seg_mat[it,1],seg_mat[it+1,1]])
         ymin = min([seg_mat[it,4],seg_mat[it+1,4]])
         ymax = max([seg_mat[it,3],seg_mat[it+1,3]])
         zmax = max([seg_mat[it,5],seg_mat[it+1,5]])

@@ -72,6 +72,7 @@ def ex1(project,file,varVal, version):
         #relevant set of points.
         Airfoil = foil_to_spar(varVal['airfoil_'+str(ii)],chord_min,chord_max) 
         #(coordinates in unit chord scale are too small for CATIA)
+        print("Airfoil", Airfoil) #for tshoot
 
         #Reference point for scaling and rotations.
         xAnchor = (chord_max+chord_min)/2
@@ -81,6 +82,7 @@ def ex1(project,file,varVal, version):
         #Adjusting airfoil points, based on section parameters.
         i = 0
         af = np.zeros([np.size(Airfoil,0),2])
+        print(np.size(Airfoil,0), "is this 0? how?") #tshoot xT unassigned
         while i < np.size(Airfoil,0):
             
             #translate choordinate system for correct scaling
