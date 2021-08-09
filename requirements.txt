@@ -6,7 +6,7 @@ pandas==0.25.1
 PyAutoGUI==0.9.48
 pyodbc==4.0.27
 PySimpleGUI==4.15.2
-pywin32==228
+pywin32==301
 scikit-image==0.15.0
 scikit-learn==0.21.3
 sklearn==0.0
