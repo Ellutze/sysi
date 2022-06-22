@@ -1,7 +1,7 @@
 bokeh==1.3.4
 configparser==4.0.2
 lhsmdu==0.1
-numpy==1.18.1
+numpy==1.22.0
 pandas==0.25.1
 PyAutoGUI==0.9.48
 pyodbc==4.0.27
