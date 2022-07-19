@@ -136,3 +136,9 @@ To cite, please use the repository DOI: https://zenodo.org/badge/latestdoi/25248
 ### References 
 
 Deutsch and Deutsch, Latin hypercube sampling with multidimensional uniformity", Journal of Statistical Planning and Inference 142 (2012) , 763-772 
+
+Link to my Thesis will be provided here, it's pending publishing at University of Bristol thesis repository (ETA end of summer 2022).
+
+For now the most relevant published research:
+
+Kucera J, Visrolia A, Rendall T, Kratz J. Highly automated “design for manufacture” of composite components. In: AIAA 2022-0924 - Session: Model-Based Design Applied to Complex Systems and Structures. 2022. Available from: https://arc.aiaa.org/doi/abs/10.2514/6.2022-0924
