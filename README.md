@@ -137,7 +137,7 @@ To cite, please use the repository DOI: https://zenodo.org/badge/latestdoi/25248
 
 Deutsch and Deutsch, Latin hypercube sampling with multidimensional uniformity", Journal of Statistical Planning and Inference 142 (2012) , 763-772 
 
-Link to my Thesis will be provided here, it's pending publishing at University of Bristol thesis repository (ETA end of summer 2022).
+Link to author's thesis: https://research-information.bris.ac.uk/ws/portalfiles/portal/326912406/PGR_submission_Kucera_Jakub_17766270_final.pdf.
 
 For now the most relevant published research:
 
